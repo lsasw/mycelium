@@ -996,6 +996,22 @@
       "tags": ["Psychology", "Adler"],
       "related": [],
       "tended": "2026-09-02"
+    },
+    {
+      "id": "tennis-starter",
+      "title": "网球入门自学指南",
+      "cat": "体育",
+      "level": "入门",
+      "status": "已完结",
+      "maturity": 3,
+      "evergreen": true,
+      "created": "2026-09-08",
+      "updated": "2026-09-08",
+      "url": "网球入门自学指南.html",
+      "desc": "网球零基础自学：规则、握拍、正反手击球、发球、计分与术语黑话，含动作演示动画。",
+      "tags": ["Tennis", "Sports", "入门"],
+      "related": [],
+      "tended": "2026-09-08"
     }
   ]
 }
