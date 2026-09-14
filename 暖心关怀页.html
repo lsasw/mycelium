@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="xJ41nKtmqsUZLqI01I4OIh">
+<head data-page-node-id="WaQiDtPccTYNBJiNlyYlBh">
+<meta charset="UTF-8" data-page-node-id="wPizBhCH9IC4wKx3hD0GDX">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="wL9GoVagkL8eQiDea4ETtH">
+<title>暖心关怀页 · 陪着她</title>
+<style>
+  :root {
+    --bg-1: #fff6f7;
+    --bg-2: #ffe9ed;
+    --bg-3: #fdeff3;
+    --card: rgba(255, 255, 255, 0.78);
+    --card-solid: #ffffff;
+    --primary: #f2728c;
+    --primary-deep: #e0577a;
+    --primary-soft: #ffd6de;
+    --accent: #ffb07a;
+    --lavender: #c7b2e4;
+    --text: #5d3b44;
+    --text-soft: #8a626b;
+    --text-faint: #b08991;
+    --line: #f3d6dc;
+    --shadow: 0 10px 30px rgba(226, 87, 122, 0.10);
+    --shadow-sm: 0 4px 14px rgba(226, 87, 122, 0.08);
+    --radius: 20px;
+    --radius-sm: 14px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body { height: 100%; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+      "Microsoft YaHei", "Segoe UI", sans-serif;
+    color: var(--text);
+    background: linear-gradient(160deg, var(--bg-1) 0%, var(--bg-2) 45%, var(--bg-3) 100%);
+    background-attachment: fixed;
+    min-height: 100%;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 40px;
+  }
+
+  .wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 22px 18px;
+  }
+
+  /* ---------- 顶部 ---------- */
+  header { text-align: center; padding: 20px 0 6px; }
+  .logo-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--card-solid);
+    padding: 8px 16px;
+    border-radius: 999px;
+    box-shadow: var(--shadow-sm);
+    font-size: 13px; color: var(--primary-deep); font-weight: 600;
+    margin-bottom: 14px;
+  }
+  .logo-badge svg { width: 16px; height: 16px; }
+  h1 { font-size: 30px; font-weight: 800; letter-spacing: 1px; }
+  h1 span { color: var(--primary); }
+  .date-line { margin-top: 8px; font-size: 14px; color: var(--text-soft); }
+
+  /* ---------- 通用卡片 ---------- */
+  .card {
+    background: var(--card);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 20px;
+  }
+
+  .section { margin-top: 20px; }
+  .section-head {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 16px; font-weight: 700; color: var(--text);
+    margin-bottom: 14px;
+  }
+  .section-head .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--primary);
+  }
+
+  /* ---------- 经期周期 ---------- */
+  .cycle-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+  }
+  .field label {
+    display: block; font-size: 12px; color: var(--text-soft);
+    margin-bottom: 6px; font-weight: 600;
+  }
+  .field input {
+    width: 100%; padding: 11px 12px;
+    border: 1.5px solid var(--line); border-radius: var(--radius-sm);
+    background: var(--card-solid); color: var(--text);
+    font-size: 15px; outline: none; transition: border-color .2s;
+  }
+  .field input:focus { border-color: var(--primary); }
+
+  .cycle-status {
+    margin-top: 16px; padding: 16px;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(135deg, #ffe3ea, #fff0f3);
+    text-align: center;
+  }
+  .cycle-tag {
+    display: inline-block; font-size: 13px; font-weight: 700;
+    color: #fff; background: var(--primary);
+    padding: 5px 14px; border-radius: 999px; margin-bottom: 10px;
+  }
+  .cycle-countdown { font-size: 26px; font-weight: 800; color: var(--primary-deep); }
+  .cycle-countdown small { font-size: 14px; font-weight: 600; color: var(--text-soft); }
+  .cycle-tip { margin-top: 8px; font-size: 14px; color: var(--text-soft); line-height: 1.7; }
+
+  /* ---------- 情绪安抚 ---------- */
+  .soothe-box {
+    text-align: center; padding: 28px 18px;
+    position: relative; overflow: hidden;
+  }
+  .soothe-box .quote-mark {
+    font-size: 40px; line-height: 1; color: var(--primary-soft);
+    font-weight: 800; font-family: Georgia, serif;
+  }
+  .soothe-text {
+    font-size: 20px; line-height: 1.8; font-weight: 600;
+    margin: 12px 0 18px; min-height: 3.2em;
+    transition: opacity .25s ease;
+  }
+  .soothe-text.fade { opacity: 0; transform: translateY(6px); }
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--card-solid); border: 1.5px solid var(--primary-soft);
+    color: var(--primary-deep); font-weight: 700; font-size: 14px;
+    padding: 10px 22px; border-radius: 999px; cursor: pointer;
+    transition: all .2s;
+  }
+  .btn-ghost:hover { background: var(--primary-soft); border-color: var(--primary); }
+  .btn-ghost svg { width: 16px; height: 16px; }
+
+  /* ---------- 关怀卡片 ---------- */
+  .care-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+  }
+  .care-item {
+    background: var(--card-solid);
+    border: 1.5px solid var(--line);
+    border-radius: var(--radius-sm);
+    padding: 18px 12px;
+    text-align: center; cursor: pointer;
+    transition: transform .15s, box-shadow .2s, border-color .2s, background .2s;
+    user-select: none;
+    position: relative;
+  }
+  .care-item:hover { transform: translateY(-3px); box-shadow: var(--shadow-sm); }
+  .care-item .icon { width: 42px; height: 42px; margin: 0 auto 10px; color: var(--primary); }
+  .care-item .name { font-size: 14px; font-weight: 700; color: var(--text); }
+  .care-item .sub { font-size: 11px; color: var(--text-faint); margin-top: 3px; }
+  .care-item .check {
+    position: absolute; top: 8px; right: 8px;
+    width: 20px; height: 20px; border-radius: 50%;
+    background: var(--primary-soft); color: #fff;
+    display: none; align-items: center; justify-content: center;
+  }
+  .care-item.done { background: #fff0f4; border-color: var(--primary); }
+  .care-item.done .check { display: flex; }
+  .care-item.done .name { color: var(--primary-deep); }
+  .care-item.done .icon { color: var(--primary-deep); }
+
+  /* ---------- 大按钮 ---------- */
+  .big-heart-wrap { text-align: center; margin-top: 20px; }
+  .btn-heart {
+    position: relative;
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 18px 40px; border-radius: 999px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    color: #fff; font-size: 20px; font-weight: 800; letter-spacing: 1px;
+    border: none; cursor: pointer;
+    box-shadow: 0 14px 30px rgba(242, 114, 140, 0.42);
+    transition: transform .15s, box-shadow .2s;
+  }
+  .btn-heart:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 18px 40px rgba(242,114,140,0.5); }
+  .btn-heart:active { transform: scale(0.96); }
+  .btn-heart svg { width: 26px; height: 26px; }
+  .heart-count {
+    margin-top: 14px; font-size: 13px; color: var(--text-soft); font-weight: 600;
+  }
+  .heart-count b { color: var(--primary-deep); font-size: 16px; }
+
+  /* 弹窗甜言蜜语 */
+  .toast {
+    position: fixed; left: 50%; bottom: 40px; transform: translateX(-50%) translateY(20px);
+    background: var(--text); color: #fff;
+    padding: 14px 26px; border-radius: 999px;
+    font-size: 15px; font-weight: 600;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.22);
+    opacity: 0; pointer-events: none;
+    transition: opacity .3s, transform .3s;
+    z-index: 100; max-width: 86vw; text-align: center;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* 飘落的爱心 */
+  .float-heart {
+    position: fixed; top: -40px; z-index: 99;
+    pointer-events: none;
+    animation: fall linear forwards;
+  }
+  @keyframes fall {
+    0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+  }
+
+  footer { text-align: center; margin-top: 30px; font-size: 12px; color: var(--text-faint); }
+
+  /* ---------- 响应式 ---------- */
+  @media (max-width: 720px) {
+    h1 { font-size: 25px; }
+    .cycle-grid { grid-template-columns: 1fr; }
+    .care-grid { grid-template-columns: repeat(2, 1fr); }
+    .soothe-text { font-size: 18px; }
+  }
+  @media (max-width: 400px) {
+    .care-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .btn-heart { padding: 16px 30px; font-size: 18px; }
+  }
+</style>
+</head>
+<body data-page-node-id="c2Q5IvnWDrQ4geJf1TE6Qd">
+<div class="wrap" data-page-node-id="ODuYv8cXP1NP7WpRML4SKg">
+
+  <header data-page-node-id="X1TtlIfKnjac8ZhKbm0Kzr">
+    <div class="logo-badge" data-page-node-id="nRsxvoXWxeryGpi3W1jMLJ">
+      <svg viewBox="0 0 24 24" fill="currentColor" data-page-node-id="9krZNoWyswAGkLkCCNbCLk"><path d="M12 21s-7.5-4.9-10-9.2C.6 8.6 2.3 5 6 5c2 0 3.4 1 4 2.2C10.6 6 12 5 14 5c3.7 0 5.4 3.6 4 6.8C19.5 16.1 12 21 12 21z" data-page-node-id="Ii4GEanrey6Zwwasbb9QQ9"/></svg>
+      今天的她，也要被好好照顾
+    </div>
+    <h1 data-page-node-id="FZZbNnc8IB7ZGsNJFXelQc">暖心<span data-page-node-id="jobV1uZa71CgSTtqZoCnBR">关怀</span>页</h1>
+    <div class="date-line" id="dateLine" data-page-node-id="EE6uL2zBcE9JoLBQ6BHHvz"></div>
+  </header>
+
+  <!-- 经期周期 -->
+  <section class="section" data-page-node-id="qjOUdiuguZwTbCxtV74oHP">
+    <div class="section-head" data-page-node-id="0P9BQfcAuZdrA4RbP7hpRu"><span class="dot" data-page-node-id="bb2ScCLmGMqF8zhiWwMZV3"></span>经期周期 · 温柔记挂</div>
+    <div class="card" data-page-node-id="7mnZx1xAyTgwwrM11FNzvQ">
+      <div class="cycle-grid" data-page-node-id="pWE86LO7xUXAMrfn5dU3f3">
+        <div class="field" data-page-node-id="zjKxghlz5dbt05hlgB7gTI">
+          <label data-page-node-id="X0BBd0B4BTM1IGY6VQx5LT">上次经期开始日期</label>
+          <input type="date" id="lastPeriod" data-page-node-id="SWtgbASS8OAkFJrvtkHDFw">
+        </div>
+        <div class="field" data-page-node-id="61KEJnmzis6u21KHzbzewA">
+          <label data-page-node-id="AZiAmmYtdcXUwg2jijKnS2">平均周期（天）</label>
+          <input type="number" id="cycleDays" min="20" max="45" value="28" data-page-node-id="gRuZZSOLPsyfmdJhuKV9fG">
+        </div>
+      </div>
+      <div class="cycle-status" id="cycleStatus" data-page-node-id="CtW4h0kKKHIg1DJuCuIomC"></div>
+    </div>
+  </section>
+
+  <!-- 情绪安抚 -->
+  <section class="section" data-page-node-id="Vzb1YnipzdFXo1De2Pa7z0">
+    <div class="section-head" data-page-node-id="xhJcHTLOae1wGkXVLplZGm"><span class="dot" data-page-node-id="SykWb6zvRnfuupPBlu4Btu"></span>一句情绪安抚</div>
+    <div class="card soothe-box" data-page-node-id="w6B8EF3NrFJmOhsL7zj1rL">
+      <div class="quote-mark" data-page-node-id="rzFDoav8o6hI5tHGytuWAF">&#8220;</div>
+      <div class="soothe-text" id="sootheText" data-page-node-id="7DXmJCiT6kjhgmikiIBh9A"></div>
+      <button class="btn-ghost" id="sootheBtn" data-page-node-id="P21vyJMpAmEIN7lBq7xX9x">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="B8VIpTeyc98SIvNXVBKv71"><path d="M21 12a9 9 0 1 1-3-6.7" data-page-node-id="B6TdjsXdy2nju2obbBp2p0"/><path d="M21 3v6h-6" data-page-node-id="CBdl8jtiREVfCtMoUQ3fQA"/></svg>
+        换一句温柔的话
+      </button>
+    </div>
+  </section>
+
+  <!-- 关怀卡片 -->
+  <section class="section" data-page-node-id="NlK8m7h5CHcFwpcCBj11ed">
+    <div class="section-head" data-page-node-id="xCk5pdCMmwDjtbq54FdAJH"><span class="dot" data-page-node-id="1F7RtAClu4l2A28CtaOXSf"></span>今天的小小关怀 · 点一下记下来</div>
+    <div class="care-grid" id="careGrid" data-page-node-id="515BiLWyp6FbMso7zU5rkO"></div>
+  </section>
+
+  <!-- 大按钮 -->
+  <section class="big-heart-wrap" data-page-node-id="POBBRKrjCTAIbnLMxkRfMe">
+    <button class="btn-heart" id="heartBtn" data-page-node-id="A8zqIF8DgHRO1WieheZcGg">
+      <svg viewBox="0 0 24 24" fill="currentColor" data-page-node-id="EgUjElQDHgwlwU6MwhISSc"><path d="M12 21s-7.5-4.9-10-9.2C.6 8.6 2.3 5 6 5c2 0 3.4 1 4 2.2C10.6 6 12 5 14 5c3.7 0 5.4 3.6 4 6.8C19.5 16.1 12 21 12 21z" data-page-node-id="41XcmjL7y6xuSLthSGGcMc"/></svg>
+      点一下，送她一颗心
+    </button>
+    <div class="heart-count" data-page-node-id="KozCaeEKD27vgtrpTcltJl">已经送出了 <b id="heartCount" data-page-node-id="QXOJFk1dzfxzJa1ytYmBDp">0</b> 颗爱心</div>
+  </section>
+
+  <footer data-page-node-id="bfbsFkRGeJpmRY78xUZ4kX">愿每一句关心，都刚刚好抵达她的心里。</footer>
+</div>
+
+<div class="toast" id="toast" data-page-node-id="xuSME06FJMtEVZmEakGX9o"></div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ============ 常量 ============ */
+  const SOOTHES = [
+    "没关系的，慢慢来，我一直都在。",
+    "累的时候不用逞强，我的肩膀借你靠。",
+    "你已经做得很好了，别对自己太苛刻。",
+    "今天不开心也没关系，我陪你把它过完。",
+    "先喝口水，深呼吸，我在呢。",
+    "你值得被温柔对待，包括被你自己。",
+    "世界偶尔很吵，但你可以安静一会儿。",
+    "就算今天什么都不想做，也完全 OK。"
+  ];
+
+  const SWEETS = [
+    "今天的你，也超可爱。",
+    "别怕，有我在。",
+    "记住，你永远可以依赖我。",
+    "想你了，就想告诉你一声。",
+    "你笑起来的样子，我最喜欢。",
+    "不管发生什么，我都站在你这边。",
+    "抱一下，充电完成。",
+    "你比昨天的自己，又更棒了一点点。"
+  ];
+
+  const CARES = [
+    { name: "多喝热水",   sub: "慢慢喝，别烫到", icon: "water" },
+    { name: "注意保暖",   sub: "脖子和脚踝别着凉", icon: "scarf" },
+    { name: "早点休息",   sub: "今晚早点睡", icon: "moon" },
+    { name: "记得吃饭",   sub: "三餐要按时", icon: "rice" },
+    { name: "红糖姜茶",   sub: "暖胃也暖心", icon: "tea" },
+    { name: "暖水袋热敷", sub: "肚肚会舒服很多", icon: "warm" },
+    { name: "揉揉肚子",   sub: "轻轻地、有耐心", icon: "hand" },
+    { name: "听她说话",   sub: "想聊随时找我", icon: "chat" }
+  ];
+
+  /* ============ 图标 ============ */
+  const ICONS = {
+    water: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.5 6 11a6 6 0 1 1-12 0c0-4.5 6-11 6-11z"/><path d="M9 14a3 3 0 0 0 3 3"/></svg>',
+    scarf: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7c0 3 2 4 2 7v5"/><path d="M20 7c0 3-2 4-2 7v5"/><path d="M6 11c2-1.5 4-1.5 6 0s4 1.5 6 0"/><path d="M6 15c2-1.5 4-1.5 6 0s4 1.5 6 0"/></svg>',
+    moon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>',
+    rice: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11h16a2 2 0 0 1 2 2v1a8 8 0 0 1-8 8H10a8 8 0 0 1-8-8v-1a2 2 0 0 1 2-2z"/><path d="M9 11V6a1 1 0 0 1 2 0v4M13 11V6a1 1 0 0 1 2 0v4"/></svg>',
+    tea: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h12v4a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5z"/><path d="M16 10h1.5a2.5 2.5 0 0 1 0 5H16"/><path d="M6 3v2M10 3v2M14 3v2"/></svg>',
+    warm: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 5h10v4a5 5 0 0 1-10 0z"/><path d="M8 9v7a4 4 0 0 0 8 0V9"/><path d="M12 4V2"/></svg>',
+    hand: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 11V5a2 2 0 0 1 4 0v4M10 9V4a2 2 0 0 1 4 0v5M14 9V5a2 2 0 0 1 4 0v6"/><path d="M18 11a2 2 0 0 1 2 2v4c0 3-2.5 5-6 5h-1a8 8 0 0 1-5-2.3L6 17a1.5 1.5 0 0 1 2-2.2l3 2.2"/></svg>',
+    chat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>'
+  };
+
+  /* ============ 工具 ============ */
+  function $(id) { return document.getElementById(id); }
+  function todayKey() {
+    const d = new Date();
+    const m = String(d.getMonth() + 1).padStart(2, "0");
+    const day = String(d.getDate()).padStart(2, "0");
+    return d.getFullYear() + m + day;
+  }
+  function daysBetween(a, b) {
+    // a, b 均为 "YYYY-MM-DD"
+    const t1 = new Date(a + "T00:00:00");
+    const t2 = new Date(b + "T00:00:00");
+    return Math.round((t2 - t1) / 86400000);
+  }
+  function fmtDate(d) {
+    const week = ["日","一","二","三","四","五","六"][d.getDay()];
+    return d.getFullYear() + " 年 " + (d.getMonth() + 1) + " 月 " + d.getDate() + " 日 · 星期" + week;
+  }
+  function addDays(dateStr, n) {
+    const d = new Date(dateStr + "T00:00:00");
+    d.setDate(d.getDate() + n);
+    const m = String(d.getMonth() + 1).padStart(2, "0");
+    const day = String(d.getDate()).padStart(2, "0");
+    return d.getFullYear() + "-" + m + "-" + day;
+  }
+  function todayStr() {
+    const d = new Date();
+    const m = String(d.getMonth() + 1).padStart(2, "0");
+    const day = String(d.getDate()).padStart(2, "0");
+    return d.getFullYear() + "-" + m + "-" + day;
+  }
+
+  /* ============ 日期显示 ============ */
+  $("dateLine").textContent = fmtDate(new Date());
+
+  /* ============ 情绪安抚 ============ */
+  let sootheIndex = 0;
+  function renderSoothe() {
+    const el = $("sootheText");
+    el.classList.add("fade");
+    setTimeout(function () {
+      el.textContent = SOOTHES[sootheIndex % SOOTHES.length];
+      el.classList.remove("fade");
+    }, 220);
+  }
+  $("sootheBtn").addEventListener("click", function () {
+    sootheIndex = (sootheIndex + 1) % SOOTHES.length;
+    renderSoothe();
+  });
+  renderSoothe();
+
+  /* ============ 关怀卡片 ============ */
+  const doneKey = "care_done_" + todayKey();
+  let doneSet = new Set();
+  try { doneSet = new Set(JSON.parse(localStorage.getItem(doneKey) || "[]")); } catch (e) {}
+
+  const grid = $("careGrid");
+  CARES.forEach(function (c, i) {
+    const el = document.createElement("div");
+    el.className = "care-item" + (doneSet.has(i) ? " done" : "");
+    el.innerHTML =
+      '<div class="check"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>' +
+      '<div class="icon">' + ICONS[c.icon] + "</div>" +
+      '<div class="name">' + c.name + "</div>" +
+      '<div class="sub">' + c.sub + "</div>";
+    el.addEventListener("click", function () {
+      const isDone = el.classList.toggle("done");
+      if (isDone) doneSet.add(i); else doneSet.delete(i);
+      localStorage.setItem(doneKey, JSON.stringify(Array.from(doneSet)));
+      if (isDone) showToast("记下了：已「" + c.name + "」");
+    });
+    grid.appendChild(el);
+  });
+
+  /* ============ 大按钮 + 爱心飘落 ============ */
+  let heartCount = parseInt(localStorage.getItem("care_heart_count") || "0", 10);
+  $("heartCount").textContent = heartCount;
+
+  function showToast(text) {
+    const t = $("toast");
+    t.textContent = text;
+    t.classList.add("show");
+    clearTimeout(t._timer);
+    t._timer = setTimeout(function () { t.classList.remove("show"); }, 2400);
+  }
+
+  function spawnHeart() {
+    const heart = document.createElement("div");
+    heart.className = "float-heart";
+    heart.innerHTML = '<svg viewBox="0 0 24 24" width="100%" height="100%" fill="currentColor"><path d="M12 21s-7.5-4.9-10-9.2C.6 8.6 2.3 5 6 5c2 0 3.4 1 4 2.2C10.6 6 12 5 14 5c3.7 0 5.4 3.6 4 6.8C19.5 16.1 12 21 12 21z"/></svg>';
+    const size = 16 + Math.random() * 26;
+    const x = Math.random() * (window.innerWidth - size);
+    const colors = ["#f2728c", "#ffb07a", "#e0577a", "#c7b2e4", "#ff8fa3"];
+    heart.style.left = x + "px";
+    heart.style.width = size + "px";
+    heart.style.height = size + "px";
+    heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+    heart.style.animationDuration = (2.5 + Math.random() * 2.5) + "s";
+    document.body.appendChild(heart);
+    setTimeout(function () { heart.remove(); }, 5500);
+  }
+
+  $("heartBtn").addEventListener("click", function () {
+    heartCount += 1;
+    $("heartCount").textContent = heartCount;
+    localStorage.setItem("care_heart_count", String(heartCount));
+    for (let i = 0; i < 12; i++) { setTimeout(spawnHeart, i * 70); }
+    showToast(SWEETS[Math.floor(Math.random() * SWEETS.length)]);
+  });
+
+  /* ============ 经期周期计算 ============ */
+  const lastInput = $("lastPeriod");
+  const cycleInput = $("cycleDays");
+
+  // 读取或初始化设置
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem("care_cycle") || "{}"); } catch (e) {}
+  if (saved.last) lastInput.value = saved.last;
+  if (saved.cycle) cycleInput.value = saved.cycle;
+
+  function renderCycle() {
+    const last = lastInput.value;
+    const cycle = parseInt(cycleInput.value, 10) || 28;
+    const box = $("cycleStatus");
+
+    if (!last) {
+      box.innerHTML = '<div class="cycle-tip">填写「上次经期开始日期」，我会帮你算好下次大概什么时候到、这几天该怎么照顾她。</div>';
+      return;
+    }
+
+    const next = addDays(last, cycle);
+    const today = todayStr();
+    const diff = daysBetween(today, next); // 距离下次经期天数（正=还没到，负=已过）
+    const sinceLast = daysBetween(last, today); // 距上次开始多少天
+
+    let tag = "日常呵护";
+    let tip = "";
+    let countdownHtml = "";
+
+    if (sinceLast >= 0 && sinceLast <= 5) {
+      // 经期中
+      tag = "经期中";
+      countdownHtml = "这几天辛苦了";
+      tip = "多喝热水、红糖姜茶，暖水袋热敷肚子；别碰凉水，早点休息，情绪会容易低落，多点耐心抱抱她。";
+    } else if (diff >= 0 && diff <= 5) {
+      // 经期前（PMS）
+      tag = "经期临近";
+      countdownHtml = "还有 " + diff + " 天 <small>左右</small>";
+      tip = "她可能容易烦躁、疲惫、情绪起伏，这是正常的。别跟她讲道理，先共情、多陪伴，帮她准备好暖宝宝。";
+    } else if (sinceLast >= 10 && sinceLast <= 17) {
+      // 排卵期附近
+      tag = "排卵期";
+      countdownHtml = "距下次约 " + Math.max(diff, 0) + " 天";
+      tip = "这段时间她可能比较累、腹部偶尔不适。提醒她别太拼，注意休息和保暖。";
+    } else {
+      tag = "相对轻松期";
+      countdownHtml = "距下次约 " + Math.max(diff, 0) + " 天";
+      tip = "状态相对平稳，日常关心就好。可以约她散散步、吃顿好的，把日子过得舒舒服服。";
+    }
+
+    box.innerHTML =
+      '<div class="cycle-tag">' + tag + "</div>" +
+      '<div class="cycle-countdown">' + countdownHtml + "</div>" +
+      '<div class="cycle-tip">' + tip + "</div>";
+  }
+
+  lastInput.addEventListener("change", function () {
+    localStorage.setItem("care_cycle", JSON.stringify({ last: lastInput.value, cycle: cycleInput.value }));
+    renderCycle();
+  });
+  cycleInput.addEventListener("change", function () {
+    let v = parseInt(cycleInput.value, 10);
+    if (!v || v < 20) v = 28;
+    if (v > 45) v = 45;
+    cycleInput.value = v;
+    localStorage.setItem("care_cycle", JSON.stringify({ last: lastInput.value, cycle: v }));
+    renderCycle();
+  });
+
+  renderCycle();
+})();
+</script>
+</body>
+</html>

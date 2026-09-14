@@ -1,0 +1,686 @@
+{
+ "aprilia-rs457": {
+  "w": 474,
+  "h": 266,
+  "ratio": 1.78,
+  "src_fmt": "JPEG"
+ },
+ "benda-heiqi500": {
+  "w": 794,
+  "h": 668,
+  "ratio": 1.19,
+  "src_fmt": "PNG"
+ },
+ "benda-huishi250": {
+  "w": 630,
+  "h": 467,
+  "ratio": 1.35,
+  "src_fmt": "JPEG"
+ },
+ "benda-huishi707": {
+  "w": 750,
+  "h": 500,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "benda-jinjila300": {
+  "w": 474,
+  "h": 290,
+  "ratio": 1.63,
+  "src_fmt": "JPEG"
+ },
+ "benda-jinjila500": {
+  "w": 474,
+  "h": 337,
+  "ratio": 1.41,
+  "src_fmt": "JPEG"
+ },
+ "benelli-imperiale400": {
+  "w": 846,
+  "h": 566,
+  "ratio": 1.49,
+  "src_fmt": "JPEG"
+ },
+ "benelli-leoncino500": {
+  "w": 908,
+  "h": 608,
+  "ratio": 1.49,
+  "src_fmt": "JPEG"
+ },
+ "benelli-leoncino800": {
+  "w": 846,
+  "h": 635,
+  "ratio": 1.33,
+  "src_fmt": "JPEG"
+ },
+ "benelli-trk502x": {
+  "w": 908,
+  "h": 605,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "benelli-trk552": {
+  "w": 474,
+  "h": 316,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "bmw-g310gs": {
+  "w": 908,
+  "h": 605,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "bmw-r1250gs": {
+  "w": 474,
+  "h": 710,
+  "ratio": 0.67,
+  "src_fmt": "JPEG"
+ },
+ "bmw-r1300gs": {
+  "w": 1080,
+  "h": 1440,
+  "ratio": 0.75,
+  "src_fmt": "JPEG"
+ },
+ "cf-250clx": {
+  "w": 630,
+  "h": 440,
+  "ratio": 1.43,
+  "src_fmt": "JPEG"
+ },
+ "cf-250nk": {
+  "w": 908,
+  "h": 605,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "cf-450mt": {
+  "w": 960,
+  "h": 635,
+  "ratio": 1.51,
+  "src_fmt": "JPEG"
+ },
+ "cf-450nk": {
+  "w": 474,
+  "h": 446,
+  "ratio": 1.06,
+  "src_fmt": "JPEG"
+ },
+ "cf-450sr": {
+  "w": 1200,
+  "h": 450,
+  "ratio": 2.67,
+  "src_fmt": "JPEG"
+ },
+ "cf-675sr": {
+  "w": 474,
+  "h": 355,
+  "ratio": 1.34,
+  "src_fmt": "JPEG"
+ },
+ "cf-700clx": {
+  "w": 846,
+  "h": 635,
+  "ratio": 1.33,
+  "src_fmt": "JPEG"
+ },
+ "cf-700mt": {
+  "w": 1200,
+  "h": 1074,
+  "ratio": 1.12,
+  "src_fmt": "PNG"
+ },
+ "cf-800mt": {
+  "w": 474,
+  "h": 563,
+  "ratio": 0.84,
+  "src_fmt": "JPEG"
+ },
+ "cf-800nk": {
+  "w": 800,
+  "h": 533,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "ducati-panigalev4": {
+  "w": 908,
+  "h": 605,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "haojue-afr125": {
+  "w": 474,
+  "h": 335,
+  "ratio": 1.41,
+  "src_fmt": "JPEG"
+ },
+ "haojue-ufr150": {
+  "w": 474,
+  "h": 347,
+  "ratio": 1.37,
+  "src_fmt": "JPEG"
+ },
+ "haojue-uhr150": {
+  "w": 474,
+  "h": 355,
+  "ratio": 1.34,
+  "src_fmt": "JPEG"
+ },
+ "harley-nightster": {
+  "w": 630,
+  "h": 510,
+  "ratio": 1.24,
+  "src_fmt": "JPEG"
+ },
+ "harley-sportsters": {
+  "w": 846,
+  "h": 564,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "honda-adv160": {
+  "w": 818,
+  "h": 600,
+  "ratio": 1.36,
+  "src_fmt": "JPEG"
+ },
+ "honda-cb1100": {
+  "w": 474,
+  "h": 355,
+  "ratio": 1.34,
+  "src_fmt": "JPEG"
+ },
+ "honda-cb350": {
+  "w": 474,
+  "h": 312,
+  "ratio": 1.52,
+  "src_fmt": "JPEG"
+ },
+ "honda-cb400f": {
+  "w": 474,
+  "h": 315,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "honda-cb500x": {
+  "w": 846,
+  "h": 635,
+  "ratio": 1.33,
+  "src_fmt": "JPEG"
+ },
+ "honda-cb650r": {
+  "w": 900,
+  "h": 600,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "honda-cbr500r": {
+  "w": 846,
+  "h": 564,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "honda-cbr650r": {
+  "w": 1200,
+  "h": 800,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "honda-cm1100": {
+  "w": 474,
+  "h": 286,
+  "ratio": 1.66,
+  "src_fmt": "JPEG"
+ },
+ "honda-cm500": {
+  "w": 846,
+  "h": 635,
+  "ratio": 1.33,
+  "src_fmt": "JPEG"
+ },
+ "honda-crf250l": {
+  "w": 630,
+  "h": 420,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "honda-crf250rally": {
+  "w": 474,
+  "h": 248,
+  "ratio": 1.91,
+  "src_fmt": "JPEG"
+ },
+ "honda-crf300l": {
+  "w": 846,
+  "h": 564,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "honda-forza350": {
+  "w": 846,
+  "h": 635,
+  "ratio": 1.33,
+  "src_fmt": "JPEG"
+ },
+ "honda-nx400": {
+  "w": 1080,
+  "h": 1440,
+  "ratio": 0.75,
+  "src_fmt": "JPEG"
+ },
+ "honda-pcx160": {
+  "w": 1200,
+  "h": 800,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "jihue-ae8": {
+  "w": 630,
+  "h": 378,
+  "ratio": 1.67,
+  "src_fmt": "JPEG"
+ },
+ "kaiwei-t250x": {
+  "w": 474,
+  "h": 316,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "kawasaki-ninja400": {
+  "w": 1200,
+  "h": 800,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "kawasaki-z650": {
+  "w": 908,
+  "h": 681,
+  "ratio": 1.33,
+  "src_fmt": "JPEG"
+ },
+ "kawasaki-z900": {
+  "w": 846,
+  "h": 635,
+  "ratio": 1.33,
+  "src_fmt": "JPEG"
+ },
+ "kawasaki-zx4r": {
+  "w": 474,
+  "h": 316,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "kayo-321rr": {
+  "w": 474,
+  "h": 355,
+  "ratio": 1.34,
+  "src_fmt": "JPEG"
+ },
+ "kayo-450rally": {
+  "w": 800,
+  "h": 533,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "kayo-450rr": {
+  "w": 806,
+  "h": 671,
+  "ratio": 1.2,
+  "src_fmt": "JPEG"
+ },
+ "kayo-525x": {
+  "w": 474,
+  "h": 355,
+  "ratio": 1.34,
+  "src_fmt": "JPEG"
+ },
+ "kayo-625x": {
+  "w": 1067,
+  "h": 600,
+  "ratio": 1.78,
+  "src_fmt": "JPEG"
+ },
+ "kayo-800x": {
+  "w": 630,
+  "h": 420,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "ktm-250exc": {
+  "w": 474,
+  "h": 474,
+  "ratio": 1.0,
+  "src_fmt": "JPEG"
+ },
+ "ktm-350exc": {
+  "w": 690,
+  "h": 897,
+  "ratio": 0.77,
+  "src_fmt": "PNG"
+ },
+ "ktm-390adv": {
+  "w": 630,
+  "h": 420,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "ktm-500exc": {
+  "w": 630,
+  "h": 420,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "ktm-790adv": {
+  "w": 908,
+  "h": 605,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "ktm-790duke": {
+  "w": 630,
+  "h": 420,
+  "ratio": 1.5,
+  "src_fmt": "PNG"
+ },
+ "ktm-rc390": {
+  "w": 908,
+  "h": 605,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "kymco-ct250": {
+  "w": 474,
+  "h": 355,
+  "ratio": 1.34,
+  "src_fmt": "JPEG"
+ },
+ "kymco-saiti250": {
+  "w": 846,
+  "h": 635,
+  "ratio": 1.33,
+  "src_fmt": "JPEG"
+ },
+ "moto-guzzi-v7": {
+  "w": 474,
+  "h": 316,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "ninebot-e100": {
+  "w": 846,
+  "h": 564,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "ninebot-e300p": {
+  "w": 690,
+  "h": 488,
+  "ratio": 1.41,
+  "src_fmt": "JPEG"
+ },
+ "niucore-nqi": {
+  "w": 1200,
+  "h": 1200,
+  "ratio": 1.0,
+  "src_fmt": "JPEG"
+ },
+ "niucore-nxt": {
+  "w": 474,
+  "h": 495,
+  "ratio": 0.96,
+  "src_fmt": "JPEG"
+ },
+ "peugeot-django150": {
+  "w": 474,
+  "h": 315,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "qj-sai550": {
+  "w": 846,
+  "h": 564,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "qj-sai600rs": {
+  "w": 474,
+  "h": 309,
+  "ratio": 1.53,
+  "src_fmt": "JPEG"
+ },
+ "qj-shan300s": {
+  "w": 474,
+  "h": 355,
+  "ratio": 1.34,
+  "src_fmt": "JPEG"
+ },
+ "qj-shan500s": {
+  "w": 1200,
+  "h": 676,
+  "ratio": 1.78,
+  "src_fmt": "JPEG"
+ },
+ "qj-zhui550": {
+  "w": 630,
+  "h": 355,
+  "ratio": 1.77,
+  "src_fmt": "JPEG"
+ },
+ "qj-zhui600": {
+  "w": 846,
+  "h": 635,
+  "ratio": 1.33,
+  "src_fmt": "JPEG"
+ },
+ "re-classic350": {
+  "w": 630,
+  "h": 355,
+  "ratio": 1.77,
+  "src_fmt": "PNG"
+ },
+ "sanyang-drg158": {
+  "w": 846,
+  "h": 635,
+  "ratio": 1.33,
+  "src_fmt": "JPEG"
+ },
+ "sanyang-xunyi150": {
+  "w": 474,
+  "h": 313,
+  "ratio": 1.51,
+  "src_fmt": "JPEG"
+ },
+ "sdk-rt2": {
+  "w": 1200,
+  "h": 1200,
+  "ratio": 1.0,
+  "src_fmt": "JPEG"
+ },
+ "sdk-rt3": {
+  "w": 630,
+  "h": 630,
+  "ratio": 1.0,
+  "src_fmt": "JPEG"
+ },
+ "suzuki-uy125": {
+  "w": 846,
+  "h": 635,
+  "ratio": 1.33,
+  "src_fmt": "JPEG"
+ },
+ "suzuki-vstrom650": {
+  "w": 908,
+  "h": 680,
+  "ratio": 1.34,
+  "src_fmt": "JPEG"
+ },
+ "triumph-speed400": {
+  "w": 474,
+  "h": 355,
+  "ratio": 1.34,
+  "src_fmt": "JPEG"
+ },
+ "triumph-streettriple765": {
+  "w": 1200,
+  "h": 900,
+  "ratio": 1.33,
+  "src_fmt": "PNG"
+ },
+ "triumph-trident660": {
+  "w": 846,
+  "h": 635,
+  "ratio": 1.33,
+  "src_fmt": "JPEG"
+ },
+ "vespa-primavera150": {
+  "w": 1080,
+  "h": 810,
+  "ratio": 1.33,
+  "src_fmt": "JPEG"
+ },
+ "voge-300ac": {
+  "w": 846,
+  "h": 635,
+  "ratio": 1.33,
+  "src_fmt": "JPEG"
+ },
+ "voge-525ac": {
+  "w": 1200,
+  "h": 800,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "voge-525r": {
+  "w": 1200,
+  "h": 800,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "voge-525rr": {
+  "w": 800,
+  "h": 600,
+  "ratio": 1.33,
+  "src_fmt": "JPEG"
+ },
+ "voge-625r": {
+  "w": 800,
+  "h": 600,
+  "ratio": 1.33,
+  "src_fmt": "JPEG"
+ },
+ "voge-cu250": {
+  "w": 1080,
+  "h": 607,
+  "ratio": 1.78,
+  "src_fmt": "JPEG"
+ },
+ "voge-cu525": {
+  "w": 846,
+  "h": 564,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "voge-cu625": {
+  "w": 474,
+  "h": 316,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "voge-ds525x": {
+  "w": 800,
+  "h": 758,
+  "ratio": 1.06,
+  "src_fmt": "PNG"
+ },
+ "voge-ds625x": {
+  "w": 630,
+  "h": 354,
+  "ratio": 1.78,
+  "src_fmt": "JPEG"
+ },
+ "voge-ds900x": {
+  "w": 474,
+  "h": 355,
+  "ratio": 1.34,
+  "src_fmt": "JPEG"
+ },
+ "voge-sr250gt": {
+  "w": 474,
+  "h": 266,
+  "ratio": 1.78,
+  "src_fmt": "JPEG"
+ },
+ "voge-sr4max": {
+  "w": 474,
+  "h": 316,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "yamaha-aerox155": {
+  "w": 698,
+  "h": 551,
+  "ratio": 1.27,
+  "src_fmt": "PNG"
+ },
+ "yamaha-mt03": {
+  "w": 908,
+  "h": 605,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "yamaha-mt07": {
+  "w": 846,
+  "h": 635,
+  "ratio": 1.33,
+  "src_fmt": "JPEG"
+ },
+ "yamaha-mt09": {
+  "w": 1200,
+  "h": 900,
+  "ratio": 1.33,
+  "src_fmt": "PNG"
+ },
+ "yamaha-nmax155": {
+  "w": 1200,
+  "h": 801,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "yamaha-r3": {
+  "w": 1024,
+  "h": 768,
+  "ratio": 1.33,
+  "src_fmt": "PNG"
+ },
+ "yamaha-wr250r": {
+  "w": 630,
+  "h": 418,
+  "ratio": 1.51,
+  "src_fmt": "JPEG"
+ },
+ "yamaha-xmax300": {
+  "w": 846,
+  "h": 564,
+  "ratio": 1.5,
+  "src_fmt": "JPEG"
+ },
+ "yamaha-xsr700": {
+  "w": 474,
+  "h": 355,
+  "ratio": 1.34,
+  "src_fmt": "JPEG"
+ },
+ "zontes-703r": {
+  "w": 1080,
+  "h": 739,
+  "ratio": 1.46,
+  "src_fmt": "JPEG"
+ },
+ "zx-500rr": {
+  "w": 1200,
+  "h": 675,
+  "ratio": 1.78,
+  "src_fmt": "JPEG"
+ }
+}

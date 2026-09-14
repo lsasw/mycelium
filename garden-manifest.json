@@ -3,7 +3,7 @@
   "type": "garden",
   "name": "Mycelium · 菌丝",
   "tagline": "地下互联的常青笔记网络",
-  "generated": "2026-09-05",
+  "generated": "2026-09-14",
   "notes": [
     {
       "id": "transformer",
@@ -1012,6 +1012,38 @@
       "tags": ["Tennis", "Sports", "入门"],
       "related": [],
       "tended": "2026-09-08"
+    },
+    {
+      "id": "care-page",
+      "title": "暖心关怀页",
+      "cat": "生活",
+      "level": "入门",
+      "status": "已完结",
+      "maturity": 3,
+      "evergreen": true,
+      "created": "2026-09-09",
+      "updated": "2026-09-09",
+      "url": "暖心关怀页.html",
+      "desc": "经期周期提醒、情绪安抚、关怀卡片与爱心互动，一个温柔的陪伴小工具。",
+      "tags": ["Care", "Life", "Tool"],
+      "related": [],
+      "tended": "2026-09-09"
+    },
+    {
+      "id": "moto-selector",
+      "title": "机车选型指南",
+      "cat": "机车",
+      "level": "入门",
+      "status": "已完结",
+      "maturity": 4,
+      "evergreen": true,
+      "created": "2026-09-11",
+      "updated": "2026-09-14",
+      "url": "moto/index.html",
+      "desc": "114 款主流摩托横向对比：五步选车向导、多维筛选、并排参数对比与购车手册。",
+      "tags": ["Moto", "Selector", "Tool"],
+      "related": [],
+      "tended": "2026-09-14"
     }
   ]
 }

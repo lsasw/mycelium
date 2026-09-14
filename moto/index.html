@@ -1,0 +1,3827 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="机车选型指南 · 114 款海内外热门摩托车（含燃油与电动），按品类/预算/用途筛选对比，配选车向导与购车避坑手册。">
+<meta name="theme-color" content="#e8590c">
+<title>机车选型指南 · 114 款热门车型选购决策工具</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='82' font-size='86'%3E%F0%9F%8F%8D%3C/text%3E%3C/svg%3E">
+<style>
+/* ═══════════ Tokens ═══════════ */
+:root,html,body{
+  --bg:#f4f4f2;
+  --bg-2:#ebebe8;
+  --surface:#ffffff;
+  --surface-2:#fafaf8;
+  --ink:#14161a;
+  --ink-2:#4b5058;
+  --ink-3:#8b919b;
+  --line:rgba(20,22,26,.10);
+  --line-2:rgba(20,22,26,.06);
+  --accent:#e8590c;
+  --accent-2:#c1121f;
+  --accent-ink:#b1440a;
+  --accent-soft:#fff2ea;
+  --teal:#0f766e;
+  --teal-soft:#e6f4f1;
+  --shadow-s:0 1px 2px rgba(20,22,26,.05);
+  --shadow:0 2px 10px rgba(20,22,26,.07);
+  --shadow-l:0 18px 44px rgba(20,22,26,.16);
+  --r-s:8px; --r:12px; --r-l:18px; --r-xl:26px;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;
+  --mono:'JetBrains Mono','Cascadia Code',Consolas,monospace;
+  --maxw:1240px;
+}
+[data-theme="dark"],[data-theme="dark"] body{
+  --bg:#0d0e11;
+  --bg-2:#131519;
+  --surface:#171a1f;
+  --surface-2:#1d2127;
+  --ink:#edeff2;
+  --ink-2:#a7aeb8;
+  --ink-3:#6f7681;
+  --line:rgba(255,255,255,.10);
+  --line-2:rgba(255,255,255,.06);
+  --accent:#ff6b35;
+  --accent-2:#ff4d4d;
+  --accent-ink:#ff8a5c;
+  --accent-soft:rgba(255,107,53,.13);
+  --teal:#2dd4bf;
+  --teal-soft:rgba(45,212,191,.12);
+  --shadow-s:0 1px 2px rgba(0,0,0,.4);
+  --shadow:0 2px 10px rgba(0,0,0,.45);
+  --shadow-l:0 18px 44px rgba(0,0,0,.6);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);background:var(--bg);color:var(--ink);
+  font-size:14px;line-height:1.62;-webkit-font-smoothing:antialiased;
+}
+button,input,select{font:inherit;color:inherit;background:none;border:none;outline:none}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+::-webkit-scrollbar{width:9px;height:9px}
+::-webkit-scrollbar-thumb{background:var(--line);border-radius:6px}
+::-webkit-scrollbar-thumb:hover{background:var(--ink-3)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+
+/* ═══════════ Top bar ═══════════ */
+.topbar{
+  position:sticky;top:0;z-index:60;
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  background:rgba(244,244,242,.82);
+  border-bottom:1px solid var(--line-2);
+}
+.topbar .in{max-width:var(--maxw);margin:0 auto;padding:0 22px;height:56px;display:flex;align-items:center;gap:14px}
+.brand{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:.2px}
+.brand .dot{width:22px;height:22px;border-radius:7px;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 0 0 3px var(--accent-soft)}
+.brand b{font-size:15px}
+.brand span{font-size:11px;color:var(--ink-3);font-weight:600;letter-spacing:1.4px}
+.tb-nav{display:flex;gap:4px;margin-left:auto}
+.tb-nav a{padding:7px 12px;border-radius:9px;font-size:13px;color:var(--ink-2);font-weight:600}
+.tb-nav a:hover{background:var(--surface);color:var(--accent-ink)}
+.icon-btn{width:34px;height:34px;border-radius:10px;border:1px solid var(--line);display:grid;place-items:center;background:var(--surface);transition:.18s}
+.icon-btn:hover{border-color:var(--accent);color:var(--accent)}
+@media(max-width:820px){.tb-nav{display:none}}
+
+/* ═══════════ Hero ═══════════ */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(900px 380px at 12% -10%,var(--accent-soft),transparent 62%),
+    radial-gradient(700px 340px at 92% 8%,rgba(15,118,110,.10),transparent 60%),
+    var(--bg-2);
+  border-bottom:1px solid var(--line-2);
+}
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background:repeating-linear-gradient(115deg,transparent 0 22px,rgba(20,22,26,.05) 22px 23px);
+  -webkit-mask-image:linear-gradient(to bottom,transparent,#000 40%,transparent);
+  mask-image:linear-gradient(to bottom,transparent,#000 40%,transparent);
+}
+.hero .in{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;padding:52px 22px 44px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:800;letter-spacing:2px;
+  color:var(--accent-ink,#b1440a);background:var(--accent-soft,#fff2ea);border:1px solid rgba(232,89,12,.26);
+  padding:6px 12px;border-radius:100px;text-transform:uppercase}
+.hero h1{margin:16px 0 10px;font-size:clamp(28px,4.4vw,46px);line-height:1.14;letter-spacing:-.9px;font-weight:850}
+/* 渐变文字：默认实色，仅在支持 background-clip:text 时才用渐变，避免透明文字消失 */
+.hero h1 em{font-style:normal;color:var(--accent,#e8590c)}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .hero h1 em{background:linear-gradient(100deg,var(--accent,#e8590c),var(--accent-2,#c1121f) 70%);-webkit-background-clip:text;background-clip:text;color:transparent}
+}
+.hero p.lead{max-width:660px;color:var(--ink-2);font-size:15px;line-height:1.75}
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.btn{padding:11px 19px;border-radius:11px;font-weight:700;font-size:13.5px;transition:.18s;border:1px solid transparent;display:inline-flex;align-items:center;gap:7px}
+.btn-p{background:var(--accent);color:#fff;box-shadow:0 6px 18px -6px var(--accent)}
+.btn-p:hover{background:var(--accent-2);transform:translateY(-1px)}
+.btn-g{background:var(--surface);border-color:var(--line);color:var(--ink)}
+.btn-g:hover{border-color:var(--accent);color:var(--accent-ink)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:34px}
+.stat{background:var(--surface);border:1px solid var(--line-2);border-radius:var(--r);padding:14px 16px;box-shadow:var(--shadow-s)}
+.stat b{display:block;font-size:24px;font-weight:850;letter-spacing:-.6px;font-variant-numeric:tabular-nums}
+.stat span{font-size:11.5px;color:var(--ink-3);font-weight:600;letter-spacing:.4px}
+@media(max-width:700px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* ═══════════ Section head ═══════════ */
+section{padding:54px 0}
+.shead{margin-bottom:26px}
+.shead .k{font-size:11.5px;font-weight:800;letter-spacing:2px;color:var(--accent-ink);text-transform:uppercase}
+.shead h2{font-size:clamp(21px,2.7vw,29px);letter-spacing:-.6px;margin:7px 0 6px;font-weight:820}
+.shead p{color:var(--ink-2);max-width:680px}
+
+/* ═══════════ Wizard ═══════════ */
+.wizard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--shadow);overflow:hidden}
+.wz-head{padding:20px 24px;border-bottom:1px solid var(--line-2);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.wz-head h3{font-size:16.5px;font-weight:800}
+.wz-head .sub{font-size:12.5px;color:var(--ink-3)}
+.wz-prog{margin-left:auto;display:flex;gap:6px;align-items:center}
+.wz-prog i{width:26px;height:5px;border-radius:3px;background:var(--line);transition:.25s}
+.wz-prog i.on{background:var(--accent)}
+.wz-body{padding:26px 24px 28px}
+.wz-q{font-size:16px;font-weight:780;margin-bottom:4px}
+.wz-hint{font-size:12.5px;color:var(--ink-3);margin-bottom:16px}
+.opts{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(158px,1fr))}
+.opt{
+  text-align:left;padding:14px 15px;border-radius:var(--r);border:1.5px solid var(--line);
+  background:var(--surface-2);transition:.16s;
+}
+.opt:hover{border-color:rgba(232,89,12,.55);transform:translateY(-2px);box-shadow:var(--shadow-s)}
+.opt.on{border-color:var(--accent,#e8590c);background:var(--accent-soft,#fff2ea);box-shadow:0 0 0 3px rgba(232,89,12,.14)}
+.opt b{display:block;font-size:14px;font-weight:750}
+.opt span{font-size:11.5px;color:var(--ink-3);line-height:1.5;display:block;margin-top:3px}
+.wz-foot{padding:16px 24px;border-top:1px solid var(--line-2);display:flex;gap:10px;align-items:center;background:var(--surface-2)}
+.wz-foot .sp{margin-left:auto;font-size:12.5px;color:var(--ink-3)}
+.wz-result{padding:24px}
+.wz-result .rr{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(268px,1fr))}
+.rcard{border:1px solid var(--line);border-radius:var(--r-l);overflow:hidden;background:var(--surface-2);position:relative;transition:.2s}
+.rcard:hover{box-shadow:var(--shadow-l);transform:translateY(-3px)}
+.rcard .rank{position:absolute;z-index:3;top:12px;left:12px;background:var(--ink);color:var(--bg);font-size:11px;font-weight:800;padding:4px 10px;border-radius:100px;letter-spacing:.6px}
+.rcard.t1 .rank{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff}
+.rcard .im{aspect-ratio:16/10;background:var(--bg-2);overflow:hidden}
+.rcard .im img{width:100%;height:100%;object-fit:cover}
+.rcard .bd{padding:15px 16px 17px}
+.rcard h4{font-size:16px;font-weight:800;letter-spacing:-.2px}
+.rcard .pp{font-size:17px;font-weight:850;color:var(--accent-ink);font-variant-numeric:tabular-nums}
+.rcard .why{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}
+.rcard .why li{list-style:none;font-size:11.5px;font-weight:650;background:var(--teal-soft);color:var(--teal);
+  border:1px solid rgba(15,118,110,.24);padding:3px 9px;border-radius:7px}
+.rcard .warn{margin-top:9px;font-size:11.5px;color:var(--ink-3);border-left:2px solid var(--line);padding-left:9px;line-height:1.6}
+
+/* ═══════════ Toolbar ═══════════ */
+.toolbar{position:sticky;top:56px;z-index:50;background:rgba(244,244,242,.9);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid var(--line-2);border-radius:var(--r-l);padding:13px 15px;box-shadow:var(--shadow-s)}
+.tb-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.tb-row+.tb-row{margin-top:10px;padding-top:10px;border-top:1px solid var(--line-2)}
+.search{flex:1;min-width:190px;position:relative}
+.search input{width:100%;padding:9px 13px 9px 34px;border-radius:10px;border:1px solid var(--line);background:var(--surface);font-size:13px}
+.search input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.search svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);opacity:.42}
+.tabs{display:flex;gap:4px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:7px 13px;border-radius:9px;font-size:12.8px;font-weight:700;color:var(--ink-2);white-space:nowrap;border:1px solid transparent;transition:.15s}
+.tab:hover{background:var(--surface-2);color:var(--ink)}
+.tab.on{background:var(--ink);color:var(--bg)}
+.chip{padding:6px 11px;border-radius:8px;font-size:12px;font-weight:650;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);transition:.15s}
+.chip:hover{border-color:var(--accent);color:var(--accent-ink)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.fld{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--ink-3);font-weight:650}
+.fld select{padding:7px 10px;border-radius:9px;border:1px solid var(--line);background:var(--surface);font-size:12.5px;font-weight:650;color:var(--ink)}
+.fld select:focus{border-color:var(--accent)}
+.res-count{margin-left:auto;font-size:12.5px;color:var(--ink-3);font-weight:650;white-space:nowrap}
+.res-count b{color:var(--accent-ink);font-variant-numeric:tabular-nums}
+@media(max-width:600px){.toolbar{top:56px;position:static}}
+
+/* ═══════════ Grid ═══════════ */
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(276px,1fr))}
+.card{
+  background:var(--surface);border:1px solid var(--line-2);border-radius:var(--r-l);
+  overflow:hidden;display:flex;flex-direction:column;transition:.22s;position:relative;
+}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-l);border-color:var(--line)}
+.card .photo{aspect-ratio:16/10.5;background:linear-gradient(135deg,var(--bg-2),var(--surface-2));overflow:hidden;position:relative}
+.card .photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)}
+.card:hover .photo img{transform:scale(1.055)}
+/* 非横构图车型：完整显示不裁切 */
+.card .photo img.contain,.rcard .im img.contain{object-fit:contain;background:var(--surface-2)}
+.dhero img.contain{object-fit:contain;background:#14161a}
+.badges{position:absolute;top:11px;left:11px;display:flex;gap:6px;flex-wrap:wrap;max-width:calc(100% - 60px)}
+.bdg{font-size:10.5px;font-weight:800;letter-spacing:.4px;padding:4px 9px;border-radius:100px;backdrop-filter:blur(8px)}
+.bdg.cat{background:rgba(20,22,26,.72);color:#fff}
+.bdg.origin{background:rgba(255,255,255,.86);color:#14161a;border:1px solid rgba(20,22,26,.06)}
+.bdg.origin.imp{background:rgba(232,89,12,.9);color:#fff}
+.bdg.origin.jv{background:rgba(15,118,110,.9);color:#fff}
+.fav{position:absolute;top:10px;right:10px;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(255,255,255,.85);backdrop-filter:blur(8px);transition:.18s;color:#14161a}
+.fav:hover{transform:scale(1.1)}
+.fav.on{background:var(--accent);color:#fff}
+.card .bd{padding:15px 16px 16px;display:flex;flex-direction:column;flex:1}
+.card .rk{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+.card h4{font-size:16.5px;font-weight:800;letter-spacing:-.3px;line-height:1.3}
+.card .en{font-size:11px;color:var(--ink-3);font-weight:650;font-family:var(--mono)}
+.card .price{margin-top:7px;font-size:19px;font-weight:850;color:var(--accent-ink);font-variant-numeric:tabular-nums;letter-spacing:-.4px}
+.card .price small{font-size:11px;color:var(--ink-3);font-weight:650;margin-left:5px;letter-spacing:0}
+.specs{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-2);border:1px solid var(--line-2);
+  border-radius:var(--r-s);overflow:hidden;margin:13px 0 12px}
+.specs div{background:var(--surface);padding:8px 4px;text-align:center}
+.specs b{display:block;font-size:13px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.2px}
+.specs span{font-size:10px;color:var(--ink-3);font-weight:650}
+.tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:13px}
+.tag{font-size:10.5px;font-weight:700;padding:3px 8px;border-radius:6px;background:var(--accent-soft);color:var(--accent-ink)}
+.tag.n{background:var(--teal-soft);color:var(--teal)}
+.card .acts{margin-top:auto;display:flex;gap:8px}
+.mini{flex:1;padding:9px;border-radius:9px;font-size:12.5px;font-weight:750;border:1px solid var(--line);background:var(--surface-2);transition:.16s}
+.mini:hover{border-color:var(--accent);color:var(--accent-ink)}
+.mini.pri{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.mini.pri:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.empty{grid-column:1/-1;text-align:center;padding:64px 20px;color:var(--ink-3)}
+.empty b{display:block;font-size:17px;color:var(--ink-2);margin-bottom:6px}
+
+/* ═══════════ Compare bar ═══════════ */
+.cbar{
+  position:fixed;left:50%;bottom:18px;transform:translate(-50%,140%);z-index:80;
+  background:var(--ink);color:var(--bg);border-radius:16px;padding:11px 13px;
+  display:flex;align-items:center;gap:11px;box-shadow:var(--shadow-l);transition:transform .32s cubic-bezier(.2,.8,.3,1);
+  max-width:calc(100vw - 28px);
+}
+.cbar.up{transform:translate(-50%,0)}
+.cbar .thumbs{display:flex;gap:6px}
+.cbar .thumbs img{width:44px;height:34px;object-fit:cover;border-radius:8px;border:1px solid rgba(255,255,255,.2)}
+.cbar .ct{font-size:12.5px;font-weight:700;opacity:.82;white-space:nowrap}
+.cbar button{padding:9px 15px;border-radius:10px;font-size:12.5px;font-weight:750;background:var(--accent);color:#fff}
+.cbar button.ghost{background:transparent;color:var(--bg);border:1px solid rgba(255,255,255,.25)}
+.cbar button:disabled{opacity:.4;cursor:not-allowed}
+
+/* ═══════════ Modal ═══════════ */
+.modal{position:fixed;inset:0;z-index:100;display:none}
+.modal.on{display:block}
+.modal .mask{position:absolute;inset:0;background:rgba(10,11,13,.62);backdrop-filter:blur(4px);animation:fade .22s}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes pop{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:none}}
+.sheet{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:min(940px,calc(100vw - 24px));max-height:min(88vh,880px);overflow:auto;
+  background:var(--surface);border-radius:var(--r-xl);box-shadow:var(--shadow-l);animation:pop .28s cubic-bezier(.2,.8,.3,1);
+}
+.sheet .close{position:absolute;top:14px;right:14px;z-index:5;width:34px;height:34px;border-radius:50%;
+  background:rgba(20,22,26,.55);color:#fff;display:grid;place-items:center;backdrop-filter:blur(6px)}
+.sheet .close:hover{background:var(--accent)}
+.dhero{position:relative;aspect-ratio:16/8;background:var(--bg-2);overflow:hidden}
+.dhero img{width:100%;height:100%;object-fit:cover}
+.dhero .ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,11,13,.9),rgba(10,11,13,.12) 55%,transparent)}
+.dhero .txt{position:absolute;left:0;bottom:0;padding:22px 26px;color:#fff}
+.dhero .txt h3{font-size:clamp(22px,3.4vw,32px);font-weight:850;letter-spacing:-.7px}
+.dhero .txt .m{font-size:12.5px;opacity:.82;margin-top:3px;font-family:var(--mono)}
+.dhero .txt .pr{font-size:21px;font-weight:850;color:#ffb38a;margin-top:8px;font-variant-numeric:tabular-nums}
+.dbody{padding:24px 26px 30px}
+.dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(112px,1fr));gap:1px;background:var(--line-2);
+  border:1px solid var(--line-2);border-radius:var(--r);overflow:hidden;margin-bottom:22px}
+.dgrid div{background:var(--surface-2);padding:12px 13px}
+.dgrid b{display:block;font-size:16px;font-weight:830;font-variant-numeric:tabular-nums;letter-spacing:-.3px}
+.dgrid span{font-size:10.5px;color:var(--ink-3);font-weight:650;letter-spacing:.3px}
+.dsec{margin-bottom:20px}
+.dsec h5{font-size:12px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+.dsec p{color:var(--ink-2);line-height:1.8}
+.pc{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.pc{grid-template-columns:1fr}}
+.pc .box{border:1px solid var(--line-2);border-radius:var(--r);padding:14px 16px;background:var(--surface-2)}
+.pc .box h6{font-size:12.5px;font-weight:800;margin-bottom:8px}
+.pc .box.g h6{color:var(--teal)}
+.pc .box.b h6{color:var(--accent-2)}
+.pc ul{list-style:none;display:grid;gap:7px}
+.pc li{font-size:13px;color:var(--ink-2);padding-left:16px;position:relative;line-height:1.65}
+.pc li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.35}
+.pc .box.g li::before{background:var(--teal);opacity:.8}
+.pc .box.b li::before{background:var(--accent-2);opacity:.8}
+.dtags{display:flex;gap:7px;flex-wrap:wrap}
+.dtags span{font-size:12px;font-weight:700;padding:5px 11px;border-radius:8px;background:var(--accent-soft);color:var(--accent-ink)}
+.fit{background:var(--teal-soft,#e6f4f1);border:1px solid rgba(15,118,110,.22);border-radius:var(--r);padding:14px 16px}
+.fit b{color:var(--teal);font-weight:800}
+.dacts{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px;padding-top:20px;border-top:1px solid var(--line-2)}
+
+/* ═══════════ Compare table ═══════════ */
+.ctable{overflow:auto;border:1px solid var(--line);border-radius:var(--r);max-height:70vh}
+.ctable table{border-collapse:separate;border-spacing:0;width:100%;min-width:640px;font-size:13px}
+.ctable th,.ctable td{padding:11px 13px;border-bottom:1px solid var(--line-2);text-align:left;vertical-align:top}
+.ctable thead th{position:sticky;top:0;background:var(--surface-2);z-index:2;border-bottom:1px solid var(--line)}
+.ctable tbody th{position:sticky;left:0;background:var(--surface);font-weight:750;color:var(--ink-3);font-size:12px;white-space:nowrap;z-index:1;min-width:88px}
+.ctable td b{font-variant-numeric:tabular-nums}
+.ctable td.best{color:var(--teal);font-weight:800}
+.ctable td.best::after{content:" ★";font-size:10px}
+.ctable .ch{display:flex;gap:10px;align-items:center;min-width:150px}
+.ctable .ch img{width:62px;height:46px;object-fit:cover;border-radius:8px;background:var(--bg-2)}
+.ctable .ch b{font-size:13.5px;font-weight:800;display:block;line-height:1.35}
+.ctable .ch span{font-size:11px;color:var(--ink-3)}
+.ctable .rm{font-size:11px;color:var(--accent-2);font-weight:700;margin-top:3px}
+
+/* ═══════════ Guide ═══════════ */
+.gcards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(285px,1fr))}
+.gc{background:var(--surface);border:1px solid var(--line-2);border-radius:var(--r-l);padding:20px 21px;box-shadow:var(--shadow-s)}
+.gc .ic{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent-ink);margin-bottom:13px}
+.gc h4{font-size:15.5px;font-weight:800;margin-bottom:8px}
+.gc p,.gc li{font-size:13px;color:var(--ink-2);line-height:1.75}
+.gc ul{list-style:none;display:grid;gap:7px;margin-top:9px}
+.gc li{padding-left:17px;position:relative}
+.gc li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--accent);opacity:.6}
+.gc table{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:10px}
+.gc table th,.gc table td{padding:7px 8px;border-bottom:1px solid var(--line-2);text-align:left}
+.gc table th{color:var(--ink-3);font-size:11px;font-weight:750;letter-spacing:.4px}
+.gc table td b{font-variant-numeric:tabular-nums;color:var(--accent-ink)}
+.budget{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.budget span{font-size:12px;font-weight:700;padding:6px 11px;border-radius:9px;background:var(--surface-2);border:1px solid var(--line-2)}
+
+/* ═══════════ Footer ═══════════ */
+footer{border-top:1px solid var(--line-2);padding:32px 0 46px;color:var(--ink-3);font-size:12.5px}
+footer .in{max-width:var(--maxw);margin:0 auto;padding:0 22px;display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+footer b{color:var(--ink-2)}
+footer .sp{margin-left:auto}
+.disc{margin-top:14px;padding:14px 16px;border:1px dashed var(--line);border-radius:var(--r);background:var(--surface-2);line-height:1.75;max-width:var(--maxw)}
+.toast{position:fixed;left:50%;bottom:84px;transform:translate(-50%,20px);background:var(--ink);color:var(--bg);
+  padding:10px 18px;border-radius:11px;font-size:13px;font-weight:700;opacity:0;pointer-events:none;transition:.28s;z-index:120}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* ═══════════════════════════════════════════════════
+   兼容兜底层
+   预览面板等嵌入环境可能不支持 :root 变量 / color-mix / mask-image。
+   下面为所有「深色文字 + 变量底色」的关键组合补上字面兜底，
+   确保任何环境下都不会出现白底白字或透明文字。
+   ═══════════════════════════════════════════════════ */
+body{background:var(--bg,#f4f4f2);color:var(--text,var(--ink,#14161a))}
+.btn-p{background:var(--accent,#e8590c);color:#fff}
+.btn-p:hover{background:var(--accent-2,#c1121f)}
+.btn-g{background:var(--surface,#fff);border-color:var(--line,rgba(20,22,26,.10));color:var(--ink,#14161a)}
+.card,.wizard,.sheet,.gc,.stat,.toolbar{background:var(--surface,#fff)}
+.specs div,.dgrid div,.pc .box{background:var(--surface,#fff)}
+.specs,.specs div,.dgrid,.dgrid div,.pc .box{border-color:var(--line-2,rgba(20,22,26,.06))}
+.card{border-color:var(--line-2,rgba(20,22,26,.06))}
+.fav.on{background:var(--accent,#e8590c);color:#fff}
+.chip.on{background:var(--accent,#e8590c);border-color:var(--accent,#e8590c);color:#fff}
+.cbar button{background:var(--accent,#e8590c);color:#fff}
+.cbar button.ghost{background:transparent;color:var(--bg,#f4f4f2);border:1px solid rgba(255,255,255,.25)}
+.rcard.t1 .rank{background:var(--accent,#e8590c);background-image:linear-gradient(135deg,var(--accent,#e8590c),var(--accent-2,#c1121f))}
+/* 深色主题下 hero/toolbar 的毛玻璃底色（替代 color-mix） */
+[data-theme="dark"] .topbar{background:rgba(13,14,17,.84)}
+[data-theme="dark"] .toolbar{background:rgba(19,21,25,.92)}
+</style>
+</head>
+<body>
+
+<!-- ══ Topbar ══ -->
+<div class="topbar">
+  <div class="in">
+    <div class="brand"><span class="dot"></span><span><b>机车选型指南</b><br><span>MOTO SELECTOR</span></span></div>
+    <nav class="tb-nav">
+      <a href="#wizard">选车向导</a>
+      <a href="#list">车型库</a>
+      <a href="#guide">购车手册</a>
+    </nav>
+    <button class="icon-btn" id="themeBtn" title="切换主题" aria-label="切换主题">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M2.5 12h2M19.5 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- ══ Hero ══ -->
+<header class="hero">
+  <div class="in">
+    <span class="eyebrow">◆ 114 款车型 · 8 大品类 · 海内外品牌</span>
+    <h1>选一台真正<br><em>适合你</em>的摩托车</h1>
+    <p class="lead">把海内外主流车型摆在一起看——从 0.9 万的代步小踏板到 20 万级的梦想 ADV，燃油与电动都覆盖。按品类、预算、用途、座高筛选，一键并排对比参数，再用选车向导 5 个问题锁定候选。不站队、不吹票，只把差异摆清楚。</p>
+    <div class="hero-cta">
+      <a class="btn btn-p" href="#wizard">开始选车向导
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-g" href="#list">直接看车型库</a>
+    </div>
+    <div class="stats" id="heroStats"></div>
+  </div>
+</header>
+
+<!-- ══ Wizard ══ -->
+<section id="wizard"><div class="wrap">
+  <div class="shead">
+    <div class="k">Step by step</div>
+    <h2>选车向导</h2>
+    <p>回答 5 个问题，系统按预算、用途、经验、身高与车型偏好加权打分，给出最匹配的 3 台车和推荐理由。</p>
+  </div>
+  <div class="wizard">
+    <div class="wz-head">
+      <h3 id="wzTitle">预算范围</h3>
+      <span class="sub" id="wzSub">先定预算，能砍掉 70% 的选项</span>
+      <div class="wz-prog" id="wzProg"></div>
+    </div>
+    <div class="wz-body"><div id="wzBody"></div></div>
+    <div class="wz-foot">
+      <button class="btn btn-g" id="wzBack">上一步</button>
+      <button class="btn btn-p" id="wzRestart" style="background:var(--surface);color:var(--ink);border-color:var(--line);box-shadow:none">重新开始</button>
+      <span class="sp" id="wzStep">第 1 / 5 步</span>
+    </div>
+  </div>
+</div></section>
+
+<!-- ══ List ══ -->
+<section id="list" style="padding-top:0"><div class="wrap">
+  <div class="shead">
+    <div class="k">Database</div>
+    <h2>车型库 · 114 款</h2>
+    <p>所有价格均为厂商指导价或市场参考价（会随促销波动），参数以官方公布为准。点任意卡片看完整参数与优缺点。</p>
+  </div>
+
+  <div class="toolbar">
+    <div class="tb-row">
+      <div class="search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+        <input id="q" type="search" placeholder="搜索车型 / 品牌，如 450SR、雅马哈、踏板">
+      </div>
+      <div class="fld"><label for="sort">排序</label>
+        <select id="sort">
+          <option value="def">推荐排序</option>
+          <option value="p-asc">价格 低 → 高</option>
+          <option value="p-desc">价格 高 → 低</option>
+          <option value="d-desc">排量 大 → 小</option>
+          <option value="h-desc">马力 大 → 小</option>
+          <option value="w-asc">重量 轻 → 重</option>
+          <option value="s-asc">座高 低 → 高</option>
+        </select>
+      </div>
+      <span class="res-count"><b id="cnt">0</b> 款符合条件</span>
+    </div>
+    <div class="tb-row">
+      <div class="tabs" id="cats"></div>
+    </div>
+    <div class="tb-row">
+      <div class="fld">预算</div>
+      <div class="tabs" id="budget"></div>
+      <div class="fld" style="margin-left:6px">产地</div>
+      <div class="tabs" id="origin"></div>
+      <button class="chip" id="clearAll" style="margin-left:auto">清空筛选</button>
+    </div>
+    <div class="tb-row">
+      <div class="fld">用途</div>
+      <div class="tabs" id="uses"></div>
+    </div>
+  </div>
+
+  <div class="grid" id="grid" style="margin-top:22px"></div>
+</div></section>
+
+<!-- ══ Guide ══ -->
+<section id="guide"><div class="wrap">
+  <div class="shead">
+    <div class="k">Before you buy</div>
+    <h2>购车手册 · 别只看参数</h2>
+    <p>参数决定上限，用车场景决定幸福。下面几件事，比“买哪台”更值得先想清楚。</p>
+  </div>
+  <div class="gcards">
+    <div class="gc">
+      <div class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19h16M6 19V9l6-5 6 5v10"/><path d="M10 19v-5h4v5"/></svg></div>
+      <h4>① 排量怎么选</h4>
+      <p>新手别一上来就大排。250–500cc 是最好练手的区间：够用、便宜、摔了不心疼。</p>
+      <ul>
+        <li><b>125–250cc</b>｜通勤代步、纯新手首车、预算 1–2 万</li>
+        <li><b>250–500cc</b>｜通勤 + 周末玩乐，最推荐的新手进阶区间</li>
+        <li><b>500–800cc</b>｜中排，动力充沛，建议 1 年以上骑龄</li>
+        <li><b>800cc+</b>｜大排/公升级，经验与体重都要跟上</li>
+      </ul>
+    </div>
+    <div class="gc">
+      <div class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M17 6H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+      <h4>② 落地价 ≠ 车价</h4>
+      <p>裸车价只是起点。按 5 万元裸车估算，实际落地大概这样：</p>
+      <table>
+        <tr><th>项目</th><th>金额</th></tr>
+        <tr><td>裸车价</td><td><b>50,000</b></td></tr>
+        <tr><td>购置税（约 8.8%）</td><td><b>4,400</b></td></tr>
+        <tr><td>交强险 + 三者 + 车损</td><td><b>1,200 ~ 1,800</b></td></tr>
+        <tr><td>上牌 / 车船税</td><td><b>200 ~ 500</b></td></tr>
+        <tr><td>原厂配件/护杠/尾箱</td><td><b>1,000 ~ 4,000</b></td></tr>
+        <tr><td>合计</td><td><b>≈ 5.7 万 ~ 6.1 万</b></td></tr>
+      </table>
+      <p style="margin-top:9px;font-size:12px;color:var(--ink-3)">150cc 及以下免购置税，这是小踏板的一大优势。</p>
+    </div>
+    <div class="gc">
+      <div class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3l8 4v6c0 4.5-3.3 7.6-8 9-4.7-1.4-8-4.5-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
+      <h4>③ 装备别省这笔钱</h4>
+      <p>头盔是消耗品和保命件，预算至少给到车价的 1/10。</p>
+      <ul>
+        <li>全盔 &gt; 半盔，认准 3C / ECE 22.06 认证</li>
+        <li>骑行手套 + 护膝是通勤最低配置</li>
+        <li>骑行服优先选带 CE 护具的，别买纯装饰款</li>
+        <li>行车记录仪 / 胎压监测，长途强烈建议</li>
+      </ul>
+    </div>
+    <div class="gc">
+      <div class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h4l2-6 4 14 2.5-8H21"/></svg></div>
+      <h4>④ 试驾必看清单</h4>
+      <p>参数再漂亮，跨上去扭两把油门才是真的。到店重点确认：</p>
+      <ul>
+        <li>双脚能否全脚掌着地（停车安全感）</li>
+        <li>原地挪车、低速掉头是否吃力（车重 + 重心）</li>
+        <li>坐姿：手把高度、脚踏位置、会不会压手腕</li>
+        <li>低速油门响应是否线性（新手最怕窜车）</li>
+        <li>问清保养周期、配件价格、当地服务网点数量</li>
+      </ul>
+    </div>
+    <div class="gc">
+      <div class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M4 8l8-5 8 5-8 5z"/><path d="M4 8v8l8 5 8-5V8"/></svg></div>
+      <h4>⑤ 国产 vs 进口，怎么想</h4>
+      <p>2025 年后的国产车在配置与动力上已全面追上，差距主要在<b>品控一致性、保值率、售后网点密度</b>。</p>
+      <ul>
+        <li>预算 3 万内、要配置 → 国产几乎是最优解</li>
+        <li>追求省心、开 5 年不折腾 → 合资/进口更稳</li>
+        <li>考虑 2–3 年换车 → 优先看保值率（本田、雅马哈、川崎）</li>
+        <li>本地没有服务网点 → 慎重，修车要跑几百公里</li>
+      </ul>
+    </div>
+    <div class="gc">
+      <div class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+      <h4>⑥ 按预算快速定位</h4>
+      <p>把预算当作第一道筛子，再看用途，效率最高。</p>
+      <div class="budget">
+        <span>≤1.5 万 → 通勤小踏板 / 入门巡航</span>
+        <span>1.5–3 万 → 仿赛 & 复古 & 巡航主战场</span>
+        <span>3–6 万 → 中排街车 / ADV / 四缸仿赛</span>
+        <span>6–10 万 → 进口中排 / 大排街车</span>
+        <span>10 万+ → 公升级 / 豪华巡航</span>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="in">
+  <b>机车选型指南</b>
+  <span>·</span>
+  <span>个人购车决策参考工具</span>
+  <span class="sp">数据整理于 2026-09 · 图片来自厂商官网及公开渠道</span>
+</div>
+<div class="wrap"><div class="disc">
+  <b style="color:var(--ink-2)">免责说明：</b>本页价格为厂商指导价或市场参考价，实际成交价受地区、促销、库存影响会有明显波动；技术参数以厂商官方公布为准，不同年份改款会有差异。图片来源于品牌官方及公开网络渠道，仅用于个人选购参考，版权归原作者所有。购车请以经销商店内实车与实际报价为准。
+</div></div>
+</footer>
+
+<!-- ══ Compare bar ══ -->
+<div class="cbar" id="cbar">
+  <div class="thumbs" id="cthumbs"></div>
+  <span class="ct" id="ctext">已选 0 台</span>
+  <button id="doCompare" disabled>开始对比</button>
+  <button class="ghost" id="clearCmp">清空</button>
+</div>
+
+<!-- ══ Modal ══ -->
+<div class="modal" id="modal"><div class="mask" id="mask"></div><div class="sheet" id="sheet"></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ═══════════════════════════════════════════════
+   数据：114 款车型
+   price = 参考起售价（元）用于排序/筛选
+   ═══════════════════════════════════════════════ */
+const CATS = ["仿赛","街车","巡航","复古","拉力ADV","踏板","越野","电动摩托"];
+const USES = ["通勤代步","玩乐跑山","长途摩旅","越野林道","城市巡航","新手友好"];
+
+const BIKES = [
+/* ── 仿赛 ── */
+{id:"cf-450sr",name:"春风 450SR",en:"CFMOTO 450SR",brand:"春风 CFMOTO",cat:"仿赛",origin:"国产",price:24980,priceText:"24,980 元起",
+ disp:450,cyl:"直列双缸 · 水冷 · 270°曲轴",kw:38,hp:51.7,nm:40,kg:170,seat:795,tank:14,use:["通勤代步","玩乐跑山","新手友好"],
+ tags:["销量王","新手友好","270°曲轴","性价比"],pros:["轻量化到位，170kg 推起来毫无压力","270° 曲轴声浪接近 V 缸，辨识度高","保有量极大，改件和保养便宜","二手保值率在国产里数一数二"],
+ cons:["高转延展一般，万转后劲不如四缸","后座支撑偏弱，载人舒适性差"],fit:"第一次买仿赛的人、通勤与周末跑山兼顾的骑手"},
+{id:"kayo-450rr",name:"凯越 450RR",en:"KAYO 450RR",brand:"凯越 KAYO",cat:"仿赛",origin:"国产",price:29980,priceText:"29,980 元",
+ disp:443,cyl:"直列四缸 · 水冷",kw:52,hp:70.7,nm:39,kg:165,seat:795,tank:15,use:["玩乐跑山"],
+ tags:["国产首款四缸仿赛","轻量化","高转猛"],pros:["165kg 车重，同级最轻之一","万转之后动力爆发非常上头","四缸声浪是这个价位难得的东西"],
+ cons:["低扭偏弱，市区代步略显费神","后减震偏硬，载人体验一般","座姿偏战斗，长途不舒服"],fit:"追求操控极限与赛道潜力的进阶玩家"},
+{id:"zx-500rr",name:"张雪 500RR",en:"Zhangxue 500RR",brand:"张雪机车",cat:"仿赛",origin:"国产",price:27980,priceText:"27,980 元起",
+ disp:470,cyl:"直列四缸 · 水冷",kw:62,hp:84.3,nm:46,kg:172,seat:795,tank:15,use:["玩乐跑山"],
+ tags:["四缸黑马","84匹","3.4秒破百"],pros:["同价位马力最强，84.3 匹压迫感十足","弯道 ABS、快排等配置给得很足","团队愿意听玩家意见，迭代很快"],
+ cons:["品牌新，全国服务网点偏少","长期可靠性与保值率还需时间验证"],fit:"把性能和账面数据放在第一位的玩家"},
+{id:"qj-sai600rs",name:"钱江 赛600RS",en:"QJMOTOR 赛600RS",brand:"QJMOTOR 钱江",cat:"仿赛",origin:"国产",price:34999,priceText:"34,999 元起",
+ disp:680,cyl:"直列四缸 · 水冷",kw:74.5,hp:101,nm:68,kg:206,seat:830,tank:18,use:["玩乐跑山"],
+ tags:["四缸常青树","百匹","Brembo"],pros:["680cc 四缸 101 匹，动力储备充足","布雷博卡钳 + 马祖奇减震，硬件规格高","车型成熟，配件与改装生态完善"],
+ cons:["206kg 车重，挪车需要技巧","油耗高，市区六七个油","座高 830mm，对矮个子不友好"],fit:"想要四缸声浪与性能、预算 3 万多的进阶玩家"},
+{id:"honda-cbr500r",name:"本田 CBR500R",en:"Honda CBR500R",brand:"本田 Honda",cat:"仿赛",origin:"进口",price:69800,priceText:"约 69,800 元",
+ disp:471,cyl:"直列双缸 · 水冷",kw:35,hp:47.6,nm:43,kg:193,seat:785,tank:17,use:["通勤代步","长途摩旅"],
+ tags:["品质稳定","保值率高","省心"],pros:["本田品控，故障率极低","动力输出极其平顺，新手也容易上手","保值率是同级的标杆"],
+ cons:["价格偏高，配置相对保守","动力偏平淡，缺乏刺激感","保养和配件费用比国产高"],fit:"看重长期省心、能骑五年的稳健派"},
+{id:"kawasaki-ninja400",name:"川崎 Ninja 400",en:"Kawasaki Ninja 400",brand:"川崎 Kawasaki",cat:"仿赛",origin:"进口",price:49800,priceText:"约 49,800 元",
+ disp:399,cyl:"直列双缸 · 水冷",kw:35,hp:47.6,nm:38,kg:168,seat:785,tank:14,use:["通勤代步","玩乐跑山","新手友好"],
+ tags:["进口入门标杆","轻巧","改装潜力"],pros:["168kg 车轻，操控灵活好上手","川崎品质稳，二手保值","改装件丰富，玩车生态好"],
+ cons:["399cc 排量偏小，进阶后会不够用","进口身份但配置一般","热门配色常有加价或等车"],fit:"想入门进口仿赛、预算 5 万左右的新手"},
+{id:"ducati-panigalev4",name:"杜卡迪 Panigale V4",en:"Ducati Panigale V4",brand:"杜卡迪 Ducati",cat:"仿赛",origin:"进口",price:249000,priceText:"约 249,000 元",
+ disp:1103,cyl:"V型四缸 · 水冷",kw:158,hp:215,nm:120.9,kg:195,seat:850,tank:17,use:["玩乐跑山"],
+ tags:["公升级","215匹","梦想车"],pros:["性能与电控处在量产车顶端","颜值和声浪是同级天花板","赛道能力几乎没有对手"],
+ cons:["价格昂贵，落地接近 30 万","保养周期短、费用高","座高 850mm，日常骑行偏累"],fit:"预算充足、追求极致性能的高阶玩家"},
+
+/* ── 街车 ── */
+{id:"cf-250nk",name:"春风 250NK",en:"CFMOTO 250NK",brand:"春风 CFMOTO",cat:"街车",origin:"国产",price:18980,priceText:"18,980 元",
+ disp:250,cyl:"单缸 · 水冷 · 270°曲轴",kw:20.5,hp:27.9,nm:22,kg:151,seat:795,tank:12.5,use:["通勤代步","新手友好","玩乐跑山"],
+ tags:["入门神车","轻巧","价格低"],pros:["不到 2 万，练手摔了不心疼","151kg 车身，掉头挪车轻松","270° 曲轴单缸，声音比一般单缸好听"],
+ cons:["单缸震动明显，跑高速手麻","配置基础，没有 TFT 和快排"],fit:"纯新手第一台车、预算 2 万以内的通勤党"},
+{id:"cf-800nk",name:"春风 800NK",en:"CFMOTO 800NK",brand:"春风 CFMOTO",cat:"街车",origin:"国产",price:45800,priceText:"约 45,800 元",
+ disp:799,cyl:"直列双缸 · 水冷",kw:74,hp:100,nm:78,kg:186,seat:795,tank:15,use:["玩乐跑山","通勤代步"],
+ tags:["百匹街车","KTM同源","性价比"],pros:["799cc 双缸 100 匹，动力相当暴力","与 KTM 同平台开发，车架和调校有底子","186kg 配 100 匹，推重比出色"],
+ cons:["油耗偏高，暴力驾驶七八个油","大排量需要一定骑行经验","电子系统偶有车主反馈小问题"],fit:"想要的排量和动力、预算 4–5 万的进阶玩家"},
+{id:"qj-zhui600",name:"钱江 追600",en:"QJMOTOR 追600",brand:"QJMOTOR 钱江",cat:"街车",origin:"国产",price:36999,priceText:"36,999 元",
+ disp:680,cyl:"直列四缸 · 水冷",kw:74.5,hp:101,nm:68,kg:200,seat:800,tank:17,use:["通勤代步","玩乐跑山"],
+ tags:["四缸街车天花板","马祖奇+Brembo"],pros:["680cc 四缸，街车里的动力猛兽","标配马祖奇减震与布雷博卡钳","TFT 投屏、胎压监测等配置齐全"],
+ cons:["车重约 200kg，低速略笨","油耗高，通勤成本不低"],fit:"喜欢四缸声浪、想要街车坐姿的性能玩家"},
+{id:"voge-525r",name:"无极 525R",en:"VOGE 525R",brand:"无极 VOGE",cat:"街车",origin:"国产",price:31800,priceText:"约 31,800 元",
+ disp:494,cyl:"直列双缸 · 水冷",kw:36.5,hp:49.6,nm:45,kg:190,seat:780,tank:17,use:["通勤代步","长途摩旅","新手友好"],
+ tags:["宝马同源发动机","好上手","配置全"],pros:["发动机与宝马同源技术，平顺耐用","780mm 座高友好，坐姿舒适","滑动离合 + 博世 ABS，对新手很宽容"],
+ cons:["外观设计偏保守，缺乏话题性","二手保值率一般"],fit:"通勤为主、偶尔长途，看重省心的中排新选择"},
+{id:"honda-cb400f",name:"本田 CB400F",en:"Honda CB400F",brand:"本田 Honda",cat:"街车",origin:"合资",price:39800,priceText:"39,800 元",
+ disp:399,cyl:"直列双缸 · 水冷",kw:33,hp:44.9,nm:37,kg:194,seat:790,tank:17,use:["通勤代步","长途摩旅","新手友好"],
+ tags:["街车之王","十年质保","省心"],pros:["全球销量巨大的成熟车型，极其耐用","保养便宜，配件好找","二手保值率在合资里名列前茅"],
+ cons:["动力平淡，缺少驾驶激情","外观中庸，配置朴素"],fit:"以通勤代步为主、看重省心耐用的人"},
+{id:"yamaha-mt07",name:"雅马哈 MT-07",en:"Yamaha MT-07",brand:"雅马哈 Yamaha",cat:"街车",origin:"进口",price:79800,priceText:"约 79,800 元",
+ disp:689,cyl:"直列双缸 · 水冷 · CP2",kw:54,hp:73.4,nm:67,kg:184,seat:805,tank:13,use:["玩乐跑山","通勤代步"],
+ tags:["扭矩大师","CP2发动机","操控好"],pros:["低扭极其充沛，不用拉高转就有劲","184kg 车身轻盈，山路非常好骑","CP2 发动机的声浪和质感被广泛认可"],
+ cons:["前叉偏软，激烈驾驶信心不足","配置朴素，缺少电控","价格在进口双缸里偏高"],fit:"喜欢双缸质感、跑山为主的老手与进阶玩家"},
+{id:"kawasaki-z900",name:"川崎 Z900",en:"Kawasaki Z900",brand:"川崎 Kawasaki",cat:"街车",origin:"进口",price:89800,priceText:"89,800 元（SE 99,800）",
+ disp:948,cyl:"直列四缸 · 水冷",kw:92,hp:123.3,nm:97.8,kg:213,seat:820,tank:17,use:["玩乐跑山","通勤代步"],
+ tags:["暴力绅士","六轴IMU","四缸"],pros:["948cc 四缸 123 匹，动力从容","2025 款加入六轴 IMU、弯道 ABS","进口四缸里性价比非常突出"],
+ cons:["213kg 车重，低速挪车费力","油耗不低，市区七到八个油","座高 820mm，新手偏吃力"],fit:"有骑行经验、想要进口四缸街车的中高级玩家"},
+
+/* ── 巡航 ── */
+{id:"benda-jinjila300",name:"奔达 金吉拉300",en:"Benda Chinchilla 300",brand:"奔达 Benda",cat:"巡航",origin:"国产",price:23800,priceText:"约 23,800 元",
+ disp:298,cyl:"V型双缸 · 水冷",kw:20.5,hp:27.9,nm:26.5,kg:163,seat:690,tank:15,use:["城市巡航","新手友好"],
+ tags:["入门V缸","690mm超低座高","女生友好"],pros:["690mm 座高，155cm 也能单脚撑地","V 缸声浪与美式外观辨识度高","163kg 车轻，市区很好操控"],
+ cons:["298cc 排量偏小，高速巡航吃力","早期批次品控口碑一般","功率仅 20.5kW，动力谈不上充沛"],fit:"新手、身材娇小的骑士、城市巡航代步"},
+{id:"benda-huishi250",name:"奔达 灰石250",en:"Benda Greystone 250",brand:"奔达 Benda",cat:"巡航",origin:"国产",price:16980,priceText:"16,980 元",
+ disp:250,cyl:"V型双缸 · 水冷",kw:19,hp:25.8,nm:23,kg:170,seat:700,tank:14,use:["城市巡航","新手友好"],
+ tags:["美式肌肉","价格亲民","入门首选"],pros:["不到 1.7 万就能拥有 V 缸巡航","外观有美式肌肉感，停在路边很吸睛","座高低、车重适中，新手友好"],
+ cons:["250cc 动力一般，载人偏吃力","做工细节与进口有差距"],fit:"预算有限、想入坑巡航车的新手"},
+{id:"voge-cu625",name:"无极 CU625",en:"VOGE CU625",brand:"无极 VOGE",cat:"巡航",origin:"国产",price:26666,priceText:"26,666 元（限时 25,566）",
+ disp:578,cyl:"V型双缸 · 水冷",kw:45,hp:61.2,nm:61,kg:210,seat:710,tank:16,use:["城市巡航","长途摩旅"],
+ tags:["中排巡航卷王","三重散热","低扭强"],pros:["578cc V 缸 61 匹，5500 转就出峰值扭矩","三重散热设计，明显改善 V 缸“烤腿”","710mm 超低座高 + 双平衡轴，震动控制好"],
+ cons:["210kg 车重，长时间低速行驶略累","配置偏实用取向，不够“堆料”"],fit:"想要中排 V 缸巡航又在意散热与舒适度的进阶骑士"},
+{id:"voge-cu250",name:"无极 CU250",en:"VOGE CU250",brand:"无极 VOGE",cat:"巡航",origin:"国产",price:16980,priceText:"16,980 元起",
+ disp:250,cyl:"V型双缸 · 水冷",kw:20,hp:27.2,nm:23,kg:176,seat:700,tank:14,use:["城市巡航","新手友好"],
+ tags:["新手V缸","皮带传动","震动小"],pros:["皮带传动安静顺滑，免维护","震动抑制在同级里表现不错","座低车轻，新手容易掌控"],
+ cons:["250cc 动力有限，跑高速稍显吃力"],fit:"入门巡航的新手、日常城市代步"},
+{id:"qj-shan300s",name:"钱江 闪300S",en:"QJMOTOR 闪300S",brand:"QJMOTOR 钱江",cat:"巡航",origin:"国产",price:23999,priceText:"23,999 元",
+ disp:298,cyl:"V型双缸 · 水冷",kw:20.5,hp:27.9,nm:26.5,kg:163,seat:690,tank:15,use:["城市巡航","新手友好"],
+ tags:["最小V缸巡航之一","690mm座高","好操控"],pros:["690mm 座高 + 163kg，娇小骑士也能稳撑","V 缸外观和小巧车身在城市里很讨巧","价格友好，入门门槛低"],
+ cons:["排量小，长途与载人不适合","高速稳定性一般"],fit:"城市通勤巡航的新手与女性骑士"},
+{id:"honda-cm500",name:"本田 CM500",en:"Honda Rebel 500",brand:"本田 Honda",cat:"巡航",origin:"进口",price:72800,priceText:"约 72,800 元",
+ disp:471,cyl:"直列双缸 · 水冷",kw:33.5,hp:45.6,nm:43,kg:191,seat:690,tank:11,use:["城市巡航","通勤代步"],
+ tags:["Rebel系列","低座高","品质稳"],pros:["690mm 座高，几乎不挑身高","本田品控，可靠性极高，保值好","车身紧凑，城市里灵活好骑"],
+ cons:["价格偏高，配置朴素","油箱 11L 偏小，续航一般","外观偏素，缺少机械感"],fit:"看重品质与保值、以城市巡航为主的骑手"},
+{id:"harley-sportsters",name:"哈雷 Sportster S",en:"Harley-Davidson Sportster S",brand:"哈雷 Harley-Davidson",cat:"巡航",origin:"进口",price:139000,priceText:"约 139,000 元",
+ disp:1252,cyl:"V型双缸 · 水冷 Revolution Max",kw:90,hp:122,nm:127,kg:228,seat:753,tank:11.8,use:["城市巡航","玩乐跑山"],
+ tags:["美式重机","122匹","扭矩猛"],pros:["1252cc V 缸 127N·m，扭矩随叫随到","外观极具压迫感，气场是它最大的卖点","配置现代，电控与仪表都不落后"],
+ cons:["价格高，落地接近 15 万","228kg 车重，操控需要适应","坐姿偏战斗，长途不舒服"],fit:"预算充足、追求美式重机气场与扭矩的发烧友"},
+
+/* ── 复古 ── */
+{id:"cf-700clx",name:"春风 700CL-X",en:"CFMOTO 700CL-X",brand:"春风 CFMOTO",cat:"复古",origin:"国产",price:45800,priceText:"约 45,800 元",
+ disp:693,cyl:"直列双缸 · 水冷",kw:55,hp:74.8,nm:68,kg:195,seat:800,tank:13,use:["通勤代步","玩乐跑山"],
+ tags:["复古Cafe风","中排","配置全"],pros:["693cc 双缸 75 匹，动力在中排复古里很充足","外观有 Cafe Racer 味道，辨识度高","TFT 仪表、定速巡航等配置齐全"],
+ cons:["保有量偏少，配件和二手流通一般","保养成本比入门级高"],fit:"想要中排动力 + 复古造型的骑手"},
+{id:"voge-300ac",name:"无极 300AC",en:"VOGE 300AC",brand:"无极 VOGE",cat:"复古",origin:"国产",price:16800,priceText:"约 16,800 元",
+ disp:292,cyl:"单缸 · 水冷",kw:19,hp:25.8,nm:24,kg:158,seat:780,tank:14,use:["通勤代步","新手友好"],
+ tags:["入门复古","轻巧","便宜"],pros:["1.7 万左右就能拥有复古造型","158kg 车身轻，日常很好骑","座高 780mm，对多数人友好"],
+ cons:["单缸震动，长时间骑行手麻","动力偏弱，跑高速费劲"],fit:"预算有限、喜欢复古外观的入门骑士"},
+{id:"benelli-leoncino500",name:"贝纳利 幼狮500",en:"Benelli Leoncino 500",brand:"贝纳利 Benelli",cat:"复古",origin:"合资",price:33800,priceText:"约 33,800 元",
+ disp:499,cyl:"直列双缸 · 水冷",kw:35,hp:47.6,nm:45,kg:196,seat:800,tank:12.5,use:["通勤代步","城市巡航"],
+ tags:["意式复古","声浪好","有格调"],pros:["意大利设计语言，复古氛围到位","双缸声浪比同级单缸好听很多","中排动力，通勤与周末都够用"],
+ cons:["196kg 车重，挪车偏沉","油耗和保养成本高于国产同级","售后网点密度不如本田/雅马哈"],fit:"喜欢意式复古风格、有点格调需求的骑手"},
+{id:"honda-cb350",name:"本田 CB350",en:"Honda CB350",brand:"本田 Honda",cat:"复古",origin:"进口",price:35800,priceText:"约 35,800 元",
+ disp:348,cyl:"单缸 · 风冷",kw:15.5,hp:21,nm:30,kg:181,seat:800,tank:15,use:["通勤代步","城市巡航"],
+ tags:["经典复刻","做工精致","省油"],pros:["做工与漆水质感在同价位里很突出","单缸风冷，结构简单、极其省油","气质沉稳，慢骑很享受"],
+ cons:["21 匹动力偏弱，超车要留距离","风冷单缸高转表现一般","价格在 350cc 级别里不算低"],fit:"复古情怀党、享受慢节奏骑行的用户"},
+{id:"triumph-trident660",name:"凯旋 Trident 660",en:"Triumph Trident 660",brand:"凯旋 Triumph",cat:"复古",origin:"进口",price:66900,priceText:"66,900 元",
+ disp:660,cyl:"直列三缸 · 水冷",kw:60,hp:81,nm:64,kg:189,seat:805,tank:14,use:["通勤代步","玩乐跑山"],
+ tags:["三缸","英伦","六轴IMU"],pros:["660cc 三缸 81 匹，动力与声浪都很有魅力","2025 款加入六轴 IMU、弯道 ABS 与牵引力控制","进口车里性价比相当能打"],
+ cons:["价格仍偏高，落地七万五左右","保养与配件成本按进口标准"],fit:"想要进口质感与三缸独特魅力的进阶骑士"},
+
+/* ── 拉力 ADV ── */
+{id:"kayo-525x",name:"凯越 525X",en:"KAYO 525X",brand:"凯越 KAYO",cat:"拉力ADV",origin:"国产",price:28500,priceText:"28,500 元",
+ disp:500,cyl:"直列双缸 · 水冷",kw:39.6,hp:53.8,nm:50.5,kg:205,seat:820,tank:17,use:["长途摩旅","越野林道"],
+ tags:["国产500级ADV标杆","越野强","跌破3万"],pros:["非铺装通过性在同级里数一数二","操控灵活，走烂路很有底气","国产 500cc ADV 里唯一官降到 3 万内"],
+ cons:["高速巡航稳定性略逊于公路取向竞品","座高 820mm，矮个子吃力"],fit:"想兼顾公路与轻度越野的摩旅玩家"},
+{id:"voge-ds625x",name:"无极 DS625X",en:"VOGE DS625X",brand:"无极 VOGE",cat:"拉力ADV",origin:"国产",price:32999,priceText:"32,999 元（三箱 36,999）",
+ disp:581,cyl:"直列双缸 · 水冷 · 270°曲轴",kw:47,hp:63.9,nm:57,kg:213,seat:830,tank:18,use:["长途摩旅","越野林道"],
+ tags:["宝马同源","KYB可调","续航500km"],pros:["581cc 双缸 64 匹，270° 曲轴低扭强劲","KYB 全可调减震 + 双通道 ABS/TCS，配置拉满","18L 油箱，极限续航可超 500 公里"],
+ cons:["座高 830mm，对身高要求高","高速长时间骑行散热表现一般"],fit:"跑长途摩旅 + 非铺装，预算 3 万多的进阶玩家"},
+{id:"cf-450mt",name:"春风 450MT",en:"CFMOTO 450MT",brand:"春风 CFMOTO",cat:"拉力ADV",origin:"国产",price:30580,priceText:"30,580 元",
+ disp:450,cyl:"直列双缸 · 水冷",kw:32.5,hp:44.2,nm:44,kg:194,seat:820,tank:17,use:["越野林道","长途摩旅"],
+ tags:["非铺装玩乐","轻","同价位无竞品"],pros:["194kg 车轻，烂路操控非常灵活","定位偏硬派玩乐，同级几乎没有直接对手","外观和装备感在同价位很突出"],
+ cons:["公路巡航表现中规中矩","动力在 450 级别中不算突出","座高 820mm，新手偏吃力"],fit:"第一诉求是非铺装通过性和玩乐性的车友"},
+{id:"benelli-trk552",name:"贝纳利 TRK552",en:"Benelli TRK552",brand:"贝纳利 Benelli",cat:"拉力ADV",origin:"合资",price:32680,priceText:"32,680 元",
+ disp:550,cyl:"直列双缸 · 水冷",kw:45,hp:61.2,nm:55,kg:235,seat:830,tank:20,use:["长途摩旅","通勤代步"],
+ tags:["公路坦克","风阻保护好","体量感强"],pros:["高速稳定性优秀，风阻保护是同价位最好的之一","550cc 双缸 61 匹，长途巡航有余量","气场接近公升级 ADV，外观很唬人"],
+ cons:["235kg 车重，非铺装路面很吃力","原地挪车对体力要求高"],fit:"以长途公路摩旅为主、喜欢大气场的骑手"},
+{id:"honda-nx400",name:"本田 NX400",en:"Honda NX400",brand:"本田 Honda",cat:"拉力ADV",origin:"合资",price:29980,priceText:"29,980 元",
+ disp:399,cyl:"直列双缸 · 水冷",kw:33,hp:44.9,nm:37,kg:196,seat:800,tank:17,use:["长途摩旅","通勤代步"],
+ tags:["本田品控","均衡","保值"],pros:["本田品牌背书，可靠性高、保值好","车身轻巧，市区与长途都轻松","座高 800mm，对多数人友好"],
+ cons:["配置朴素，动力对比国产竞品无优势","越野能力偏弱"],fit:"看重品牌可靠性与保值率的稳健摩旅党",contain:true},
+{id:"bmw-r1250gs",name:"宝马 R1250GS",en:"BMW R1250GS",brand:"宝马 BMW",cat:"拉力ADV",origin:"进口",price:219900,priceText:"219,900 元（库存约 18 万）",
+ disp:1250,cyl:"水平对置双缸 · 水冷",kw:100,hp:136,nm:143,kg:249,seat:850,tank:20,use:["长途摩旅","越野林道"],
+ tags:["ADV标杆","水鸟","全能"],pros:["动力、舒适性、越野能力全都在第一梯队","品牌与长途摩旅的“信仰”属性强","因新款上市，部分库存价格已明显下探"],
+ cons:["价格高，保养与维修成本按豪华品牌算","249kg 车重，新手完全不建议碰","座高 850mm，对身高有要求"],fit:"预算充足的资深摩旅玩家",contain:true},
+
+/* ── 踏板 ── */
+{id:"haojue-uhr150",name:"豪爵 UHR150",en:"Haojue UHR150",brand:"豪爵 Haojue",cat:"踏板",origin:"国产",price:13380,priceText:"13,380 元起",
+ disp:150,cyl:"单缸 · 水冷",kw:10.4,hp:14.1,nm:14,kg:148,seat:765,tank:8,use:["通勤代步","新手友好"],
+ tags:["国产通勤标杆","双通道ABS","省油"],pros:["品质在同价位国产里属第一梯队","百公里约 2.2–2.4L，一箱油通勤一整周","标配双通道 ABS、无钥匙启动、LED 大灯"],
+ cons:["外观设计偏保守，缺少个性","8L 油箱，长途续航一般"],fit:"纯通勤代步、追求省心省油的大多数人"},
+{id:"voge-sr4max",name:"无极 SR4 Max",en:"VOGE SR4 Max",brand:"无极 VOGE",cat:"踏板",origin:"国产",price:29999,priceText:"29,999 元起",
+ disp:350,cyl:"单缸 · 水冷（宝马 C400 同源）",kw:25,hp:34,nm:35,kg:208,seat:760,tank:12.5,use:["通勤代步","长途摩旅"],
+ tags:["宝马同源大踏板","配置高","降价1万"],pros:["与宝马 C400 共线生产，同车架同引擎规格","34 匹动力在大踏板里算小钢炮","7 寸仪表、行车记录仪、ABS+TCS 配置齐全"],
+ cons:["208kg 车重，窄路掉头需注意","油耗约 3.8L，通勤成本不算低"],fit:"想要大踏板质感与动力、中长途通勤的用户"},
+{id:"sdk-rt3",name:"赛科龙 RT3",en:"SDR RT3",brand:"赛科龙 SDR",cat:"踏板",origin:"国产",price:18999,priceText:"18,999 元",
+ disp:247,cyl:"单缸 · 水冷",kw:17.5,hp:23.8,nm:22.5,kg:199,seat:755,tank:12.7,use:["通勤代步","长途摩旅"],
+ tags:["250级踏板","毫米波雷达","配置越级"],pros:["2025 款配备毫米波雷达，支持盲区监测","TFT 投屏、胎压监测、博世 ABS+TCS 全系标配","199kg 大车身，高速巡航很稳"],
+ cons:["油耗偏高，保值率一般","品牌售后网点不如豪爵/本田"],fit:"想要 250 级踏板、注重配置与舒适性的通勤+小长途用户",contain:true},
+{id:"sanyang-drg158",name:"三阳 DRG158",en:"SYM DRG 158",brand:"三阳 SYM",cat:"踏板",origin:"合资",price:15980,priceText:"15,980 元（2025 款）",
+ disp:158,cyl:"单缸 · 水冷",kw:10.5,hp:14.3,nm:13.5,kg:135,seat:790,tank:7.5,use:["通勤代步","玩乐跑山"],
+ tags:["运动踏板","龙骨车架","操控好"],pros:["龙骨车架 + 前后 13/14 寸轮，弯道倾角大","135kg 车轻，市区穿行极其灵活","三阳品控稳定，改装件丰富"],
+ cons:["座桶只能放 3/4 盔，储物偏小","座高 790mm，在踏板里偏高"],fit:"追求驾驶乐趣与运动风格的通勤党"},
+{id:"honda-pcx160",name:"本田 PCX160",en:"Honda PCX160",brand:"本田 Honda",cat:"踏板",origin:"合资",price:19990,priceText:"19,990 元",
+ disp:157,cyl:"单缸 · 水冷 · eSP+",kw:11.8,hp:16,nm:14.7,kg:132,seat:761,tank:8.2,use:["通勤代步","新手友好"],
+ tags:["舒适通勤","省油","30L大座桶"],pros:["百公里油耗约 2.0L，续航轻松 350km+","30L 座桶可放全盔 + 随身物品","怠速启停 + 静音启动，通勤体验极佳"],
+ cons:["仅前轮单通道 ABS，雨天需谨慎","国产后价格仍不算便宜"],fit:"以通勤代步为主、看重实用与品质的用户"},
+{id:"yamaha-nmax155",name:"雅马哈 NMAX155",en:"Yamaha NMAX 155",brand:"雅马哈 Yamaha",cat:"踏板",origin:"进口",price:27800,priceText:"27,800 元",
+ disp:155,cyl:"单缸 · 水冷 · VVA",kw:11.3,hp:15.4,nm:14,kg:131,seat:765,tank:7.1,use:["通勤代步","新手友好"],
+ tags:["进口通勤王","VVA","保值"],pros:["蓝芯 VVA 发动机，动力顺滑省油","油耗约 2.1–2.3L，通勤成本极低","进口身份，保值率与品质口碑都很好"],
+ cons:["价格比国产同级贵近一倍","热门配色等车周期长","保养按进口标准"],fit:"预算充足、注重品质与保值的通勤一族"},
+{id:"yamaha-xmax300",name:"雅马哈 XMAX300",en:"Yamaha XMAX 300",brand:"雅马哈 Yamaha",cat:"踏板",origin:"进口",price:49800,priceText:"49,800 元（降价后）",
+ disp:292,cyl:"单缸 · 水冷",kw:20.6,hp:28,nm:29,kg:180,seat:795,tank:13,use:["通勤代步","长途摩旅"],
+ tags:["大踏板","双全盔座桶","长途舒适"],pros:["座桶可放两顶全盔，装载能力同级顶尖","13L 油箱 + 优秀风阻保护，长途很舒服","雅马哈品质与保值率有保障"],
+ cons:["价格接近 5 万，门槛不低","180kg 车身，低速掉头要适应"],fit:"长途通勤、经常双人出行或需要大储物空间的用户"},
+
+/* ── 越野 ── */
+{id:"kayo-800x",name:"凯越 800X",en:"KAYO 800X",brand:"凯越 KAYO",cat:"越野",origin:"国产",price:41800,priceText:"41,800 元起",
+ disp:799,cyl:"直列双缸 · 水冷",kw:71,hp:96.5,nm:80,kg:213,seat:830,tank:20,use:["越野林道","长途摩旅"],
+ tags:["大排硬派","轻量化","力大砖飞"],pros:["799cc 双缸 96 匹，动力在国产 ADV 中很猛","213kg 对于这个排量属于轻量化控制出色","配置给得足，越野硬件扎实"],
+ cons:["座高 830mm，对身高要求高","4 万多的价格对国产来说不算便宜"],fit:"想要大排量硬派越野/ADV 的资深玩家"},
+{id:"kaiwei-t250x",name:"凯威 Finder T250X",en:"Kaiwei Finder T250X",brand:"凯威 Kaiwei",cat:"越野",origin:"国产",price:13980,priceText:"13,980 元起",
+ disp:250,cyl:"单缸 · 水冷",kw:15,hp:20.4,nm:22,kg:151,seat:890,tank:13,use:["越野林道","新手友好"],
+ tags:["轻型拉力","230mm离地间隙","随便摔"],pros:["151kg + 230mm 离地间隙，林道里极其灵活","1.4 万的入门价，摔了完全不心疼","配备高位排气与原厂保险杠，玩法齐全"],
+ cons:["20 匹动力偏弱，公路巡航吃力","座高 890mm，矮个子基本骑不了"],fit:"想入门林道越野、又怕重车的玩家"},
+{id:"honda-crf250l",name:"本田 CRF250L",en:"Honda CRF250L",brand:"本田 Honda",cat:"越野",origin:"进口",price:45900,priceText:"约 45,900 元",
+ disp:250,cyl:"单缸 · 水冷",kw:18.2,hp:24.7,nm:22.6,kg:141,seat:880,tank:7.8,use:["越野林道"],
+ tags:["双用途越野","可靠","可上牌"],pros:["141kg 车重，越野操控轻盈","本田可靠性口碑极好，长期耐用","双用途设定，公路与林道都能跑"],
+ cons:["座高 880mm，对身高要求很高","动力偏温和，硬核越野偏弱","价格接近 4.6 万"],fit:"越野入门、并且需要合法上牌的双用途需求"},
+{id:"ktm-500exc",name:"KTM 500 EXC-F",en:"KTM 500 EXC-F",brand:"KTM",cat:"越野",origin:"进口",price:116000,priceText:"约 116,000 元",
+ disp:510,cyl:"单缸 · 水冷",kw:46,hp:63,nm:45,kg:111,seat:950,tank:8.5,use:["越野林道"],
+ tags:["硬核越野","111kg","动力猛"],pros:["111kg 车重配 63 匹，推重比达到赛车级别","底盘与悬挂为纯越野场景设计","KTM 在越野领域的品牌地位无需多言"],
+ cons:["座高 950mm，普通身高无法驾驭","保养周期按小时算，维护成本高","价格昂贵，接近 12 万"],fit:"有越野基础的硬核玩家，不适合日常通勤"},
+/* ── 扩充车型 ── */
+{
+ "id": "cf-675sr",
+ "name": "春风 675SR",
+ "en": "CFMOTO 675SR",
+ "brand": "春风 CFMOTO",
+ "cat": "仿赛",
+ "origin": "国产",
+ "price": 39580,
+ "priceText": "39,580 元",
+ "disp": 674,
+ "cyl": "直列三缸 · 水冷",
+ "kw": 70,
+ "hp": 95.2,
+ "nm": 70,
+ "kg": 175,
+ "seat": 815,
+ "tank": 15,
+ "use": [
+  "玩乐跑山"
+ ],
+ "tags": [
+  "国产三缸天花板",
+  "95匹",
+  "双向快排"
+ ],
+ "pros": [
+  "674cc 三缸 95 匹，国产中排仿赛动力标杆",
+  "KYB 全可调减震 + 西互四活塞辐射卡钳，硬件越级",
+  "标配双向快排、滑动离合、两段可调 TCS"
+ ],
+ "cons": [
+  "座高 815mm 偏高，175kg 干重挪车需注意",
+  "三缸保养成本高于双缸"
+ ],
+ "fit": "预算 4 万左右、想要三缸动力与越级配置的进阶玩家"
+},
+{
+ "id": "voge-525rr",
+ "name": "无极 525RR",
+ "en": "VOGE 525RR",
+ "brand": "无极 VOGE",
+ "cat": "仿赛",
+ "origin": "国产",
+ "price": 29980,
+ "priceText": "约 29,980 元",
+ "disp": 494,
+ "cyl": "直列双缸 · 水冷",
+ "kw": 40,
+ "hp": 54.4,
+ "nm": 44,
+ "kg": 190,
+ "seat": 790,
+ "tank": 16,
+ "use": [
+  "玩乐跑山",
+  "通勤代步"
+ ],
+ "tags": [
+  "中排四缸之外的选择",
+  "动力够用",
+  "好上手"
+ ],
+ "pros": [
+  "494cc 双缸 54 匹，动力平顺好控制",
+  "坐姿不如四缸战斗，日常通勤也能骑",
+  "配置齐全，价格落在 3 万内"
+ ],
+ "cons": [
+  "双缸声浪不如四缸有吸引力",
+  "车身偏重 190kg"
+ ],
+ "fit": "想兼顾通勤与周末跑山的中排仿赛用户"
+},
+{
+ "id": "qj-sai550",
+ "name": "钱江 赛550",
+ "en": "QJMOTOR 赛550",
+ "brand": "QJMOTOR 钱江",
+ "cat": "仿赛",
+ "origin": "国产",
+ "price": 26999,
+ "priceText": "约 26,999 元",
+ "disp": 554,
+ "cyl": "直列双缸 · 水冷",
+ "kw": 41,
+ "hp": 55.8,
+ "nm": 52,
+ "kg": 190,
+ "seat": 795,
+ "tank": 16,
+ "use": [
+  "玩乐跑山",
+  "通勤代步"
+ ],
+ "tags": [
+  "中排双缸",
+  "扭矩足",
+  "配置高"
+ ],
+ "pros": [
+  "554cc 双缸 52N·m，低扭充沛",
+  "标配 ABS + TCS，制动规格不低",
+  "价格在 550 级别里很有竞争力"
+ ],
+ "cons": [
+  "品牌同级车型多，容易挑花眼",
+  "车重 190kg，激进骑行偏吃力"
+ ],
+ "fit": "预算 2.7 万左右、看重扭矩与配置的仿赛用户"
+},
+{
+ "id": "kayo-321rr",
+ "name": "凯越 321RR",
+ "en": "KAYO 321RR",
+ "brand": "凯越 KAYO",
+ "cat": "仿赛",
+ "origin": "国产",
+ "price": 23980,
+ "priceText": "约 23,980 元",
+ "disp": 322,
+ "cyl": "直列双缸 · 水冷",
+ "kw": 30,
+ "hp": 40.8,
+ "nm": 24,
+ "kg": 151,
+ "seat": 780,
+ "tank": 14,
+ "use": [
+  "玩乐跑山",
+  "新手友好"
+ ],
+ "tags": [
+  "151kg超轻",
+  "入门仿赛",
+  "好上手"
+ ],
+ "pros": [
+  "151kg 车重，同级最轻之一，操控极灵活",
+  "座高 780mm，身材一般也能双脚着地",
+  "价格低，入门门槛友好"
+ ],
+ "cons": [
+  "322cc 动力上限有限，进阶后会不够用",
+  "高速稳定性一般"
+ ],
+ "fit": "第一台仿赛、预算 2.4 万以内的新手"
+},
+{
+ "id": "kawasaki-zx4r",
+ "name": "川崎 Ninja ZX-4R",
+ "en": "Kawasaki Ninja ZX-4R",
+ "brand": "川崎 Kawasaki",
+ "cat": "仿赛",
+ "origin": "进口",
+ "price": 69800,
+ "priceText": "69,800 元",
+ "disp": 401,
+ "cyl": "直列四缸 · 水冷",
+ "kw": 57,
+ "hp": 77.5,
+ "nm": 39.6,
+ "kg": 189,
+ "seat": 800,
+ "tank": 15,
+ "use": [
+  "玩乐跑山"
+ ],
+ "tags": [
+  "小排四缸",
+  "14000转",
+  "Showa减震"
+ ],
+ "pros": [
+  "401cc 四缸拉到 14000 转，高转声浪无敌",
+  "Showa 前后全可调减震，赛道底子好",
+  "进口车中少见的 400 级四缸"
+ ],
+ "cons": [
+  "低转扭矩偏弱，市区拥堵路况体验一般",
+  "价格接近 7 万，同价位可买国产四缸更大排量"
+ ],
+ "fit": "想要小排量四缸高转乐趣、预算 7 万的玩家"
+},
+{
+ "id": "aprilia-rs457",
+ "name": "阿普利亚 RS 457",
+ "en": "Aprilia RS 457",
+ "brand": "阿普利亚 Aprilia",
+ "cat": "仿赛",
+ "origin": "进口",
+ "price": 49800,
+ "priceText": "约 49,800 元",
+ "disp": 457,
+ "cyl": "直列双缸 · 水冷",
+ "kw": 35,
+ "hp": 47.6,
+ "nm": 43.5,
+ "kg": 175,
+ "seat": 800,
+ "tank": 13,
+ "use": [
+  "玩乐跑山",
+  "通勤代步"
+ ],
+ "tags": [
+  "意式仿赛",
+  "175kg",
+  "赛道基因"
+ ],
+ "pros": [
+  "175kg 车重配 47 匹，推重比出色",
+  "阿普利亚的赛道调校，弯道表现优秀",
+  "外观和做工是同级里的颜值担当"
+ ],
+ "cons": [
+  "价格偏高，配置不如国产堆料",
+  "售后网点密度不及日系"
+ ],
+ "fit": "看重操控质感与品牌调性的进阶骑手"
+},
+{
+ "id": "honda-cbr650r",
+ "name": "本田 CBR650R",
+ "en": "Honda CBR650R",
+ "brand": "本田 Honda",
+ "cat": "仿赛",
+ "origin": "进口",
+ "price": 89800,
+ "priceText": "约 89,800 元",
+ "disp": 649,
+ "cyl": "直列四缸 · 水冷",
+ "kw": 70,
+ "hp": 95.2,
+ "nm": 63,
+ "kg": 208,
+ "seat": 810,
+ "tank": 15,
+ "use": [
+  "通勤代步",
+  "长途摩旅"
+ ],
+ "tags": [
+  "中排四缸",
+  "品质稳",
+  "通勤友好"
+ ],
+ "pros": [
+  "649cc 四缸 95 匹，动力线性好骑",
+  "坐姿比纯仿赛舒适，能日常通勤",
+  "本田品控与保值率有保障"
+ ],
+ "cons": [
+  "208kg 车重，低速略笨",
+  "配置相对朴素，电子辅助少"
+ ],
+ "fit": "想要四缸质感又要日常舒适的中高级骑手"
+},
+{
+ "id": "yamaha-r3",
+ "name": "雅马哈 YZF-R3",
+ "en": "Yamaha YZF-R3",
+ "brand": "雅马哈 Yamaha",
+ "cat": "仿赛",
+ "origin": "进口",
+ "price": 46800,
+ "priceText": "约 46,800 元",
+ "disp": 321,
+ "cyl": "直列双缸 · 水冷",
+ "kw": 30.4,
+ "hp": 41.3,
+ "nm": 29.6,
+ "kg": 169,
+ "seat": 780,
+ "tank": 14,
+ "use": [
+  "通勤代步",
+  "玩乐跑山",
+  "新手友好"
+ ],
+ "tags": [
+  "入门进口",
+  "轻巧",
+  "保值"
+ ],
+ "pros": [
+  "169kg 车轻，新手上手压力小",
+  "雅马哈品质稳定，二手保值好",
+  "座高 780mm，对多数人友好"
+ ],
+ "cons": [
+  "321cc 动力偏温和",
+  "配置基础，无快排等硬件"
+ ],
+ "fit": "想入门进口仿赛、以通勤和轻玩乐为主的新手"
+},
+{
+ "id": "ktm-rc390",
+ "name": "KTM RC 390",
+ "en": "KTM RC 390",
+ "brand": "KTM",
+ "cat": "仿赛",
+ "origin": "进口",
+ "price": 49800,
+ "priceText": "约 49,800 元",
+ "disp": 373,
+ "cyl": "单缸 · 水冷",
+ "kw": 32,
+ "hp": 43.5,
+ "nm": 36,
+ "kg": 172,
+ "seat": 824,
+ "tank": 13.7,
+ "use": [
+  "玩乐跑山"
+ ],
+ "tags": [
+  "单缸猛兽",
+  "Ready to Race",
+  "WP减震"
+ ],
+ "pros": [
+  "373cc 单缸压榨出 43.5 匹，动力暴躁",
+  "WP 减震 + 轻量化车架，赛道取向明确",
+  "电控配置丰富，弯道 ABS 标配"
+ ],
+ "cons": [
+  "单缸震动明显，长途不舒适",
+  "座高 824mm，坐姿战斗"
+ ],
+ "fit": "喜欢激进风格、以赛道和山路为主的玩家"
+},
+{
+ "id": "cf-450nk",
+ "name": "春风 450NK",
+ "en": "CFMOTO 450NK",
+ "brand": "春风 CFMOTO",
+ "cat": "街车",
+ "origin": "国产",
+ "price": 24880,
+ "priceText": "24,880 元起",
+ "disp": 449,
+ "cyl": "直列双缸 · 水冷 · 270°曲轴",
+ "kw": 37,
+ "hp": 50.3,
+ "nm": 39,
+ "kg": 165,
+ "seat": 795,
+ "tank": 15,
+ "use": [
+  "通勤代步",
+  "玩乐跑山",
+  "新手友好"
+ ],
+ "tags": [
+  "中排街车卷王",
+  "165kg",
+  "性价比高"
+ ],
+ "pros": [
+  "449cc 双缸 50 匹，动力堪比 500 级",
+  "165kg 车身，城市钻缝与山路都轻松",
+  "5 寸曲面 TFT、TCS、ABS 配置齐全"
+ ],
+ "cons": [
+  "高速巡航风阻保护一般",
+  "后座偏窄，载人不舒适"
+ ],
+ "fit": "预算 2.5 万左右、通勤玩乐兼顾的中排新手",
+ "contain": true
+},
+{
+ "id": "qj-zhui550",
+ "name": "钱江 追550",
+ "en": "QJMOTOR 追550",
+ "brand": "QJMOTOR 钱江",
+ "cat": "街车",
+ "origin": "国产",
+ "price": 24699,
+ "priceText": "24,699 元",
+ "disp": 554,
+ "cyl": "直列双缸 · 水冷",
+ "kw": 41,
+ "hp": 55.8,
+ "nm": 52,
+ "kg": 190,
+ "seat": 795,
+ "tank": 16,
+ "use": [
+  "通勤代步",
+  "玩乐跑山"
+ ],
+ "tags": [
+  "3万内配置王",
+  "布雷博",
+  "马祖奇"
+ ],
+ "pros": [
+  "前双碟 + 鲍鱼径向四活塞卡钳，制动规格高",
+  "马祖奇倒立前减震，悬挂有诚意",
+  "550 级动力，价格压到 2.5 万内"
+ ],
+ "cons": [
+  "190kg 车重，低速挪车费劲",
+  "油耗偏高"
+ ],
+ "fit": "预算 2.5 万、想要高配置中排街车的骑手"
+},
+{
+ "id": "voge-625r",
+ "name": "无极 625R",
+ "en": "VOGE 625R",
+ "brand": "无极 VOGE",
+ "cat": "街车",
+ "origin": "国产",
+ "price": 39800,
+ "priceText": "约 39,800 元",
+ "disp": 581,
+ "cyl": "直列双缸 · 水冷 · 270°曲轴",
+ "kw": 47,
+ "hp": 63.9,
+ "nm": 57,
+ "kg": 196,
+ "seat": 800,
+ "tank": 17,
+ "use": [
+  "通勤代步",
+  "玩乐跑山"
+ ],
+ "tags": [
+  "宝马同源平台",
+  "270°曲轴",
+  "中排街车"
+ ],
+ "pros": [
+  "581cc 双缸 64 匹，270° 曲轴低扭好",
+  "无极品控与售后网点覆盖广",
+  "配置齐全，价格比进口同级低一半"
+ ],
+ "cons": [
+  "外观设计偏保守",
+  "车重 196kg"
+ ],
+ "fit": "看重平台技术与售后保障的中排街车买家"
+},
+{
+ "id": "zontes-703r",
+ "name": "升仕 703R",
+ "en": "ZONTES 703R",
+ "brand": "升仕 ZONTES",
+ "cat": "街车",
+ "origin": "国产",
+ "price": 43800,
+ "priceText": "约 43,800 元",
+ "disp": 699,
+ "cyl": "直列三缸 · 水冷",
+ "kw": 71.5,
+ "hp": 97.2,
+ "nm": 76,
+ "kg": 205,
+ "seat": 810,
+ "tank": 17,
+ "use": [
+  "通勤代步",
+  "玩乐跑山"
+ ],
+ "tags": [
+  "国产三缸街车",
+  "97匹",
+  "电控全"
+ ],
+ "pros": [
+  "699cc 三缸 97 匹，动力在同价位很猛",
+  "电子油门 + 全套电控，配置拉满",
+  "城市通勤与山路压弯都灵活"
+ ],
+ "cons": [
+  "品牌售后网点相对少",
+  "三缸后期保养成本偏高"
+ ],
+ "fit": "想要三缸动力与丰富电控的国产街车玩家"
+},
+{
+ "id": "honda-cb650r",
+ "name": "本田 CB650R",
+ "en": "Honda CB650R",
+ "brand": "本田 Honda",
+ "cat": "街车",
+ "origin": "进口",
+ "price": 99800,
+ "priceText": "约 99,800 元",
+ "disp": 649,
+ "cyl": "直列四缸 · 水冷",
+ "kw": 70,
+ "hp": 95.2,
+ "nm": 63,
+ "kg": 208,
+ "seat": 810,
+ "tank": 15,
+ "use": [
+  "通勤代步",
+  "玩乐跑山"
+ ],
+ "tags": [
+  "Neo Sports Café",
+  "四缸",
+  "品质稳"
+ ],
+ "pros": [
+  "四缸声浪与本田做工结合，质感出色",
+  "外观复古运动兼具，辨识度高",
+  "长期使用省心，保值率高"
+ ],
+ "cons": [
+  "价格接近 10 万，配置不算堆料",
+  "208kg 车重，低速操控偏沉"
+ ],
+ "fit": "预算充足、看重质感与品牌的四缸街车买家"
+},
+{
+ "id": "yamaha-mt09",
+ "name": "雅马哈 MT-09",
+ "en": "Yamaha MT-09",
+ "brand": "雅马哈 Yamaha",
+ "cat": "街车",
+ "origin": "进口",
+ "price": 109800,
+ "priceText": "约 109,800 元",
+ "disp": 890,
+ "cyl": "直列三缸 · 水冷",
+ "kw": 87.5,
+ "hp": 119,
+ "nm": 93,
+ "kg": 193,
+ "seat": 825,
+ "tank": 14,
+ "use": [
+  "玩乐跑山",
+  "通勤代步"
+ ],
+ "tags": [
+  "扭矩大师",
+  "三缸",
+  "119匹"
+ ],
+ "pros": [
+  "890cc 三缸 119 匹，动力强且输出线性",
+  "193kg 配 119 匹，推重比出色",
+  "电控与仪表配置现代感强"
+ ],
+ "cons": [
+  "价格超过 10 万",
+  "座高 825mm，对身高有要求"
+ ],
+ "fit": "预算充足、追求三缸动力质感的资深骑手"
+},
+{
+ "id": "kawasaki-z650",
+ "name": "川崎 Z650",
+ "en": "Kawasaki Z650",
+ "brand": "川崎 Kawasaki",
+ "cat": "街车",
+ "origin": "进口",
+ "price": 70800,
+ "priceText": "约 70,800 元",
+ "disp": 649,
+ "cyl": "直列双缸 · 水冷",
+ "kw": 46,
+ "hp": 62.6,
+ "nm": 63,
+ "kg": 188,
+ "seat": 790,
+ "tank": 15,
+ "use": [
+  "通勤代步",
+  "玩乐跑山",
+  "新手友好"
+ ],
+ "tags": [
+  "中排全能",
+  "Sugomi设计",
+  "好骑"
+ ],
+ "pros": [
+  "649cc 双缸中低扭充沛，日常很轻快",
+  "188kg + 790mm 座高，对多数人友好",
+  "KTRC 牵引力控制两段可调"
+ ],
+ "cons": [
+  "配置较朴素，缺少 TFT 与快排",
+  "进口身份但硬件不算突出"
+ ],
+ "fit": "想要进口中排街车、以通勤为主的中级骑手"
+},
+{
+ "id": "ktm-790duke",
+ "name": "KTM 790 Duke",
+ "en": "KTM 790 Duke",
+ "brand": "KTM",
+ "cat": "街车",
+ "origin": "进口",
+ "price": 69800,
+ "priceText": "69,800 元",
+ "disp": 799,
+ "cyl": "直列双缸 · 水冷",
+ "kw": 77,
+ "hp": 104.7,
+ "nm": 87,
+ "kg": 187,
+ "seat": 825,
+ "tank": 14,
+ "use": [
+  "玩乐跑山",
+  "通勤代步"
+ ],
+ "tags": [
+  "104匹",
+  "187kg",
+  "弯道ABS"
+ ],
+ "pros": [
+  "799cc 双缸 104.7 匹，动力在这个价位很凶",
+  "187kg 车重，操控像小排量一样灵活",
+  "WP 减震 + 弯道 ABS，电控丰富"
+ ],
+ "cons": [
+  "座高 825mm，低速信心要求高",
+  "单缸质感、震动比日系更明显"
+ ],
+ "fit": "有经验、追求操控与动力的进阶街车玩家"
+},
+{
+ "id": "triumph-streettriple765",
+ "name": "凯旋 Street Triple 765 R",
+ "en": "Triumph Street Triple 765 R",
+ "brand": "凯旋 Triumph",
+ "cat": "街车",
+ "origin": "进口",
+ "price": 109800,
+ "priceText": "约 109,800 元",
+ "disp": 765,
+ "cyl": "直列三缸 · 水冷",
+ "kw": 88.3,
+ "hp": 120,
+ "nm": 79,
+ "kg": 189,
+ "seat": 826,
+ "tank": 15,
+ "use": [
+  "玩乐跑山"
+ ],
+ "tags": [
+  "三缸标杆",
+  "120匹",
+  "英伦"
+ ],
+ "pros": [
+  "765cc 三缸 120 匹，动力与声浪都是标杆",
+  "189kg 车架刚性出色，操控精准",
+  "电控与制动规格高，赛道日可用"
+ ],
+ "cons": [
+  "价格高，落地超 12 万",
+  "座高与坐姿偏运动"
+ ],
+ "fit": "预算充足的性能街车玩家与老手"
+},
+{
+ "id": "yamaha-mt03",
+ "name": "雅马哈 MT-03",
+ "en": "Yamaha MT-03",
+ "brand": "雅马哈 Yamaha",
+ "cat": "街车",
+ "origin": "进口",
+ "price": 46800,
+ "priceText": "约 46,800 元",
+ "disp": 321,
+ "cyl": "直列双缸 · 水冷",
+ "kw": 30.4,
+ "hp": 41.3,
+ "nm": 29.6,
+ "kg": 169,
+ "seat": 780,
+ "tank": 14,
+ "use": [
+  "通勤代步",
+  "新手友好"
+ ],
+ "tags": [
+  "入门进口街车",
+  "轻巧",
+  "保值"
+ ],
+ "pros": [
+  "169kg 车轻，新手掌控轻松",
+  "座高 780mm，多数人双脚着地",
+  "雅马哈品质与保值率好"
+ ],
+ "cons": [
+  "321cc 动力偏温和，进阶后不够用",
+  "配置基础"
+ ],
+ "fit": "入门进口街车的新手与通勤为主的城市骑手"
+},
+{
+ "id": "benda-jinjila500",
+ "name": "奔达 金吉拉500",
+ "en": "Benda Chinchilla 500",
+ "brand": "奔达 Benda",
+ "cat": "巡航",
+ "origin": "国产",
+ "price": 26980,
+ "priceText": "约 26,980 元",
+ "disp": 476,
+ "cyl": "V型双缸 · 水冷",
+ "kw": 33,
+ "hp": 44.9,
+ "nm": 45,
+ "kg": 199,
+ "seat": 700,
+ "tank": 16,
+ "use": [
+  "城市巡航",
+  "长途摩旅"
+ ],
+ "tags": [
+  "中排V缸",
+  "低座高",
+  "颜值高"
+ ],
+ "pros": [
+  "476cc V 缸 45N·m，动力比 300 级明显充裕",
+  "700mm 座高亲民，小个子也能撑住",
+  "外观是同级里公认好看的一档"
+ ],
+ "cons": [
+  "车重 199kg，低速挪车偏沉",
+  "品牌早期品控口碑需留意"
+ ],
+ "fit": "想要中排 V 缸巡航、又在意座高与颜值的用户"
+},
+{
+ "id": "benda-heiqi500",
+ "name": "奔达 黑旗500",
+ "en": "Benda Black Flag 500",
+ "brand": "奔达 Benda",
+ "cat": "巡航",
+ "origin": "国产",
+ "price": 30980,
+ "priceText": "约 30,980 元",
+ "disp": 496,
+ "cyl": "V型双缸 · 水冷",
+ "kw": 36,
+ "hp": 49,
+ "nm": 45,
+ "kg": 210,
+ "seat": 690,
+ "tank": 16,
+ "use": [
+  "城市巡航"
+ ],
+ "tags": [
+  "690mm超低座高",
+  "V缸",
+  "肌肉感"
+ ],
+ "pros": [
+  "690mm 座高，几乎不挑身高",
+  "V 缸外观肌肉感强，气场足",
+  "标配皮带传动，安静顺滑"
+ ],
+ "cons": [
+  "210kg 车重，长时间低速累",
+  "油耗偏高"
+ ],
+ "fit": "看重外观气场与低座高的城市巡航玩家",
+ "contain": true
+},
+{
+ "id": "benda-huishi707",
+ "name": "奔达 灰石707",
+ "en": "Benda Greystone 707",
+ "brand": "奔达 Benda",
+ "cat": "巡航",
+ "origin": "国产",
+ "price": 39980,
+ "priceText": "约 39,980 元",
+ "disp": 693,
+ "cyl": "V型双缸 · 水冷",
+ "kw": 55,
+ "hp": 74.8,
+ "nm": 68,
+ "kg": 235,
+ "seat": 720,
+ "tank": 18,
+ "use": [
+  "城市巡航",
+  "长途摩旅"
+ ],
+ "tags": [
+  "大排V缸",
+  "74匹",
+  "长途舒适"
+ ],
+ "pros": [
+  "693cc V 缸 74 匹，动力储备充裕",
+  "18L 油箱，长途续航好",
+  "美式巡航造型大气，长途舒适"
+ ],
+ "cons": [
+  "235kg 车重，对体力有要求",
+  "价格接近 4 万"
+ ],
+ "fit": "想要大排量美式巡航、能跑长途的进阶骑士"
+},
+{
+ "id": "voge-cu525",
+ "name": "无极 CU525",
+ "en": "VOGE CU525",
+ "brand": "无极 VOGE",
+ "cat": "巡航",
+ "origin": "国产",
+ "price": 26666,
+ "priceText": "约 26,666 元",
+ "disp": 494,
+ "cyl": "直列双缸 · 水冷",
+ "kw": 36,
+ "hp": 49,
+ "nm": 45,
+ "kg": 198,
+ "seat": 710,
+ "tank": 16,
+ "use": [
+  "城市巡航",
+  "通勤代步"
+ ],
+ "tags": [
+  "中排巡航",
+  "低座高",
+  "好上手"
+ ],
+ "pros": [
+  "710mm 座高 + 198kg，城市里很好控",
+  "双缸动力平顺，日常通勤轻松",
+  "无极售后网点覆盖广"
+ ],
+ "cons": [
+  "直列双缸声浪不如 V 缸有味道",
+  "配置偏实用取向"
+ ],
+ "fit": "城市通勤为主、偶尔周末巡航的中排用户"
+},
+{
+ "id": "qj-shan500s",
+ "name": "钱江 闪500S",
+ "en": "QJMOTOR 闪500S",
+ "brand": "QJMOTOR 钱江",
+ "cat": "巡航",
+ "origin": "国产",
+ "price": 26999,
+ "priceText": "约 26,999 元",
+ "disp": 496,
+ "cyl": "V型双缸 · 水冷",
+ "kw": 36,
+ "hp": 49,
+ "nm": 45,
+ "kg": 205,
+ "seat": 700,
+ "tank": 15,
+ "use": [
+  "城市巡航"
+ ],
+ "tags": [
+  "V缸巡航",
+  "700mm座高",
+  "外观硬朗"
+ ],
+ "pros": [
+  "496cc V 缸，低扭取向适合巡航",
+  "700mm 座高友好，停车稳",
+  "外观设计硬朗，辨识度高"
+ ],
+ "cons": [
+  "205kg 车重，低速偏沉",
+  "高速风阻保护一般"
+ ],
+ "fit": "喜欢 V 缸巡航质感与硬朗外观的中排用户"
+},
+{
+ "id": "honda-cm1100",
+ "name": "本田 Rebel 1100",
+ "en": "Honda Rebel 1100",
+ "brand": "本田 Honda",
+ "cat": "巡航",
+ "origin": "进口",
+ "price": 129800,
+ "priceText": "约 129,800 元",
+ "disp": 1084,
+ "cyl": "直列双缸 · 水冷",
+ "kw": 64,
+ "hp": 87,
+ "nm": 98,
+ "kg": 223,
+ "seat": 700,
+ "tank": 13.6,
+ "use": [
+  "城市巡航",
+  "长途摩旅"
+ ],
+ "tags": [
+  "大排Rebel",
+  "98N·m",
+  "DCT可选"
+ ],
+ "pros": [
+  "1084cc 双缸 98N·m，扭矩充沛",
+  "700mm 低座高，大车也好撑",
+  "可选 DCT 双离合，通勤更省心"
+ ],
+ "cons": [
+  "价格接近 13 万",
+  "外观偏素，机械感不如美式巡航"
+ ],
+ "fit": "预算充足、想要大排量又好驾驭的巡航买家"
+},
+{
+ "id": "harley-nightster",
+ "name": "哈雷 Nightster",
+ "en": "Harley-Davidson Nightster",
+ "brand": "哈雷 Harley-Davidson",
+ "cat": "巡航",
+ "origin": "进口",
+ "price": 119800,
+ "priceText": "约 119,800 元",
+ "disp": 975,
+ "cyl": "V型双缸 · 水冷 Revolution Max",
+ "kw": 67,
+ "hp": 91,
+ "nm": 95,
+ "kg": 221,
+ "seat": 705,
+ "tank": 11.7,
+ "use": [
+  "城市巡航"
+ ],
+ "tags": [
+  "哈雷入门",
+  "91匹",
+  "V缸"
+ ],
+ "pros": [
+  "975cc V 缸 91 匹，动力比传统哈雷更现代",
+  "705mm 座高，相对好驾驭",
+  "品牌气场与辨识度是最大卖点"
+ ],
+ "cons": [
+  "油箱仅 11.7L，续航偏短",
+  "保养与配件按豪华品牌计价"
+ ],
+ "fit": "想入门哈雷、又希望动力现代化的骑手"
+},
+{
+ "id": "voge-525ac",
+ "name": "无极 525AC",
+ "en": "VOGE 525AC",
+ "brand": "无极 VOGE",
+ "cat": "复古",
+ "origin": "国产",
+ "price": 23980,
+ "priceText": "约 23,980 元",
+ "disp": 494,
+ "cyl": "直列双缸 · 水冷",
+ "kw": 36,
+ "hp": 49,
+ "nm": 45,
+ "kg": 190,
+ "seat": 790,
+ "tank": 15,
+ "use": [
+  "通勤代步",
+  "城市巡航"
+ ],
+ "tags": [
+  "中排复古",
+  "双缸",
+  "配置全"
+ ],
+ "pros": [
+  "494cc 双缸，中排复古里动力够用",
+  "复古造型现代配置兼得，LED + TFT",
+  "价格在 2.4 万左右"
+ ],
+ "cons": [
+  "外观复古味不够纯粹",
+  "车重 190kg"
+ ],
+ "fit": "想要中排动力 + 复古造型的日常骑手"
+},
+{
+ "id": "cf-250clx",
+ "name": "春风 250CL-X",
+ "en": "CFMOTO 250CL-X",
+ "brand": "春风 CFMOTO",
+ "cat": "复古",
+ "origin": "国产",
+ "price": 16980,
+ "priceText": "约 16,980 元",
+ "disp": 250,
+ "cyl": "单缸 · 水冷",
+ "kw": 20.5,
+ "hp": 27.9,
+ "nm": 22,
+ "kg": 155,
+ "seat": 780,
+ "tank": 13,
+ "use": [
+  "通勤代步",
+  "新手友好"
+ ],
+ "tags": [
+  "入门复古",
+  "155kg",
+  "便宜"
+ ],
+ "pros": [
+  "1.7 万左右就能拥有复古造型",
+  "155kg 车轻，日常代步灵活",
+  "春风售后网点多，保养便宜"
+ ],
+ "cons": [
+  "单缸震动较明显",
+  "动力仅够代步，跑高速吃力"
+ ],
+ "fit": "预算有限、喜欢复古外观的新手与通勤族"
+},
+{
+ "id": "benelli-leoncino800",
+ "name": "贝纳利 幼狮800",
+ "en": "Benelli Leoncino 800",
+ "brand": "贝纳利 Benelli",
+ "cat": "复古",
+ "origin": "合资",
+ "price": 55800,
+ "priceText": "约 55,800 元",
+ "disp": 754,
+ "cyl": "直列双缸 · 水冷",
+ "kw": 56,
+ "hp": 76,
+ "nm": 67,
+ "kg": 215,
+ "seat": 800,
+ "tank": 15,
+ "use": [
+  "通勤代步",
+  "玩乐跑山"
+ ],
+ "tags": [
+  "大排复古",
+  "76匹",
+  "意式"
+ ],
+ "pros": [
+  "754cc 双缸 76 匹，复古车里动力充沛",
+  "意式设计语言，做工与质感有辨识度",
+  "配置齐全，制动规格不低"
+ ],
+ "cons": [
+  "215kg 车重，挪车偏沉",
+  "价格接近 5.6 万，竞品多"
+ ],
+ "fit": "想要大排量复古、在意设计与动力的骑手"
+},
+{
+ "id": "benelli-imperiale400",
+ "name": "贝纳利 帝国400",
+ "en": "Benelli Imperiale 400",
+ "brand": "贝纳利 Benelli",
+ "cat": "复古",
+ "origin": "合资",
+ "price": 23800,
+ "priceText": "约 23,800 元",
+ "disp": 374,
+ "cyl": "单缸 · 风冷",
+ "kw": 15.5,
+ "hp": 21,
+ "nm": 30,
+ "kg": 200,
+ "seat": 780,
+ "tank": 12,
+ "use": [
+  "通勤代步",
+  "城市巡航"
+ ],
+ "tags": [
+  "经典复刻",
+  "单缸风冷",
+  "气质沉稳"
+ ],
+ "pros": [
+  "造型复古纯粹，气质接近经典英伦车",
+  "单缸风冷结构简单，保养便宜",
+  "座高 780mm，对多数人友好"
+ ],
+ "cons": [
+  "21 匹动力偏弱，200kg 车重拖累加速",
+  "风冷单缸高转表现一般"
+ ],
+ "fit": "喜欢纯粹复古造型、慢节奏骑行的用户"
+},
+{
+ "id": "yamaha-xsr700",
+ "name": "雅马哈 XSR700",
+ "en": "Yamaha XSR700",
+ "brand": "雅马哈 Yamaha",
+ "cat": "复古",
+ "origin": "进口",
+ "price": 89800,
+ "priceText": "约 89,800 元",
+ "disp": 689,
+ "cyl": "直列双缸 · 水冷 · CP2",
+ "kw": 54,
+ "hp": 73.4,
+ "nm": 67,
+ "kg": 186,
+ "seat": 835,
+ "tank": 13,
+ "use": [
+  "玩乐跑山",
+  "通勤代步"
+ ],
+ "tags": [
+  "CP2发动机",
+  "复古跑车",
+  "扭矩好"
+ ],
+ "pros": [
+  "与 MT-07 同源 CP2 发动机，低扭充沛",
+  "186kg 车身，复古车里算轻巧",
+  "外观复古但底盘现代，好玩好骑"
+ ],
+ "cons": [
+  "座高 835mm 偏高",
+  "价格接近 9 万，配置偏朴素"
+ ],
+ "fit": "喜欢复古外观又想要现代操控的进阶骑手"
+},
+{
+ "id": "triumph-speed400",
+ "name": "凯旋 Speed 400",
+ "en": "Triumph Speed 400",
+ "brand": "凯旋 Triumph",
+ "cat": "复古",
+ "origin": "进口",
+ "price": 34900,
+ "priceText": "约 34,900 元",
+ "disp": 398,
+ "cyl": "单缸 · 水冷",
+ "kw": 29.4,
+ "hp": 40,
+ "nm": 37.5,
+ "kg": 170,
+ "seat": 790,
+ "tank": 13,
+ "use": [
+  "通勤代步",
+  "城市巡航",
+  "新手友好"
+ ],
+ "tags": [
+  "入门凯旋",
+  "170kg",
+  "英伦质感"
+ ],
+ "pros": [
+  "不到 3.5 万就能入门凯旋，品牌门槛低",
+  "398cc 单缸 40 匹，动力比同排量充足",
+  "170kg + 790mm，新手上手友好"
+ ],
+ "cons": [
+  "单缸震动与高速延展一般",
+  "配置偏基础"
+ ],
+ "fit": "想入门英伦品牌、预算 3.5 万左右的复古爱好者"
+},
+{
+ "id": "re-classic350",
+ "name": "皇家恩菲尔德 Classic 350",
+ "en": "Royal Enfield Classic 350",
+ "brand": "皇家恩菲尔德 Royal Enfield",
+ "cat": "复古",
+ "origin": "进口",
+ "price": 29800,
+ "priceText": "约 29,800 元",
+ "disp": 349,
+ "cyl": "单缸 · 风冷",
+ "kw": 15.5,
+ "hp": 21,
+ "nm": 27,
+ "kg": 195,
+ "seat": 805,
+ "tank": 13,
+ "use": [
+  "城市巡航",
+  "通勤代步"
+ ],
+ "tags": [
+  "英伦经典",
+  "慢骑",
+  "复古纯粹"
+ ],
+ "pros": [
+  "造型极度复古，气质是竞品学不来的",
+  "单缸风冷长行程，怠速声浪有味道",
+  "保养便宜，可靠性在入门复古里不错"
+ ],
+ "cons": [
+  "21 匹动力很弱，只能慢骑",
+  "195kg 车重配弱动力，加速慢"
+ ],
+ "fit": "追求复古氛围与慢节奏、不追求性能的骑手"
+},
+{
+ "id": "moto-guzzi-v7",
+ "name": "摩托古兹 V7",
+ "en": "Moto Guzzi V7",
+ "brand": "摩托古兹 Moto Guzzi",
+ "cat": "复古",
+ "origin": "进口",
+ "price": 89900,
+ "priceText": "约 89,900 元",
+ "disp": 853,
+ "cyl": "V型双缸 · 风冷 · 横置曲轴",
+ "kw": 48,
+ "hp": 65,
+ "nm": 73,
+ "kg": 218,
+ "seat": 780,
+ "tank": 21,
+ "use": [
+  "城市巡航",
+  "长途摩旅"
+ ],
+ "tags": [
+  "横置V缸",
+  "意式经典",
+  "21L油箱"
+ ],
+ "pros": [
+  "横置 V 缸是独一无二的机械美学",
+  "21L 大油箱，续航出色",
+  "做工与质感属进口复古第一梯队"
+ ],
+ "cons": [
+  "价格接近 9 万，性价比不高",
+  "售后网点少，维修周期长"
+ ],
+ "fit": "预算充足、追求独特机械美学与意式格调的收藏型骑手"
+},
+{
+ "id": "honda-cb1100",
+ "name": "本田 CB1100",
+ "en": "Honda CB1100",
+ "brand": "本田 Honda",
+ "cat": "复古",
+ "origin": "进口",
+ "price": 139800,
+ "priceText": "约 139,800 元",
+ "disp": 1140,
+ "cyl": "直列四缸 · 风冷",
+ "kw": 66,
+ "hp": 90,
+ "nm": 93,
+ "kg": 252,
+ "seat": 795,
+ "tank": 16.8,
+ "use": [
+  "城市巡航",
+  "通勤代步"
+ ],
+ "tags": [
+  "风冷四缸",
+  "经典复刻",
+  "质感天花板"
+ ],
+ "pros": [
+  "1140cc 风冷四缸，经典机械美学的代表",
+  "做工与质感在同级里几乎无可挑剔",
+  "四缸平顺，长途巡航从容"
+ ],
+ "cons": [
+  "252kg 车重，挪车很吃力",
+  "价格接近 14 万，且车源稀少"
+ ],
+ "fit": "预算充足、追求经典风冷四缸质感的资深收藏型骑手"
+},
+{
+ "id": "kayo-625x",
+ "name": "凯越 625X",
+ "en": "KAYO 625X",
+ "brand": "凯越 KAYO",
+ "cat": "拉力ADV",
+ "origin": "国产",
+ "price": 31777,
+ "priceText": "31,777 元（智能减震版 35,777）",
+ "disp": 581,
+ "cyl": "直列双缸 · 水冷 · 270°曲轴",
+ "kw": 47,
+ "hp": 63.9,
+ "nm": 57,
+ "kg": 218,
+ "seat": 820,
+ "tank": 21.5,
+ "use": [
+  "长途摩旅",
+  "越野林道"
+ ],
+ "tags": [
+  "21.5L续航",
+  "毫米波雷达",
+  "智能减震可选"
+ ],
+ "pros": [
+  "21.5L 超大油箱，长途续航是第一梯队",
+  "智能减震版集成自适应阻尼 ADS + 液压举升 ALS",
+  "标配毫米波雷达、TCS、T-BOX 车联网"
+ ],
+ "cons": [
+  "座高 820mm，对身高有要求",
+  "整备质量 218kg（含三箱），烂路偏重"
+ ],
+ "fit": "跑长途摩旅、看重续航与配置的进阶 ADV 玩家"
+},
+{
+ "id": "voge-ds900x",
+ "name": "无极 DS900X",
+ "en": "VOGE DS900X",
+ "brand": "无极 VOGE",
+ "cat": "拉力ADV",
+ "origin": "国产",
+ "price": 54980,
+ "priceText": "54,980 元（三箱 58,980）",
+ "disp": 895,
+ "cyl": "直列双缸 · 水冷 · 270°曲轴",
+ "kw": 71,
+ "hp": 96.5,
+ "nm": 95,
+ "kg": 234,
+ "seat": 835,
+ "tank": 17,
+ "use": [
+  "长途摩旅",
+  "越野林道"
+ ],
+ "tags": [
+  "宝马F900GS同源",
+  "96.5匹",
+  "布雷博+KYB"
+ ],
+ "pros": [
+  "与宝马 F900GS 同源 895cc 双缸，71kW/95N·m",
+  "Brembo 刹车 + KYB 全可调减震 + 21 寸辐条轮",
+  "六轴 IMU、弯道 ABS、毫米波雷达盲区监测齐全"
+ ],
+ "cons": [
+  "座高 835mm，234kg 车重，新手不建议",
+  "电子系统复杂，长期可靠性待验证"
+ ],
+ "fit": "预算 5 万多想上准公升 ADV、追求满配的中高级骑手"
+},
+{
+ "id": "voge-ds525x",
+ "name": "无极 DS525X",
+ "en": "VOGE DS525X",
+ "brand": "无极 VOGE",
+ "cat": "拉力ADV",
+ "origin": "国产",
+ "price": 31766,
+ "priceText": "31,766 元",
+ "disp": 494,
+ "cyl": "直列双缸 · 水冷",
+ "kw": 41,
+ "hp": 55.8,
+ "nm": 50.5,
+ "kg": 213,
+ "seat": 830,
+ "tank": 18,
+ "use": [
+  "长途摩旅",
+  "越野林道"
+ ],
+ "tags": [
+  "保有量大",
+  "口碑好",
+  "配置均衡"
+ ],
+ "pros": [
+  "无极 DS 系列的口碑担当，保有量大",
+  "18L 油箱 + 213kg，长途综合表现均衡",
+  "配件与改装生态成熟"
+ ],
+ "cons": [
+  "对比 DS625X 动力与配置差一档",
+  "座高 830mm 偏高"
+ ],
+ "fit": "想要成熟可靠中排 ADV、预算 3 万出头的摩旅党",
+ "contain": true
+},
+{
+ "id": "cf-800mt",
+ "name": "春风 800MT",
+ "en": "CFMOTO 800MT",
+ "brand": "春风 CFMOTO",
+ "cat": "拉力ADV",
+ "origin": "国产",
+ "price": 57980,
+ "priceText": "约 57,980 元",
+ "disp": 799,
+ "cyl": "直列双缸 · 水冷",
+ "kw": 70,
+ "hp": 95.2,
+ "nm": 77,
+ "kg": 231,
+ "seat": 830,
+ "tank": 18.5,
+ "use": [
+  "长途摩旅",
+  "越野林道"
+ ],
+ "tags": [
+  "KTM同源",
+  "95匹",
+  "大排ADV"
+ ],
+ "pros": [
+  "799cc 双缸 95 匹，动力在中排 ADV 里领先",
+  "与 KTM 同平台开发，底盘有底子",
+  "配置高，KYB 减震 + 大油箱"
+ ],
+ "cons": [
+  "231kg 车重，非铺装路面吃力",
+  "价格接近 5.8 万"
+ ],
+ "fit": "要动力要配置、以公路摩旅为主的中高级玩家",
+ "contain": true
+},
+{
+ "id": "cf-700mt",
+ "name": "春风 700MT",
+ "en": "CFMOTO 700MT",
+ "brand": "春风 CFMOTO",
+ "cat": "拉力ADV",
+ "origin": "国产",
+ "price": 42980,
+ "priceText": "约 42,980 元",
+ "disp": 693,
+ "cyl": "直列双缸 · 水冷",
+ "kw": 55,
+ "hp": 74.8,
+ "nm": 68,
+ "kg": 226,
+ "seat": 830,
+ "tank": 18,
+ "use": [
+  "长途摩旅",
+  "通勤代步"
+ ],
+ "tags": [
+  "中排摩旅",
+  "74匹",
+  "性价比"
+ ],
+ "pros": [
+  "693cc 双缸 74.8 匹，长途巡航有余量",
+  "18L 油箱，续航 400km 以上",
+  "春风售后网点覆盖广"
+ ],
+ "cons": [
+  "226kg 车重，越野能力一般",
+  "定位偏公路，非铺装通过性有限"
+ ],
+ "fit": "以公路长途摩旅为主、预算 4 万多的骑手",
+ "contain": true
+},
+{
+ "id": "benelli-trk502x",
+ "name": "贝纳利 TRK502X",
+ "en": "Benelli TRK502X",
+ "brand": "贝纳利 Benelli",
+ "cat": "拉力ADV",
+ "origin": "合资",
+ "price": 37800,
+ "priceText": "约 37,800 元",
+ "disp": 500,
+ "cyl": "直列双缸 · 水冷",
+ "kw": 35,
+ "hp": 47.6,
+ "nm": 46,
+ "kg": 235,
+ "seat": 830,
+ "tank": 20,
+ "use": [
+  "长途摩旅"
+ ],
+ "tags": [
+  "公路坦克",
+  "20L油箱",
+  "体量大"
+ ],
+ "pros": [
+  "20L 油箱，长途续航优秀",
+  "体量感强，风阻保护好",
+  "TRK 系列保有量大，配件好找"
+ ],
+ "cons": [
+  "235kg 车重，非铺装很吃力",
+  "动力在同排量中不算突出"
+ ],
+ "fit": "以高速与公路长途为主、喜欢大体量感的摩旅党"
+},
+{
+ "id": "honda-cb500x",
+ "name": "本田 CB500X",
+ "en": "Honda CB500X",
+ "brand": "本田 Honda",
+ "cat": "拉力ADV",
+ "origin": "进口",
+ "price": 71800,
+ "priceText": "约 71,800 元",
+ "disp": 471,
+ "cyl": "直列双缸 · 水冷",
+ "kw": 35,
+ "hp": 47.6,
+ "nm": 43,
+ "kg": 199,
+ "seat": 830,
+ "tank": 17.7,
+ "use": [
+  "长途摩旅",
+  "通勤代步"
+ ],
+ "tags": [
+  "本田品质",
+  "轻巧",
+  "保值"
+ ],
+ "pros": [
+  "199kg 在中排 ADV 里算轻，好驾驭",
+  "本田可靠性口碑极好，适合长途",
+  "保值率高，二手流通好"
+ ],
+ "cons": [
+  "配置与动力对比国产同级落后一档",
+  "价格比国产同级贵 2 万以上"
+ ],
+ "fit": "看重品牌可靠性与保值的稳健摩旅党"
+},
+{
+ "id": "suzuki-vstrom650",
+ "name": "铃木 V-Strom 650XT",
+ "en": "Suzuki V-Strom 650XT",
+ "brand": "铃木 Suzuki",
+ "cat": "拉力ADV",
+ "origin": "进口",
+ "price": 89800,
+ "priceText": "约 89,800 元",
+ "disp": 645,
+ "cyl": "V型双缸 · 水冷",
+ "kw": 52,
+ "hp": 70.7,
+ "nm": 62,
+ "kg": 216,
+ "seat": 835,
+ "tank": 20,
+ "use": [
+  "长途摩旅"
+ ],
+ "tags": [
+  "V缸拉力",
+  "20L油箱",
+  "耐造"
+ ],
+ "pros": [
+  "645cc V 缸 70.7 匹，动力输出顺滑",
+  "20L 油箱，长途续航出色",
+  "公认的耐久性与可靠性"
+ ],
+ "cons": [
+  "价格接近 9 万，配置偏保守",
+  "外观多年未大改，吸引力下降"
+ ],
+ "fit": "看重耐久与长途舒适性的成熟摩旅玩家"
+},
+{
+ "id": "bmw-g310gs",
+ "name": "宝马 G310GS",
+ "en": "BMW G310GS",
+ "brand": "宝马 BMW",
+ "cat": "拉力ADV",
+ "origin": "进口",
+ "price": 51900,
+ "priceText": "约 51,900 元",
+ "disp": 313,
+ "cyl": "单缸 · 水冷",
+ "kw": 25,
+ "hp": 34,
+ "nm": 28,
+ "kg": 169,
+ "seat": 835,
+ "tank": 11,
+ "use": [
+  "通勤代步",
+  "越野林道"
+ ],
+ "tags": [
+  "宝马入门ADV",
+  "169kg",
+  "品牌门槛低"
+ ],
+ "pros": [
+  "宝马 ADV 产品线里门槛最低的一款",
+  "169kg 车轻，城市与轻度烂路都好控",
+  "品牌保值与形象是加分项"
+ ],
+ "cons": [
+  "313cc 单缸 34 匹，动力偏弱",
+  "价格 5 万出头，配置不高"
+ ],
+ "fit": "想入门宝马 ADV、以通勤和轻越野为主的骑手"
+},
+{
+ "id": "ktm-390adv",
+ "name": "KTM 390 Adventure",
+ "en": "KTM 390 Adventure",
+ "brand": "KTM",
+ "cat": "拉力ADV",
+ "origin": "进口",
+ "price": 59800,
+ "priceText": "约 59,800 元",
+ "disp": 373,
+ "cyl": "单缸 · 水冷",
+ "kw": 32,
+ "hp": 43.5,
+ "nm": 37,
+ "kg": 172,
+ "seat": 855,
+ "tank": 14.5,
+ "use": [
+  "越野林道",
+  "长途摩旅"
+ ],
+ "tags": [
+  "硬派小ADV",
+  "WP减震",
+  "轻量化"
+ ],
+ "pros": [
+  "172kg 轻量化，烂路操控灵活",
+  "WP 减震 + 可关闭 ABS，越野取向明确",
+  "电控配置在同级中丰富"
+ ],
+ "cons": [
+  "座高 855mm 很高，矮个子难骑",
+  "单缸长途震动明显"
+ ],
+ "fit": "想玩非铺装、又怕重车的 ADV 入门玩家"
+},
+{
+ "id": "ktm-790adv",
+ "name": "KTM 790 Adventure",
+ "en": "KTM 790 Adventure",
+ "brand": "KTM",
+ "cat": "拉力ADV",
+ "origin": "进口",
+ "price": 99800,
+ "priceText": "约 99,800 元",
+ "disp": 799,
+ "cyl": "直列双缸 · 水冷",
+ "kw": 70,
+ "hp": 95.2,
+ "nm": 88,
+ "kg": 205,
+ "use": [
+  "越野林道",
+  "长途摩旅"
+ ],
+ "seat": 850,
+ "tank": 20,
+ "tags": [
+  "95匹",
+  "205kg",
+  "硬派拉力"
+ ],
+ "pros": [
+  "799cc 双缸 95 匹，动力与重量比出色",
+  "205kg 在 800 级 ADV 里属轻量，越野能力强",
+  "20L 油箱，长途续航好"
+ ],
+ "cons": [
+  "价格接近 10 万",
+  "座高 850mm，对身高要求高"
+ ],
+ "fit": "有经验、想兼顾长途与硬派越野的进阶玩家"
+},
+{
+ "id": "bmw-r1300gs",
+ "name": "宝马 R1300GS",
+ "en": "BMW R1300GS",
+ "brand": "宝马 BMW",
+ "cat": "拉力ADV",
+ "origin": "进口",
+ "price": 229900,
+ "priceText": "229,900 元起",
+ "disp": 1300,
+ "cyl": "水平对置双缸 · 水冷",
+ "kw": 107,
+ "hp": 145.5,
+ "nm": 149,
+ "kg": 237,
+ "seat": 850,
+ "tank": 19,
+ "use": [
+  "长途摩旅",
+  "越野林道"
+ ],
+ "tags": [
+  "ADV天花板",
+  "145匹",
+  "全新平台"
+ ],
+ "pros": [
+  "1300cc 水平对置 145 匹，ADV 领域性能天花板",
+  "整车比上一代更轻，电控系统全面进化",
+  "长途舒适性与越野能力兼顾"
+ ],
+ "cons": [
+  "价格接近 23 万，落地更高",
+  "维护成本按豪华品牌计算"
+ ],
+ "fit": "预算充足的资深摩旅玩家，ADV 玩家的终极目标之一",
+ "contain": true
+},
+{
+ "id": "haojue-ufr150",
+ "name": "豪爵 UFR150",
+ "en": "Haojue UFR150",
+ "brand": "豪爵 Haojue",
+ "cat": "踏板",
+ "origin": "国产",
+ "price": 14980,
+ "priceText": "约 14,980 元",
+ "disp": 149,
+ "cyl": "单缸 · 水冷",
+ "kw": 11,
+ "hp": 15,
+ "nm": 14,
+ "kg": 150,
+ "seat": 765,
+ "tank": 8,
+ "use": [
+  "通勤代步",
+  "新手友好"
+ ],
+ "tags": [
+  "豪爵品控",
+  "水冷150",
+  "配置齐全"
+ ],
+ "pros": [
+  "豪爵品控在国产里是第一梯队",
+  "11kW 动力在同级 150 里偏强",
+  "标配 ABS + TCS，安全配置到位"
+ ],
+ "cons": [
+  "价格比同级国产略高",
+  "外观设计偏保守"
+ ],
+ "fit": "通勤为主、看重品质与安全的 150 踏板买家"
+},
+{
+ "id": "haojue-afr125",
+ "name": "豪爵 AFR125",
+ "en": "Haojue AFR125",
+ "brand": "豪爵 Haojue",
+ "cat": "踏板",
+ "origin": "国产",
+ "price": 8680,
+ "priceText": "8,680 元起（ABS 版 9,980）",
+ "disp": 125,
+ "cyl": "单缸 · 风冷 · ESS",
+ "kw": 6.6,
+ "hp": 9,
+ "nm": 10,
+ "kg": 120,
+ "seat": 740,
+ "tank": 6,
+ "use": [
+  "通勤代步",
+  "新手友好"
+ ],
+ "tags": [
+  "入门代步",
+  "ESS发动机",
+  "便宜耐造"
+ ],
+ "pros": [
+  "不到 1 万，通勤代步门槛极低",
+  "120kg + 740mm 座高，几乎人人能骑",
+  "豪爵做工扎实，漆水工艺好"
+ ],
+ "cons": [
+  "风冷 125 动力弱，只能市区代步",
+  "ABS 需加钱选装"
+ ],
+ "fit": "纯市区短途代步、预算 1 万以内的用户"
+},
+{
+ "id": "voge-sr250gt",
+ "name": "无极 SR250GT",
+ "en": "VOGE SR250GT",
+ "brand": "无极 VOGE",
+ "cat": "踏板",
+ "origin": "国产",
+ "price": 15980,
+ "priceText": "15,980 元（PRO 17,980）",
+ "disp": 244,
+ "cyl": "单缸 · 水冷",
+ "kw": 19,
+ "hp": 25.8,
+ "nm": 23,
+ "kg": 165,
+ "seat": 770,
+ "tank": 14,
+ "use": [
+  "通勤代步",
+  "长途摩旅"
+ ],
+ "tags": [
+  "250级销量王",
+  "25.8匹",
+  "34L座桶"
+ ],
+ "pros": [
+  "244cc 水冷 25.8 匹，动力堪比 5 万级进口 300",
+  "165kg + 770mm 座高，好骑好撑",
+  "34L 座桶可放全盔 + 半盔，储物同级第一"
+ ],
+ "cons": [
+  "后减震偏硬，过减速带体验一般",
+  "PLAY 版仪表强光下可读性一般"
+ ],
+ "fit": "想要 250 级动力与储物、预算 1.6 万的通勤+小长途用户"
+},
+{
+ "id": "sdk-rt2",
+ "name": "赛科龙 RT2",
+ "en": "SDR RT2",
+ "brand": "赛科龙 SDR",
+ "cat": "踏板",
+ "origin": "国产",
+ "price": 16980,
+ "priceText": "约 16,980 元",
+ "disp": 247,
+ "cyl": "单缸 · 水冷",
+ "kw": 17,
+ "hp": 23,
+ "nm": 22.5,
+ "kg": 187,
+ "seat": 790,
+ "tank": 12,
+ "use": [
+  "通勤代步",
+  "长途摩旅"
+ ],
+ "tags": [
+  "250踏板",
+  "配置丰富",
+  "性价比"
+ ],
+ "pros": [
+  "250cc 动力，日常与短途都够用",
+  "TFT 仪表、ABS+TCS 配置较全",
+  "价格在 250 级里偏亲民"
+ ],
+ "cons": [
+  "座高 790mm，在踏板里偏高",
+  "品牌售后网点不如豪爵/本田"
+ ],
+ "fit": "预算 1.7 万左右、想要 250 级踏板的通勤用户",
+ "contain": true
+},
+{
+ "id": "sanyang-xunyi150",
+ "name": "三阳 巡弋150",
+ "en": "SYM Cruisym 150",
+ "brand": "三阳 SYM",
+ "cat": "踏板",
+ "origin": "合资",
+ "price": 13380,
+ "priceText": "13,380 元",
+ "disp": 150,
+ "cyl": "单缸 · 水冷",
+ "kw": 10.8,
+ "hp": 14.7,
+ "nm": 13.5,
+ "kg": 145,
+ "seat": 780,
+ "tank": 12,
+ "use": [
+  "通勤代步",
+  "新手友好"
+ ],
+ "tags": [
+  "合资150",
+  "12L大油箱",
+  "运动外观"
+ ],
+ "pros": [
+  "合资品牌，三阳品控稳定",
+  "12L 大油箱，续航在同级里突出",
+  "外观偏运动，年轻人接受度高"
+ ],
+ "cons": [
+  "座高 780mm，在踏板里偏高",
+  "储物空间一般"
+ ],
+ "fit": "预算 1.3 万出头、想要合资 150 踏板通勤的用户"
+},
+{
+ "id": "kymco-ct250",
+ "name": "光阳 CT250",
+ "en": "KYMCO CT250",
+ "brand": "光阳 KYMCO",
+ "cat": "踏板",
+ "origin": "合资",
+ "price": 21990,
+ "priceText": "21,990 元",
+ "disp": 249,
+ "cyl": "单缸 · 水冷",
+ "kw": 16,
+ "hp": 21.8,
+ "nm": 22,
+ "kg": 199,
+ "seat": 780,
+ "tank": 13,
+ "use": [
+  "通勤代步",
+  "长途摩旅"
+ ],
+ "tags": [
+  "250大踏板",
+  "13L油箱",
+  "长途舒适"
+ ],
+ "pros": [
+  "250cc + 13L 油箱，续航可达 400km",
+  "大踏板车身，高速巡航稳",
+  "座桶空间大，实用性强"
+ ],
+ "cons": [
+  "199kg 车重，低速掉头费力",
+  "油耗约 3.2L，通勤成本不低"
+ ],
+ "fit": "需要大踏板长途能力、预算 2.2 万左右的用户"
+},
+{
+ "id": "kymco-saiti250",
+ "name": "光阳 赛艇250",
+ "en": "KYMCO Xciting 250",
+ "brand": "光阳 KYMCO",
+ "cat": "踏板",
+ "origin": "合资",
+ "price": 21770,
+ "priceText": "21,770 元",
+ "disp": 250,
+ "cyl": "单缸 · 水冷",
+ "kw": 16,
+ "hp": 21.8,
+ "nm": 22,
+ "kg": 199,
+ "seat": 780,
+ "tank": 13,
+ "use": [
+  "通勤代步",
+  "长途摩旅"
+ ],
+ "tags": [
+  "长途大踏板",
+  "龙骨车架",
+  "舒适"
+ ],
+ "pros": [
+  "龙骨车架刚性好，高速稳定",
+  "座垫与减震偏舒适，长途友好",
+  "光阳在大踏板领域积累深厚"
+ ],
+ "cons": [
+  "车重 199kg，城市灵活性一般",
+  "外观偏成熟稳重"
+ ],
+ "fit": "以中长途通勤与周末出行为主的大踏板用户"
+},
+{
+ "id": "honda-adv160",
+ "name": "本田 ADV160",
+ "en": "Honda ADV160",
+ "brand": "本田 Honda",
+ "cat": "踏板",
+ "origin": "进口",
+ "price": 34800,
+ "priceText": "约 34,800 元",
+ "disp": 157,
+ "cyl": "单缸 · 水冷 · eSP+",
+ "kw": 12,
+ "hp": 16.3,
+ "nm": 14.7,
+ "kg": 133,
+ "seat": 795,
+ "tank": 8.1,
+ "use": [
+  "通勤代步",
+  "越野林道"
+ ],
+ "tags": [
+  "跨界踏板",
+  "SUV风格",
+  "品质稳"
+ ],
+ "pros": [
+  "跨界 SUV 造型，在踏板里辨识度极高",
+  "133kg 车轻，城市穿梭灵活",
+  "本田品质与保值率好"
+ ],
+ "cons": [
+  "价格接近 3.5 万，比同级 150 贵一倍",
+  "座高 795mm 偏高，储物一般"
+ ],
+ "fit": "喜欢跨界造型、预算充足的品质型通勤用户"
+},
+{
+ "id": "honda-forza350",
+ "name": "本田 FORZA350",
+ "en": "Honda FORZA 350",
+ "brand": "本田 Honda",
+ "cat": "踏板",
+ "origin": "进口",
+ "price": 55800,
+ "priceText": "约 55,800 元",
+ "disp": 330,
+ "cyl": "单缸 · 水冷",
+ "kw": 21,
+ "hp": 28.6,
+ "nm": 31.5,
+ "kg": 186,
+ "seat": 780,
+ "tank": 11.7,
+ "use": [
+  "通勤代步",
+  "长途摩旅"
+ ],
+ "tags": [
+  "大踏板",
+  "电动风挡",
+  "储物王者"
+ ],
+ "pros": [
+  "330cc 28.6 匹，高速巡航从容",
+  "电动风挡 + 大座桶，长途舒适性一流",
+  "本田品质，保值率高"
+ ],
+ "cons": [
+  "价格接近 5.6 万",
+  "车重 186kg，低速挪车需适应"
+ ],
+ "fit": "预算充足、经常长途或双人出行的大踏板买家"
+},
+{
+ "id": "yamaha-aerox155",
+ "name": "雅马哈 Aerox 155",
+ "en": "Yamaha Aerox 155",
+ "brand": "雅马哈 Yamaha",
+ "cat": "踏板",
+ "origin": "进口",
+ "price": 23800,
+ "priceText": "约 23,800 元",
+ "disp": 155,
+ "cyl": "单缸 · 水冷 · VVA",
+ "kw": 11.3,
+ "hp": 15.4,
+ "nm": 13.9,
+ "kg": 126,
+ "seat": 790,
+ "tank": 5.5,
+ "use": [
+  "玩乐跑山",
+  "通勤代步"
+ ],
+ "tags": [
+  "运动踏板",
+  "126kg",
+  "VVA"
+ ],
+ "pros": [
+  "126kg 车重，运动踏板的操控标杆",
+  "VVA 可变气门，动力输出活跃",
+  "外观激进，年轻人喜欢"
+ ],
+ "cons": [
+  "油箱仅 5.5L，续航偏短",
+  "座高 790mm，储物空间小"
+ ],
+ "fit": "追求运动操控与激进外观的城市玩家"
+},
+{
+ "id": "vespa-primavera150",
+ "name": "Vespa 春天 150",
+ "en": "Vespa Primavera 150",
+ "brand": "Vespa",
+ "cat": "踏板",
+ "origin": "进口",
+ "price": 37800,
+ "priceText": "约 37,800 元",
+ "disp": 155,
+ "cyl": "单缸 · 风冷 · i-get",
+ "kw": 9.5,
+ "hp": 12.9,
+ "nm": 12.5,
+ "kg": 130,
+ "seat": 790,
+ "tank": 8,
+ "use": [
+  "通勤代步",
+  "城市巡航"
+ ],
+ "tags": [
+  "意式经典",
+  "铁壳车身",
+  "时尚单品"
+ ],
+ "pros": [
+  "铁壳车身 + 意式造型，是踏板里的时尚符号",
+  "品牌调性与保值率独特",
+  "城市代步气质拉满"
+ ],
+ "cons": [
+  "155cc 9.5kW，动力与价格极不匹配",
+  "配置基础，维修配件贵"
+ ],
+ "fit": "把踏板当穿搭单品、预算充足追求格调的用户"
+},
+{
+ "id": "peugeot-django150",
+ "name": "标致 姜戈150",
+ "en": "Peugeot Django 150",
+ "brand": "标致 Peugeot",
+ "cat": "踏板",
+ "origin": "合资",
+ "price": 16980,
+ "priceText": "约 16,980 元",
+ "disp": 150,
+ "cyl": "单缸 · 水冷",
+ "kw": 9.3,
+ "hp": 12.6,
+ "nm": 12.5,
+ "kg": 135,
+ "seat": 780,
+ "tank": 8.5,
+ "use": [
+  "通勤代步",
+  "城市巡航"
+ ],
+ "tags": [
+  "法式复古",
+  "经典造型",
+  "性价比"
+ ],
+ "pros": [
+  "法式复古造型，颜值在国产踏板里突出",
+  "135kg 车轻，城市代步灵活",
+  "价格不到 1.7 万"
+ ],
+ "cons": [
+  "动力偏弱，9.3kW 只能代步",
+  "配置基础"
+ ],
+ "fit": "喜欢复古造型、城市短途代步的用户"
+},
+{
+ "id": "suzuki-uy125",
+ "name": "铃木 UY125",
+ "en": "Suzuki UY125",
+ "brand": "铃木 Suzuki",
+ "cat": "踏板",
+ "origin": "合资",
+ "price": 9980,
+ "priceText": "9,980 元",
+ "disp": 124,
+ "cyl": "单缸 · 风冷 · 超级芯",
+ "kw": 6.9,
+ "hp": 9.4,
+ "nm": 10,
+ "kg": 112,
+ "seat": 740,
+ "tank": 5.5,
+ "use": [
+  "通勤代步",
+  "新手友好"
+ ],
+ "tags": [
+  "国民神车",
+  "油耗1.8L",
+  "22L座桶"
+ ],
+ "pros": [
+  "超级芯发动机故障率极低，油耗约 1.8L",
+  "112kg 车身，挪车掉头毫无压力",
+  "22L 座桶可放全盔+半盔，配件遍地都是"
+ ],
+ "cons": [
+  "外观中庸，毫无个性",
+  "刹车偏软，配置基础"
+ ],
+ "fit": "纯代步通勤、外卖骑手、预算 1 万以内的实用派"
+},
+{
+ "id": "kayo-450rally",
+ "name": "凯越 450 Rally",
+ "en": "KAYO 450 Rally",
+ "brand": "凯越 KAYO",
+ "cat": "越野",
+ "origin": "国产",
+ "price": 49800,
+ "priceText": "约 49,800 元",
+ "disp": 449,
+ "cyl": "单缸 · 水冷",
+ "kw": 40,
+ "hp": 54.4,
+ "nm": 44,
+ "kg": 150,
+ "seat": 950,
+ "tank": 30,
+ "use": [
+  "越野林道",
+  "长途摩旅"
+ ],
+ "tags": [
+  "拉力赛车",
+  "30L油箱",
+  "150kg"
+ ],
+ "pros": [
+  "达喀尔拉力赛同源的赛车基因",
+  "150kg + 30L 大油箱，为长途拉力而生",
+  "越野硬件规格接近专业赛车"
+ ],
+ "cons": [
+  "座高 950mm，普通身高无法驾驭",
+  "保养周期短，不適合日常通勤"
+ ],
+ "fit": "有越野基础的硬核拉力玩家，不适合新手与日常代步"
+},
+{
+ "id": "honda-crf300l",
+ "name": "本田 CRF300L",
+ "en": "Honda CRF300L",
+ "brand": "本田 Honda",
+ "cat": "越野",
+ "origin": "进口",
+ "price": 48900,
+ "priceText": "约 48,900 元",
+ "disp": 286,
+ "cyl": "单缸 · 水冷",
+ "kw": 20.1,
+ "hp": 27.3,
+ "nm": 26.6,
+ "kg": 142,
+ "seat": 880,
+ "tank": 7.8,
+ "use": [
+  "越野林道"
+ ],
+ "tags": [
+  "双用途越野",
+  "142kg",
+  "可靠"
+ ],
+ "pros": [
+  "142kg 车重，林道操控轻盈",
+  "本田可靠性极好，长期耐用",
+  "双用途设定，公路与烂路都能跑"
+ ],
+ "cons": [
+  "座高 880mm，对身高要求很高",
+  "动力偏温和，硬核越野偏弱"
+ ],
+ "fit": "越野入门、且需要合法上牌的双用途需求"
+},
+{
+ "id": "honda-crf250rally",
+ "name": "本田 CRF250 Rally",
+ "en": "Honda CRF250 Rally",
+ "brand": "本田 Honda",
+ "cat": "越野",
+ "origin": "进口",
+ "price": 55800,
+ "priceText": "约 55,800 元",
+ "disp": 249,
+ "cyl": "单缸 · 水冷",
+ "kw": 18.2,
+ "hp": 24.7,
+ "nm": 22.6,
+ "kg": 152,
+ "seat": 885,
+ "tank": 10.1,
+ "use": [
+  "越野林道",
+  "长途摩旅"
+ ],
+ "tags": [
+  "拉力造型",
+  "10L油箱",
+  "耐造"
+ ],
+ "pros": [
+  "拉力赛车造型 + 大风挡，长途舒适性优于 CRF300L",
+  "10.1L 油箱，续航更好",
+  "本田品控，适合长途烂路"
+ ],
+ "cons": [
+  "座高 885mm 很高",
+  "动力偏弱，高速吃力"
+ ],
+ "fit": "想用轻量车跑长途烂路的越野摩旅党"
+},
+{
+ "id": "yamaha-wr250r",
+ "name": "雅马哈 WR250R",
+ "en": "Yamaha WR250R",
+ "brand": "雅马哈 Yamaha",
+ "cat": "越野",
+ "origin": "进口",
+ "price": 69800,
+ "priceText": "约 69,800 元",
+ "disp": 250,
+ "cyl": "单缸 · 水冷",
+ "kw": 22.6,
+ "hp": 30.7,
+ "nm": 24.4,
+ "kg": 134,
+ "seat": 930,
+ "tank": 7.2,
+ "use": [
+  "越野林道"
+ ],
+ "tags": [
+  "专业林道",
+  "134kg",
+  "高转单缸"
+ ],
+ "pros": [
+  "134kg 极致轻量，林道操控标杆",
+  "发动机为高转取向，动力输出有激情",
+  "可靠性口碑极好"
+ ],
+ "cons": [
+  "座高 930mm，绝大多数人无法驾驭",
+  "价格接近 7 万，且国内车源稀少"
+ ],
+ "fit": "有越野功底、追求极致轻量的硬核林道玩家"
+},
+{
+ "id": "ktm-350exc",
+ "name": "KTM 350 EXC-F",
+ "en": "KTM 350 EXC-F",
+ "brand": "KTM",
+ "cat": "越野",
+ "origin": "进口",
+ "price": 109800,
+ "priceText": "约 109,800 元",
+ "disp": 350,
+ "cyl": "单缸 · 水冷",
+ "kw": 34,
+ "hp": 46,
+ "nm": 34,
+ "kg": 106,
+ "seat": 950,
+ "tank": 8.5,
+ "use": [
+  "越野林道"
+ ],
+ "tags": [
+  "106kg",
+  "46匹",
+  "越野之王"
+ ],
+ "pros": [
+  "106kg 车重配 46 匹，推重比达到赛车级别",
+  "KTM 在越野领域的统治级地位",
+  "底盘与悬挂为纯越野场景设计"
+ ],
+ "cons": [
+  "座高 950mm，普通身高无法驾驭",
+  "保养按小时计，维护成本高"
+ ],
+ "fit": "有越野基础的硬核玩家，完全不适合日常通勤",
+ "contain": true
+},
+{
+ "id": "ktm-250exc",
+ "name": "KTM 250 EXC-F",
+ "en": "KTM 250 EXC-F",
+ "brand": "KTM",
+ "cat": "越野",
+ "origin": "进口",
+ "price": 99800,
+ "priceText": "约 99,800 元",
+ "disp": 250,
+ "cyl": "单缸 · 水冷",
+ "kw": 28,
+ "hp": 38,
+ "nm": 26,
+ "kg": 105,
+ "seat": 960,
+ "tank": 8.5,
+ "use": [
+  "越野林道"
+ ],
+ "tags": [
+  "105kg",
+  "38匹",
+  "林道利器"
+ ],
+ "pros": [
+  "105kg 超轻车身，林道里极其灵活",
+  "250cc 高转单缸，动力线性可控",
+  "KTM 越野车系的技术下放"
+ ],
+ "cons": [
+  "座高 960mm，超高",
+  "价格接近 10 万，保养频繁"
+ ],
+ "fit": "有越野经验、追求轻量林道操控的玩家",
+ "contain": true
+},
+{
+ "id": "ninebot-e300p",
+ "name": "九号 E300P",
+ "en": "Segway Ninebot E300P",
+ "brand": "九号 Segway",
+ "cat": "电动摩托",
+ "origin": "国产",
+ "price": 16999,
+ "priceText": "约 16,999 元",
+ "disp": 0,
+ "cyl": "中置电机 · 三元锂电池",
+ "kw": 10,
+ "hp": 13.6,
+ "nm": 178,
+ "kg": 115,
+ "seat": 780,
+ "tank": 0,
+ "use": [
+  "通勤代步",
+  "玩乐跑山"
+ ],
+ "tags": [
+  "电动性能王",
+  "极速135",
+  "智能系统"
+ ],
+ "pros": [
+  "轮上扭矩 178N·m，起步加速极快",
+  "极速约 135km/h，是国产电摩里的性能标杆",
+  "智能化程度高，OTA 与 App 生态完善"
+ ],
+ "cons": [
+  "续航约 100–120km，长途受限",
+  "16,999 元的售价对电摩来说偏高"
+ ],
+ "fit": "城市通勤为主、追求加速快感与智能体验的年轻用户"
+},
+{
+ "id": "ninebot-e100",
+ "name": "九号 E100",
+ "en": "Segway Ninebot E100",
+ "brand": "九号 Segway",
+ "cat": "电动摩托",
+ "origin": "国产",
+ "price": 9499,
+ "priceText": "约 9,499 元",
+ "disp": 0,
+ "cyl": "轮毂电机 · 锂电池",
+ "kw": 2.4,
+ "hp": 3.3,
+ "nm": 55,
+ "kg": 78,
+ "seat": 760,
+ "tank": 0,
+ "use": [
+  "通勤代步",
+  "新手友好"
+ ],
+ "tags": [
+  "入门电摩",
+  "78kg",
+  "智能解锁"
+ ],
+ "pros": [
+  "不到 1 万，电摩入门门槛低",
+  "78kg 车身，挪车毫无压力",
+  "无钥匙解锁与 App 防盗功能实用"
+ ],
+ "cons": [
+  "动力弱，只能市区代步",
+  "续航约 60–70km"
+ ],
+ "fit": "市区短途通勤、不想考取大排驾照的新手用户"
+},
+{
+ "id": "niucore-nxt",
+ "name": "小牛 NXT Ultra",
+ "en": "NIU NXT Ultra",
+ "brand": "小牛 NIU",
+ "cat": "电动摩托",
+ "origin": "国产",
+ "price": 15999,
+ "priceText": "约 15,999 元",
+ "disp": 0,
+ "cyl": "轮毂电机 · 锂电池",
+ "kw": 4,
+ "hp": 5.4,
+ "nm": 90,
+ "kg": 95,
+ "seat": 760,
+ "tank": 0,
+ "use": [
+  "通勤代步"
+ ],
+ "tags": [
+  "智能电摩",
+  "设计感",
+  "续航长"
+ ],
+ "pros": [
+  "设计感与做工在电摩里属于第一梯队",
+  "续航可达 130km 以上，通勤够用",
+  "智能解锁、OTA、防盗生态成熟"
+ ],
+ "cons": [
+  "动力偏弱，不适合跑快速路",
+  "价格接近 1.6 万，接近燃油 150 踏板"
+ ],
+ "fit": "注重设计感与智能体验的城市通勤用户",
+ "contain": true
+},
+{
+ "id": "niucore-nqi",
+ "name": "小牛 NQi GT",
+ "en": "NIU NQi GT",
+ "brand": "小牛 NIU",
+ "cat": "电动摩托",
+ "origin": "国产",
+ "price": 10999,
+ "priceText": "约 10,999 元",
+ "disp": 0,
+ "cyl": "轮毂电机 · 锂电池",
+ "kw": 3,
+ "hp": 4.1,
+ "nm": 75,
+ "kg": 90,
+ "seat": 765,
+ "tank": 0,
+ "use": [
+  "通勤代步",
+  "新手友好"
+ ],
+ "tags": [
+  "经典款",
+  "1万出头",
+  "好上手"
+ ],
+ "pros": [
+  "小牛最经典的造型，辨识度高",
+  "1 万出头，智能配置齐全",
+  "售后网点多，维修方便"
+ ],
+ "cons": [
+  "动力仅够代步",
+  "续航约 80km"
+ ],
+ "fit": "城市短途通勤、看重品牌与智能配置的用户",
+ "contain": true
+},
+{
+ "id": "jihue-ae8",
+ "name": "极核 AE8",
+ "en": "ZEEHO AE8",
+ "brand": "极核 ZEEHO",
+ "cat": "电动摩托",
+ "origin": "国产",
+ "price": 17980,
+ "priceText": "约 17,980 元",
+ "disp": 0,
+ "cyl": "中置电机 · 锂电池",
+ "kw": 12.5,
+ "hp": 17,
+ "nm": 218,
+ "kg": 133,
+ "seat": 780,
+ "tank": 0,
+ "use": [
+  "玩乐跑山",
+  "通勤代步"
+ ],
+ "tags": [
+  "17匹",
+  "极速110",
+  "高性能电摩"
+ ],
+ "pros": [
+  "12.5kW 中置电机，动力在电摩里第一梯队",
+  "操控与底盘调校偏运动，跑山有意思",
+  "春风旗下品牌，售后依托春风渠道"
+ ],
+ "cons": [
+  "续航约 100km，长途受限",
+  "价格接近 1.8 万"
+ ],
+ "fit": "想要电动高性能与运动操控、预算充足的城市玩家"
+}
+
+];
+
+/* 补齐派生字段 */
+BIKES.forEach(b=>{
+  b.img = "images/"+b.id+".webp";
+  b.ppc = Math.round(b.price/b.disp);           // 每 cc 单价（元）
+  b.pwr = +(b.hp/(b.kg/1000)).toFixed(0);        // 马力/吨
+});
+
+/* ═══════════ 工具 ═══════════ */
+const $ = s=>document.querySelector(s);
+const $$ = s=>[...document.querySelectorAll(s)];
+const fmt = n=>n.toLocaleString("zh-CN");
+const byId = id=>BIKES.find(b=>b.id===id);
+const ORIGIN_CLS = {"国产":"","合资":"jv","进口":"imp"};
+
+/* ═══════════ 主题 ═══════════ */
+(function(){
+  const saved = localStorage.getItem("moto-theme");
+  if(saved) document.documentElement.dataset.theme = saved;
+  $("#themeBtn").onclick = ()=>{
+    const t = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = t;
+    localStorage.setItem("moto-theme", t);
+  };
+})();
+
+/* ═══════════ Hero 统计 ═══════════ */
+(function(){
+  const brands = new Set(BIKES.map(b=>b.brand.split(" ")[0]));
+  const min = Math.min(...BIKES.map(b=>b.price));
+  const cats = new Set(BIKES.map(b=>b.cat));
+  const data = [
+    [BIKES.length+"", "款在售车型"],
+    [brands.size+"", "个主流品牌"],
+    [cats.size+"", "个车型品类"],
+    [(min/10000).toFixed(1).replace(/\.0$/,"")+"万起", "最低入手价"]
+  ];
+  $("#heroStats").innerHTML = data.map(([a,b])=>
+    `<div class="stat"><b>${a}</b><span>${b}</span></div>`).join("");
+})();
+
+/* ═══════════ 收藏 ═══════════ */
+let favs = new Set(JSON.parse(localStorage.getItem("moto-favs")||"[]"));
+const saveFavs = ()=>localStorage.setItem("moto-favs", JSON.stringify([...favs]));
+
+/* ═══════════ 对比选择 ═══════════ */
+let cmp = [];
+const toast = m=>{
+  const t=$("#toast"); t.textContent=m; t.classList.add("on");
+  clearTimeout(t._t); t._t=setTimeout(()=>t.classList.remove("on"),1700);
+};
+function toggleCmp(id){
+  const i = cmp.indexOf(id);
+  if(i>-1) cmp.splice(i,1);
+  else{
+    if(cmp.length>=4){ toast("最多同时对比 4 台"); return; }
+    cmp.push(id);
+  }
+  renderCmpBar(); renderGrid();
+}
+function renderCmpBar(){
+  const bar = $("#cbar");
+  bar.classList.toggle("up", cmp.length>0);
+  $("#cthumbs").innerHTML = cmp.map(id=>`<img src="${byId(id).img}" alt="">`).join("");
+  $("#ctext").textContent = `已选 ${cmp.length} 台`;
+  $("#doCompare").disabled = cmp.length < 2;
+}
+
+/* ═══════════ 筛选状态 ═══════════ */
+const F = {cat:"全部", budget:"全部", origin:"全部", use:"全部", q:"", sort:"def"};
+const BUDGETS = [
+  {k:"全部", f:()=>true},
+  {k:"1.5万内", f:b=>b.price<15000},
+  {k:"1.5–3万", f:b=>b.price>=15000&&b.price<30000},
+  {k:"3–6万", f:b=>b.price>=30000&&b.price<60000},
+  {k:"6–10万", f:b=>b.price>=60000&&b.price<100000},
+  {k:"10万以上", f:b=>b.price>=100000}
+];
+
+function buildFilters(){
+  $("#cats").innerHTML = ["全部",...CATS].map(c=>
+    `<button class="tab${c===F.cat?" on":""}" data-cat="${c}">${c}</button>`).join("");
+  $("#budget").innerHTML = BUDGETS.map(b=>
+    `<button class="chip${b.k===F.budget?" on":""}" data-budget="${b.k}">${b.k}</button>`).join("");
+  $("#origin").innerHTML = ["全部","国产","合资","进口"].map(o=>
+    `<button class="chip${o===F.origin?" on":""}" data-origin="${o}">${o}</button>`).join("");
+  $("#uses").innerHTML = ["全部",...USES].map(u=>
+    `<button class="chip${u===F.use?" on":""}" data-use="${u}">${u}</button>`).join("");
+}
+function bindFilters(){
+  document.body.addEventListener("click", e=>{
+    const t = e.target.closest("[data-cat],[data-budget],[data-origin],[data-use]");
+    if(!t) return;
+    if(t.dataset.cat!==undefined) F.cat = t.dataset.cat;
+    if(t.dataset.budget!==undefined) F.budget = t.dataset.budget;
+    if(t.dataset.origin!==undefined) F.origin = t.dataset.origin;
+    if(t.dataset.use!==undefined) F.use = t.dataset.use;
+    buildFilters(); renderGrid();
+  });
+}
+
+function filtered(){
+  const bf = BUDGETS.find(b=>b.k===F.budget).f;
+  const q = F.q.trim().toLowerCase();
+  let r = BIKES.filter(b=>{
+    if(F.cat!=="全部" && b.cat!==F.cat) return false;
+    if(F.origin!=="全部" && b.origin!==F.origin) return false;
+    if(F.use!=="全部" && !b.use.includes(F.use)) return false;
+    if(!bf(b)) return false;
+    if(q && !(b.name+b.en+b.brand+b.tags.join("")+b.cat).toLowerCase().includes(q)) return false;
+    return true;
+  });
+  const S = {
+    "p-asc":(a,b)=>a.price-b.price, "p-desc":(a,b)=>b.price-a.price,
+    "d-desc":(a,b)=>b.disp-a.disp,  "h-desc":(a,b)=>b.hp-a.hp,
+    "w-asc":(a,b)=>a.kg-b.kg,       "s-asc":(a,b)=>a.seat-b.seat
+  };
+  if(S[F.sort]) r.sort(S[F.sort]);
+  else r.sort((a,b)=>{
+    const ca=CATS.indexOf(a.cat), cb=CATS.indexOf(b.cat);
+    return ca-cb || a.price-b.price;
+  });
+  return r;
+}
+
+/* ═══════════ 卡片渲染 ═══════════ */
+function cardHTML(b){
+  const isFav = favs.has(b.id), inCmp = cmp.includes(b.id);
+  return `<article class="card" data-open="${b.id}">
+    <div class="photo">
+      <img src="${b.img}" alt="${b.name}" loading="lazy" class="${b.contain?"contain":""}"
+           onerror="this.style.display='none';this.parentNode.classList.add('noimg')">
+      <div class="badges">
+        <span class="bdg cat">${b.cat}</span>
+        <span class="bdg origin ${ORIGIN_CLS[b.origin]||""}">${b.origin}</span>
+      </div>
+      <button class="fav${isFav?" on":""}" data-fav="${b.id}" title="收藏">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="${isFav?"currentColor":"none"}" stroke="currentColor" stroke-width="2"><path d="M12 21s-7.5-4.7-7.5-10A4.5 4.5 0 0112 7.6 4.5 4.5 0 0119.5 11c0 5.3-7.5 10-7.5 10z"/></svg>
+      </button>
+    </div>
+    <div class="bd">
+      <div class="rk"><h4>${b.name}</h4></div>
+      <div class="en">${b.en}</div>
+      <div class="price">${b.priceText}<small>参考价</small></div>
+      <div class="specs">
+        <div><b>${b.disp?b.disp:"电动"}</b><span>${b.disp?"CC":"电机"}</span></div>
+        <div><b>${b.hp}</b><span>马力</span></div>
+        <div><b>${b.kg}</b><span>KG</span></div>
+        <div><b>${b.seat}</b><span>座高mm</span></div>
+      </div>
+      <div class="tags">${b.tags.slice(0,3).map((t,i)=>`<span class="tag${i>0?" n":""}">${t}</span>`).join("")}</div>
+      <div class="acts">
+        <button class="mini" data-cmp="${b.id}">${inCmp?"✓ 已加入":"加入对比"}</button>
+        <button class="mini pri" data-open="${b.id}">查看详情</button>
+      </div>
+    </div>
+  </article>`;
+}
+function renderGrid(){
+  const r = filtered();
+  $("#cnt").textContent = r.length;
+  $("#grid").innerHTML = r.length ? r.map(cardHTML).join("")
+    : `<div class="empty"><b>没有符合条件的车型</b>试着放宽预算或清空筛选条件</div>`;
+}
+
+/* ═══════════ 详情弹窗 ═══════════ */
+function openDetail(id){
+  const b = byId(id);
+  const rows = [
+    ["排量", b.disp ? b.disp+" cc" : "电动（无排量）"], ["最大马力", b.hp+" 匹"], ["最大功率", b.kw+" kW"],
+    ["最大扭矩", b.nm+" N·m"], ["整备质量", b.kg+" kg"], ["座高", b.seat+" mm"],
+    ["油箱/电池", b.tank ? b.tank+" L" : "锂电池"], ["马力/吨", b.pwr+" hp/t"]
+  ];
+  $("#sheet").innerHTML = `
+    <button class="close" data-close aria-label="关闭">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div class="dhero">
+      <img src="${b.img}" alt="${b.name}" class="${b.contain?"contain":""}">
+      <div class="ov"></div>
+      <div class="txt">
+        <h3>${b.name}</h3>
+        <div class="m">${b.en} · ${b.brand} · ${b.cat} · ${b.origin}</div>
+        <div class="pr">${b.priceText}</div>
+      </div>
+    </div>
+    <div class="dbody">
+      <div class="dgrid">${rows.map(([k,v])=>`<div><b>${v}</b><span>${k}</span></div>`).join("")}</div>
+      <div class="dsec"><h5>动力规格</h5><p>${b.cyl}　|　最大功率 ${b.kw} kW（${b.hp} 匹）/ 最大扭矩 ${b.nm} N·m　|　整备质量 ${b.kg} kg，座高 ${b.seat} mm，油箱 ${b.tank} L。</p></div>
+      <div class="dsec"><h5>优点 / 短板</h5>
+        <div class="pc">
+          <div class="box g"><h6>✓ 值得买的地方</h6><ul>${b.pros.map(p=>`<li>${p}</li>`).join("")}</ul></div>
+          <div class="box b"><h6>✕ 需要接受的短板</h6><ul>${b.cons.map(p=>`<li>${p}</li>`).join("")}</ul></div>
+        </div>
+      </div>
+      <div class="dsec"><h5>适合谁</h5><div class="fit">${b.fit}。</div></div>
+      <div class="dsec"><h5>标签</h5><div class="dtags">${b.tags.map(t=>`<span>${t}</span>`).join("")}</div></div>
+      <div class="dacts">
+        <button class="btn ${cmp.includes(b.id)?"btn-g":"btn-p"}" data-cmp="${b.id}">${cmp.includes(b.id)?"✓ 已加入对比":"加入对比"}</button>
+        <button class="btn btn-g" data-fav="${b.id}">${favs.has(b.id)?"❤ 已收藏":"♡ 收藏"}</button>
+      </div>
+    </div>`;
+  $("#modal").classList.add("on");
+  document.body.style.overflow = "hidden";
+}
+function closeModal(){ $("#modal").classList.remove("on"); document.body.style.overflow = ""; }
+
+/* ═══════════ 对比表 ═══════════ */
+const CMP_ROWS = [
+  ["价格","priceText",b=>b.price,true],
+  ["品类","cat",b=>b.cat,false],
+  ["产地","origin",b=>b.origin,false],
+  ["排量 (cc)","disp",b=>b.disp,true],
+  ["最大马力 (匹)","hp",b=>b.hp,true],
+  ["最大扭矩 (N·m)","nm",b=>b.nm,true],
+  ["整备质量 (kg)","kg",b=>b.kg,false],
+  ["座高 (mm)","seat",b=>b.seat,false],
+  ["油箱 (L)","tank",b=>b.tank,true],
+  ["马力/吨","pwr",b=>b.pwr,true]
+];
+function openCompare(){
+  if(cmp.length<2) return;
+  const list = cmp.map(byId);
+  let html = `<button class="close" data-close aria-label="关闭">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div style="padding:22px 24px 8px">
+      <div class="k" style="font-size:11.5px;font-weight:800;letter-spacing:2px;color:var(--accent-ink)">COMPARE</div>
+      <h3 style="font-size:21px;font-weight:850;letter-spacing:-.5px;margin-top:5px">车型参数对比 · ${list.length} 台</h3>
+      <p style="color:var(--ink-2);font-size:13px;margin-top:5px">带 ★ 表示该项在所选车型中最优（价格与座高按“越低越好”判定）。</p>
+    </div>
+    <div style="padding:8px 24px 26px"><div class="ctable"><table>
+      <thead><tr><th>参数</th>${list.map(b=>`<th><div class="ch"><img src="${b.img}" alt=""><div><b>${b.name}</b><span>${b.brand}</span><div class="rm" data-cmp="${b.id}">移除</div></div></div></th>`).join("")}</tr></thead>
+      <tbody>`;
+  CMP_ROWS.forEach(([label,key,val,numeric])=>{
+    let best = null, rowHtml = "";
+    if(numeric){
+      const vals = list.map(val);
+      const lower = label.includes("质量")||label.includes("座高")||label.includes("价格");
+      best = lower ? Math.min(...vals) : Math.max(...vals);
+    }
+    list.forEach(b=>{
+      const v = typeof b[key]==="number" || key==="pwr" ? val(b) : b[key];
+      const isBest = numeric && val(b)===best;
+      const text = typeof v==="number" ? fmt(v) : v;
+      rowHtml += `<td class="${isBest?"best":""}">${typeof v==="number"?`<b>${text}</b>`:text}</td>`;
+    });
+    html += `<tr><th>${label}</th>${rowHtml}</tr>`;
+  });
+  // 用途行
+  html += `<tr><th>适用场景</th>${list.map(b=>`<td style="font-size:12px;color:var(--ink-2)">${b.use.join(" · ")}</td>`).join("")}</tr>`;
+  // 适合谁
+  html += `<tr><th>适合谁</th>${list.map(b=>`<td style="font-size:12px;color:var(--ink-2)">${b.fit}</td>`).join("")}</tr>`;
+  html += `</tbody></table></div></div>`;
+  $("#sheet").innerHTML = html;
+  $("#modal").classList.add("on");
+  document.body.style.overflow = "hidden";
+}
+
+/* ═══════════ 选车向导 ═══════════ */
+const STEPS = [
+  {key:"budget", title:"预算范围", sub:"先定预算，能砍掉 70% 的选项", hint:"按落地前的裸车预算估算即可", opts:[
+    {v:15000,t:"1.5 万以内",d:"通勤小踏板、入门巡航为主"},
+    {v:30000,t:"1.5 – 3 万",d:"仿赛 / 复古 / 巡航主战场"},
+    {v:60000,t:"3 – 6 万",d:"中排街车、ADV、四缸仿赛"},
+    {v:100000,t:"6 – 10 万",d:"进口中排、大排街车"},
+    {v:999999,t:"10 万以上",d:"公升级、豪华巡航、顶级 ADV"}
+  ]},
+  {key:"use", title:"主要用途", sub:"用得最多的是什么场景", hint:"选最贴近你日常的那一个", opts:[
+    {v:"通勤代步",t:"日常通勤代步",d:"市区通勤、买菜接娃、省油耐用"},
+    {v:"玩乐跑山",t:"周末玩乐跑山",d:"山路压弯、偶尔赛道，追求驾驶乐趣"},
+    {v:"长途摩旅",t:"长途摩旅",d:"跨省骑行、装三箱、舒适与续航优先"},
+    {v:"越野林道",t:"越野林道",d:"非铺装路面、烂路脱困、轻量化优先"},
+    {v:"城市巡航",t:"城市巡航兜风",d:"慢节奏、要腔调、坐姿放松"}
+  ]},
+  {key:"exp", title:"骑行经验", sub:"别高估自己，也别低估自己", hint:"按真实骑行年限与里程选择", opts:[
+    {v:"new",t:"纯新手（0–1 年）",d:"刚拿本或骑车不到一年"},
+    {v:"mid",t:"进阶（1–3 年）",d:"有稳定骑行经验，能应对复杂路况"},
+    {v:"pro",t:"老手（3 年以上）",d:"长期骑行，熟悉大排量特性"}
+  ]},
+  {key:"height", title:"身高", sub:"决定你能不能稳稳撑住车", hint:"座高与身高不匹配是最容易后悔的点", opts:[
+    {v:163,t:"165cm 以下",d:"建议座高 ≤ 780mm，双脚着地最安心"},
+    {v:172,t:"165 – 175cm",d:"780–810mm 都比较从容"},
+    {v:180,t:"175 – 185cm",d:"基本通吃，800mm 以上也无压力"},
+    {v:190,t:"185cm 以上",d:"建议座高 ≥ 800mm，否则腿会憋屈"}
+  ]},
+  {key:"cat", title:"车型偏好", sub:"如果已有倾向，帮你缩小范围", hint:"不确定就选“随便看看”", opts:[
+    {v:"不限",t:"随便看看",d:"没有特定倾向，让数据说话"},
+    {v:"仿赛",t:"仿赛",d:"跑车造型，坐姿战斗"},
+    {v:"街车",t:"街车",d:"直坐姿，通勤玩乐两相宜"},
+    {v:"巡航",t:"巡航 / 太子",d:"低座高、V 缸、美式风格"},
+    {v:"复古",t:"复古",d:"经典线条、有格调"},
+    {v:"拉力ADV",t:"拉力 ADV",d:"大风挡、长行程、能跑烂路"},
+    {v:"踏板",t:"踏板",d:"CVT 无级变速，最好上手"},
+    {v:"越野",t:"越野 / 林道",d:"高离地间隙、轻量化"}
+  ]}
+];
+let wz = {i:0, ans:{}};
+function renderWzProg(){
+  $("#wzProg").innerHTML = STEPS.map((_,i)=>`<i class="${i<=wz.i?"on":""}"></i>`).join("");
+  $("#wzStep").textContent = `第 ${wz.i+1} / ${STEPS.length} 步`;
+}
+function renderWz(){
+  const s = STEPS[wz.i];
+  $("#wzTitle").textContent = s.title;
+  $("#wzSub").textContent = s.sub;
+  $("#wzBody").innerHTML = `<div class="wz-hint">${s.hint}</div><div class="opts" id="opts">${
+    s.opts.map(o=>`<button class="opt${wz.ans[s.key]===o.v?" on":""}" data-v='${typeof o.v==="string"?o.v:o.v}'>
+      <b>${o.t}</b><span>${o.d}</span></button>`).join("")}</div>`;
+  $$("#opts .opt").forEach((el,idx)=>{
+    el.onclick = ()=>{
+      const o = s.opts[idx];
+      wz.ans[s.key] = o.v;
+      $$("#opts .opt").forEach(x=>x.classList.remove("on"));
+      el.classList.add("on");
+      setTimeout(()=>{ wz.i<STEPS.length-1 ? (wz.i++, renderWz(), renderWzProg()) : showWzResult(); }, 200);
+    };
+  });
+  $("#wzBack").style.visibility = wz.i===0 ? "hidden" : "visible";
+  renderWzProg();
+}
+function seatRange(h){
+  if(h<=163) return [0,780]; if(h<=172) return [0,810];
+  if(h<=180) return [770,860]; return [800,9999];
+}
+function matchScore(b, a){
+  let sc = 60, why = [], warn = "";
+  // 预算
+  if(b.price <= a.budget) { sc += 26; why.push("在预算内"); }
+  else { const over = (b.price-a.budget)/a.budget; sc -= Math.min(70, over*120); }
+  // 用途
+  if(a.use && b.use.includes(a.use)) { sc += 26; why.push("契合「"+a.use+"」"); }
+  else sc -= 22;
+  // 车型偏好
+  if(a.cat && a.cat!=="不限"){
+    if(b.cat===a.cat) { sc += 20; why.push("就是你偏好的"+b.cat); }
+    else sc -= 30;
+  }
+  // 经验
+  if(a.exp==="new"){
+    if(b.hp<=35){ sc += 16; why.push("动力温和，新手好控"); }
+    else if(b.hp>70){ sc -= 34; warn = "⚠ "+b.hp+" 匹对纯新手来说偏暴力，建议先骑小排量练手。"; }
+    else sc -= 6;
+  } else if(a.exp==="mid"){
+    if(b.hp>=35 && b.hp<=95) { sc += 10; }
+  } else {
+    if(b.hp>=80){ sc += 12; why.push("动力够老手发挥"); }
+  }
+  // 身高 / 座高
+  const [lo,hi] = seatRange(a.height);
+  if(b.seat>=lo && b.seat<=hi){ sc += 14; why.push("座高"+b.seat+"mm 与身高匹配"); }
+  else{
+    if(b.seat>hi) warn = warn || `⚠ 座高 ${b.seat}mm，对 ${a.height}cm 的身高偏高，建议到店实测。`;
+    sc -= 26;
+  }
+  return {sc, why, warn};
+}
+function showWzResult(){
+  const a = wz.ans;
+  const scored = BIKES.map(b=>({b, ...matchScore(b,a)})).sort((x,y)=>y.sc-x.sc).slice(0,3);
+  $("#wzTitle").textContent = "推荐结果";
+  $("#wzSub").textContent = "按你的条件加权排序的前 3 名";
+  $("#wzStep").textContent = "已完成";
+  $("#wzProg").innerHTML = STEPS.map(()=>`<i class="on"></i>`).join("");
+  $("#wzBack").style.visibility = "hidden";
+  $("#wzBody").innerHTML = `<div class="wz-result">
+    <div style="font-size:13.5px;color:var(--ink-2);margin-bottom:16px">
+      预算 <b>${a.budget>=999999?"不限":fmt(a.budget)+" 元内"}</b>　·　用途 <b>${a.use}</b>　·　经验 <b>${({new:"新手",mid:"进阶",pro:"老手"})[a.exp]}</b>　·　身高 <b>${a.height}cm</b>　·　偏好 <b>${a.cat}</b>
+    </div>
+    <div class="rr">${scored.map((s,i)=>`
+      <div class="rcard ${i===0?"t1":""}">
+        <div class="rank">${["首选","次选","备选"][i]}</div>
+        <div class="im"><img src="${s.b.img}" alt="${s.b.name}" class="${s.b.contain?"contain":""}"></div>
+        <div class="bd">
+          <h4>${s.b.name}</h4>
+          <div class="en" style="font-size:11px;color:var(--ink-3)">${s.b.brand} · ${s.b.cat} · ${s.b.origin}</div>
+          <div class="pp" style="margin-top:6px">${s.b.priceText}</div>
+          <ul class="why">${s.why.slice(0,4).map(w=>`<li>${w}</li>`).join("")}</ul>
+          ${s.warn?`<div class="warn">${s.warn}</div>`:""}
+          <div class="acts" style="display:flex;gap:8px;margin-top:12px">
+            <button class="mini" data-cmp="${s.b.id}">${cmp.includes(s.b.id)?"✓ 已加入":"加入对比"}</button>
+            <button class="mini pri" data-open="${s.b.id}">查看详情</button>
+          </div>
+        </div>
+      </div>`).join("")}</div>
+    <div style="margin-top:20px;padding:14px 16px;border:1px dashed var(--line);border-radius:12px;font-size:12.5px;color:var(--ink-3);line-height:1.75">
+      推荐逻辑：预算（权重最高）→ 用途 → 车型偏好 → 经验匹配（新手自动避开高马力车型）→ 身高与座高匹配。结果仅供参考，最终请以到店试驾为准。
+    </div></div>`;
+}
+$("#wzBack").onclick = ()=>{ if(wz.i>0){ wz.i--; renderWz(); } };
+$("#wzRestart").onclick = ()=>{ wz = {i:0, ans:{}}; renderWz(); $("#wzBody").scrollIntoView({block:"nearest"}); };
+
+/* ═══════════ 全局事件 ═══════════ */
+document.body.addEventListener("click", e=>{
+  const fav = e.target.closest("[data-fav]");
+  if(fav){
+    e.stopPropagation();
+    const id = fav.dataset.fav;
+    favs.has(id) ? favs.delete(id) : favs.add(id);
+    saveFavs(); renderGrid();
+    if($("#modal").classList.contains("on")) openDetail(id);
+    toast(favs.has(id) ? "已加入收藏" : "已取消收藏");
+    return;
+  }
+  const cm = e.target.closest("[data-cmp]");
+  if(cm){
+    e.stopPropagation();
+    toggleCmp(cm.dataset.cmp);
+    if($("#modal").classList.contains("on")){
+      cmp.includes(cm.dataset.cmp) ? openCompareSafe() : openDetail(cm.dataset.cmp);
+    }
+    return;
+  }
+  const op = e.target.closest("[data-open]");
+  if(op){ openDetail(op.dataset.open); return; }
+  if(e.target.closest("[data-close]") || e.target.id==="mask"){ closeModal(); return; }
+});
+function openCompareSafe(){ cmp.length>=2 ? openCompare() : (closeModal(), toast("再选一台就能对比了")); }
+$("#doCompare").onclick = openCompare;
+$("#clearCmp").onclick = ()=>{ cmp=[]; renderCmpBar(); renderGrid(); };
+$("#clearAll").onclick = ()=>{ F.cat="全部";F.budget="全部";F.origin="全部";F.use="全部";F.q="";$("#q").value="";buildFilters();renderGrid(); };
+$("#q").addEventListener("input", e=>{ F.q = e.target.value; renderGrid(); });
+$("#sort").addEventListener("change", e=>{ F.sort = e.target.value; renderGrid(); });
+document.addEventListener("keydown", e=>{ if(e.key==="Escape") closeModal(); });
+
+/* ═══════════ 启动 ═══════════ */
+buildFilters(); bindFilters(); renderGrid(); renderWz(); renderCmpBar();
+</script>
+</body>
+</html>

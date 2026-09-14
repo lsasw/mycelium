@@ -10,3 +10,9 @@ desktop.ini
 *.swp
 *.swo
 *~
+
+# Temporary / build artifacts
+*.tmp
+moto/_img_src/
+moto/.摩托车公开信息汇总表.ref/
+moto/_verify*.png
