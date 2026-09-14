@@ -200,9 +200,18 @@ tr:nth-child(even){background:#f8fafc}
 /* SVG labels */
 .svgl{font-size:11px;font-family:var(--sans)}
 </style>
+<!-- Mycelium: 内嵌于花园详情页时隐藏返回胶囊 -->
+<style id="garden-embed-guard">
+html.garden-embedded #garden-back-btn{display:none!important}
+#garden-back-btn{width:46px;height:46px;padding:0;border-radius:50%;gap:0;opacity:.82;transition:width .24s ease,border-radius .24s ease,opacity .2s ease,transform .15s ease}
+#garden-back-btn span{opacity:0;max-width:0;overflow:hidden;transition:opacity .16s ease,max-width .26s ease}
+#garden-back-btn:hover{width:158px;border-radius:23px;gap:7px;opacity:1;transform:translateY(-2px)}
+#garden-back-btn:hover span{opacity:1;max-width:120px}
+</style>
+<script>if(window.self!==window.top)document.documentElement.classList.add('garden-embedded');</script>
 </head>
 <body>
-<a href="../index.html" id="garden-back-btn" style="position:fixed;top:14px;left:14px;z-index:99999;background:rgba(47,122,79,.94);color:#fff;padding:7px 14px 7px 11px;border-radius:20px;font-family:-apple-system,system-ui,'PingFang SC',sans-serif;font-size:13px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;box-shadow:0 4px 12px rgba(47,122,79,.35);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:transform .15s;" onmouseenter="this.style.transform='translateY(-1px)'" onmouseleave="this.style.transform='translateY(0)'">🍄 <span>Mycelium 花园</span></a>
+<a href="../index.html" id="garden-back-btn" data-garden-back="v2" style="position:fixed;left:18px;bottom:18px;z-index:99999;background:rgba(47,122,79,.92);color:#fff;font-family:-apple-system,system-ui,'PingFang SC',sans-serif;font-size:13px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(47,122,79,.32);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);box-sizing:border-box;white-space:nowrap;overflow:hidden">🍄 <span>Mycelium 花园</span></a>
 
 <!-- ════════════ NAV ════════════ -->
 <nav class="nav">
