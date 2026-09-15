@@ -2560,11 +2560,10 @@ function viewDetail(){
         <div class="embed-frame-wrap">
           <iframe
             id="embed-frame"
-            src="${currentDetailTab==='embed'?escapeAttr(n.url):''}"
+            src="${currentDetailTab==='embed'?escapeAttr(n.url):'about:blank'}"
             data-src="${escapeAttr(n.url)}"
             sandbox="allow-scripts allow-popups"
             referrerpolicy="no-referrer"
-            loading="lazy"
             title="${escapeAttr(n.title)}"></iframe>
         </div>
         <p class="embed-tip">原 HTML 页面已内嵌在本花园内，<strong>不离开不刷新</strong>左侧面板的状态。如内嵌异常（少数页面禁止 iframe 嵌入），请点上方 <code>↗ 新标签打开原文</code>。</p>
@@ -2724,9 +2723,12 @@ function bindDetail(){
         if(on){p.removeAttribute('hidden')}else{p.setAttribute('hidden','')}
       });
       // 切到 embed 时懒加载 iframe src（首次从 summary 进入时才设）
+      // 注意：必须比对 getAttribute('src') 而不是 ifr.src ——
+      // iframe 的 src 属性为空串时，ifr.src 会被解析成「当前文档地址」而非空字符串，
+      // 用它做空判断会永远为 false，导致懒加载失效且 iframe 静默嵌套花园自身。
       if(tab==='embed'){
         const ifr=document.getElementById('embed-frame');
-        if(ifr && ifr.dataset.src && !ifr.src){
+        if(ifr && ifr.dataset.src && ifr.getAttribute('src')!==ifr.dataset.src){
           ifr.src=ifr.dataset.src;
         }
       }
