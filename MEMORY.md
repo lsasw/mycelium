@@ -93,9 +93,12 @@ mycelium/
 ## 5. 新增笔记的流程
 
 1. 创建 `<分类>/新笔记.html`（单文件、内联样式、零外部 CDN）
-2. 在 `garden-manifest.json` 的 `notes[]` 增加一项
-3. 已打理笔记必须填 `maturity > 0` + `related[]`，并保持双向（在另一张的 `related` 也加上自己）
-4. **不要**改 `index.html`（已由 manifest 驱动）
+2. **必须改两处**：`garden-manifest.json` 的 `notes[]` **和** `index.html` 内嵌的
+   `<script type="application/json" id="manifest-data">`。内嵌那份是为了绕开 file:// 下
+   `fetch` 被禁止的限制；**只改一处不生效**（页面读的是内嵌那份）
+3. 跑一致性校验脚本，比对两份 `notes` 的 `id` 序列是否完全一致
+4. commit + push，等 GitHub Pages workflow 绿；再用 curl/无头浏览器验证线上
+5. 已打理笔记必须填 `maturity > 0` + `related[]`，并保持双向（在另一张的 `related` 也加上自己）
 
 ---
 
